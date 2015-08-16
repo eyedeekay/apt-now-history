@@ -2,7 +2,7 @@
 
 CURDIR=pwd
 
-ORIGIN="cmotc.github.io"
+ORIGIN="user.github.io"
 CODENAME="testing"
 REPOARCH="all"
 POLICY="main"

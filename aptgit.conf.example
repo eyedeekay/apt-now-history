@@ -1,5 +1,6 @@
 #! /bin/sh
-ORIGIN="cmotc.github.io"
+#CURDIR
+ORIGIN="user.github.io"
 CODENAME="testing"
 REPOARCH="all"
 POLICY="main"
