@@ -36,7 +36,7 @@ DRY_RUN="YES"
 RESET="NO"
 CHECK="NO"
 
-CURDIR=pwd
+CURDIR=$(pwd)
 
 ORIGIN="user.github.io"
 CODENAME="testing"
@@ -138,7 +138,7 @@ enterkey(){
 }
 
 createdirs(){
-	if ["$CONFDIR" -d]; then
+	if [ -d "$CONFDIR" ]; then
 		echo "directory exists"
 	else
 		mkdir -p "$CONFDIR"
@@ -177,23 +177,31 @@ if [ "$H" = "YES" ]; then
 	echo -e $HELP
 fi
 if [ "$DRY_RUN" = "NO" ]; then
-	if [ "$SRCDIR" -d ]; then
-		if [ "$CURDIR/.git" -d ]; then
+	if [ -d "$SRCDIR" ]; then
+		if [ -d "$CURDIR/.git" ]; then
 			if [ "$RESET" = "YES" ]; then
 				CHECK="YES"
+				echo "cleaning existing repo"
 				rm -rf "$BASEDIR"
 			fi
 			if [ "$CHECK" = "YES" ]; then
+				echo "checking dependencies"
 				checkdepends
 			fi
 			if [ "$RESET" = "YES" ]; then
+				echo "generating keys"
 				generatekey
 				enterkey
+				echo "creating directories"
 				createdirs
 			fi
+			echo "generating distro file"
 			gendistrofile
+			echo "generating conf options"
 			genconfoptions
+			echo "outputting key"
 			generaterkey
+			echo "setting up packages"
 			includepackages
 			DATE=date
 			if [ "$ORG" = "YES" ]; then
