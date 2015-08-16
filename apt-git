@@ -5,32 +5,32 @@ apt-git personal repository tool\n
 ================================\n
 This tool helps developers host their own applications by posting them to \n
 github pages for download. \n
-\t	-d \ --directory
-\t\t		Work in this directory, uses current directory by default
-\t	-o \ --origin
-\t\t		URL of the repository
-\t	-c \ --codename
-\t\t		Codename you want to use, defaults is \"testing\"
-\t	-a \ --arch
-\t\t		Architecture you want to host, defaults to \"all\"
-\t	-p \ --policy
-\t\t		Policy of packages you want to host, defaults to \"main\"
-\t	-k \ --key
-\t\t		ID of the package signing key
-\t	-s \ --sources
-\t\t		Folder with the packages to include in the repo
-\t	-q \ --override
-\t\t		Name of the override file
-\t	-m \ --message
-\t\t		Message to include in the commit
-\t	-c \ --check
-\t\t		Make sure the dependencies are installed
-\t	-r \ --reset
-\t\t		Re-generate all components of the repository
-\t	-u \ --user \ --org \ --organization
-\t\t		Us as user/organization page, post page to master branch
-\t	-h \ --help 
-\t\t		Display this help message
+\t	-d \ --directory\n
+\t\t		Work in this directory, uses current directory by default\n
+\t	-o \ --origin\n
+\t\t		URL of the repository\n
+\t	-c \ --codename\n
+\t\t		Codename you want to use, defaults is \"testing\"\n
+\t	-a \ --arch\n
+\t\t		Architecture you want to host, defaults to \"all\"\n
+\t	-p \ --policy\n
+\t\t		Policy of packages you want to host, defaults to \"main\"\n
+\t	-k \ --key\n
+\t\t		ID of the package signing key\n
+\t	-s \ --sources\n
+\t\t		Folder with the packages to include in the repo\n
+\t	-q \ --override\n
+\t\t		Name of the override file\n
+\t	-m \ --message\n
+\t\t		Message to include in the commit\n
+\t	-c \ --check\n
+\t\t		Make sure the dependencies are installed\n
+\t	-r \ --reset\n
+\t\t		Re-generate all components of the repository\n
+\t	-u \ --user \ --org \ --organization\n
+\t\t		Us as user/organization page, post page to master branch\n
+\t	-h \ --help\n
+\t\t		Display this help message\n
 "
 DRY_RUN="YES"
 RESET="NO"
@@ -107,39 +107,45 @@ done
 BASEDIR="$CURDIR/debian"
 CONFDIR="$CURDIR/debian/conf"
 
-confirm()
+confirm(){
 	read -r -p "${1: -Are you sure? [y/N]} " response
 	case $response in
 		[yY][eE][sS])
-			s="YES"
+			local s="YES"
 			;;
 		*)
-			s="NO"
+			local s="NO"
 			;;
 	esac
-	echo $s
+	echo "$s"
+}
 
-checkdepends()
+checkdepends(){
 	sudo apt-get install gnupg git rng-tools dpkg-sig reprepo
 	sudo service rng-tools start
+}
 
-generatekey()
+generatekey(){
 	gpg --gen-key
+}
 
-enterkey()
-	KEYED=false
-	while ["$KEYED"="NO"]; do
+enterkey(){
+	KEYED="NO"
+	while [ "$KEYED"="NO" ]; do
 		read -r -p "Enter the key that you want to use to sign your repository" KEY
 		KEYED=confirm
 	done
+}
 
-createdirs()
+createdirs(){
 	if ["$CONFDIR" -d]; then
+		echo "directory exists"
 	else
 		mkdir -p "$CONFDIR"
 	fi
+}
 
-gendistrofile()
+gendistrofile(){
 	echo "Origin: $ORIGIN"		> "$CONFDIR/distributions"
 	echo "Label: $ORIGIN"		>> "$CONFDIR/distributions"
 	echo "Codename: $CODENAME"	>> "$CONFDIR/distributions"
@@ -150,33 +156,37 @@ gendistrofile()
 	echo "DebOverride: $OVERRIDE"	>> "$CONFDIR/distributions"
 	echo "DscOverride: $OVERRIDE"	>> "$CONFDIR/distributions"
 	touch "$CONFDIR/$OVERRIDE"
+}
 
-genconfoptions()
+genconfoptions(){
 	echo "verbose"
 	echo "ask-passphrase"
 	echo "basedir $BASEDIR"
+}
 
-generaterkey()
+generaterkey(){
 	gpg --armor --output "$CURDIR/$ORIGIN.gpg.key" --export $KEY
+}
 
-includepackages()
+includepackages(){
 	cd $BASEDIR
 	reprepo include "$SRCDIR/*"
+}
 
-if ["$H" = "YES"]; then
+if [ "$H" = "YES" ]; then
 	echo -e $HELP
 fi
-if ["$DRY_RUN" = "NO"]; then
-	if ["$SRCDIR" -d]; then
-		if ["$CURDIR/.git" -d]; then
-			if ["$RESET" = "YES"]; then
+if [ "$DRY_RUN" = "NO" ]; then
+	if [ "$SRCDIR" -d ]; then
+		if [ "$CURDIR/.git" -d ]; then
+			if [ "$RESET" = "YES" ]; then
 				CHECK="YES"
 				rm -rf "$BASEDIR"
 			fi
-			if ["$CHECK" = "YES"]; then
+			if [ "$CHECK" = "YES" ]; then
 				checkdepends
 			fi
-			if ["$RESET" = "YES"]; then
+			if [ "$RESET" = "YES" ]; then
 				generatekey
 				enterkey
 				createdirs
@@ -186,7 +196,7 @@ if ["$DRY_RUN" = "NO"]; then
 			generaterkey
 			includepackages
 			DATE=date
-			if ["$ORG" = "YES"]; then
+			if [ "$ORG" = "YES" ]; then
 				git add . && git commit -am "Repository update: $MESSAGE $DATE" && git push origin master
 			else
 				git add . && git commit -am "Repository update: $MESSAGE $DATE" && git push origin gh-pages
