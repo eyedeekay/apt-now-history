@@ -159,9 +159,9 @@ gendistrofile(){
 }
 
 genconfoptions(){
-	echo "verbose"
-	echo "ask-passphrase"
-	echo "basedir $BASEDIR"
+	echo "verbose"		> "$CONFDIR/options"
+	echo "ask-passphrase"	>> "$CONFDIR/options"
+	echo "basedir $BASEDIR"	>> "$CONFDIR/options"
 }
 
 generaterkey(){

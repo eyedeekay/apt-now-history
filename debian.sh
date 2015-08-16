@@ -25,7 +25,7 @@ mv debian/rules.new debian/rules
 # debian/install must contain the list of scripts to install 
 # as well as the target directory
 echo $SOURCEBIN usr/bin > debian/install 
-echo $SOURCEDOC usr/share/doc/apt-git >> debian/install
+#echo $SOURCEDOC usr/share/doc/apt-git >> debian/install
 
 # Remove the example files
 rm debian/*.ex
