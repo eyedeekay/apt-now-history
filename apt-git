@@ -32,7 +32,10 @@ github pages for download. \n
 \t	-h \ --help 
 \t\t		Display this help message
 "
-DRY_RUN="NO"
+DRY_RUN="YES"
+RESET="NO"
+CHECK="NO"
+
 CURDIR=pwd
 
 ORIGIN="user.github.io"
@@ -46,7 +49,7 @@ SRCDIR="$CURDIR/../debpackages"
 
 . "./aptgit.conf"
 
-while [ [$# > 0] ]; do
+while [ "$#" -gt 0 ]; do
 	arg="$1"
 	case $arg in
 		-d|--directory)
@@ -98,6 +101,7 @@ while [ [$# > 0] ]; do
 			H="YES"
 		;;
 	esac
+	shift
 done
 
 BASEDIR="$CURDIR/debian"
@@ -107,12 +111,13 @@ confirm()
 	read -r -p "${1: -Are you sure? [y/N]} " response
 	case $response in
 		[yY][eE][sS])
-			return "YES"
+			s="YES"
 			;;
 		*)
-			return "NO"
+			s="NO"
 			;;
 	esac
+	echo $s
 
 checkdepends()
 	sudo apt-get install gnupg git rng-tools dpkg-sig reprepo
@@ -122,7 +127,7 @@ generatekey()
 	gpg --gen-key
 
 enterkey()
-	KEYED="NO"
+	KEYED=false
 	while ["$KEYED"="NO"]; do
 		read -r -p "Enter the key that you want to use to sign your repository" KEY
 		KEYED=confirm
@@ -162,34 +167,34 @@ if ["$H" = "YES"]; then
 	echo -e $HELP
 fi
 if ["$DRY_RUN" = "NO"]; then
-if ["$SRCDIR" -d]; then
-	if ["$CURDIR/.git" -d]; then
-		if ["$RESET" = "YES"]; then
-			CHECK="YES"
-			rm -rf "$BASEDIR"
-		fi
-		if ["$CHECK" = "YES"]; then
-			checkdepends
-		fi
-		if ["$RESET" = "YES"]; then
-			generatekey
-			enterkey
-			createdirs
-		fi
-		gendistrofile
-		genconfoptions
-		generaterkey
-		includepackages
-		DATE=date
-		if ["$ORG" = "YES"]; then
-			git add . && git commit -am "Repository update: $MESSAGE $DATE" && git push origin master
+	if ["$SRCDIR" -d]; then
+		if ["$CURDIR/.git" -d]; then
+			if ["$RESET" = "YES"]; then
+				CHECK="YES"
+				rm -rf "$BASEDIR"
+			fi
+			if ["$CHECK" = "YES"]; then
+				checkdepends
+			fi
+			if ["$RESET" = "YES"]; then
+				generatekey
+				enterkey
+				createdirs
+			fi
+			gendistrofile
+			genconfoptions
+			generaterkey
+			includepackages
+			DATE=date
+			if ["$ORG" = "YES"]; then
+				git add . && git commit -am "Repository update: $MESSAGE $DATE" && git push origin master
+			else
+				git add . && git commit -am "Repository update: $MESSAGE $DATE" && git push origin gh-pages
+			fi
 		else
-			git add . && git commit -am "Repository update: $MESSAGE $DATE" && git push origin gh-pages
+			echo "Fatal Error, this is not a git repository. Please create a git repository and enable github pages to use this script."
 		fi
 	else
-		echo "Fatal Error, this is not a git repository. Please create a git repository and enable github pages to use this script."
+		echo "Fatal Error, packages not found in package source directory"
 	fi
-else
-	echo "Fatal Error, packages not found in package source directory"
-fi
 fi
