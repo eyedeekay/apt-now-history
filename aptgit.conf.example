@@ -1,5 +1,5 @@
 #! /bin/sh
-#CURDIR
+#CURDIR=""
 ORIGIN="user.github.io"
 CODENAME="testing"
 REPOARCH="all"

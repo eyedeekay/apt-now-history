@@ -1,5 +1,38 @@
 #! /bin/sh
 
+HELP="
+apt-git personal repository tool\n
+================================\n
+This tool helps developers host their own applications by posting them to \n
+github pages for download. \n
+\t	-d \ --directory
+\t\t		Work in this directory, uses current directory by default
+\t	-o \ --origin
+\t\t		URL of the repository
+\t	-c \ --codename
+\t\t		Codename you want to use, defaults is \"testing\"
+\t	-a \ --arch
+\t\t		Architecture you want to host, defaults to \"all\"
+\t	-p \ --policy
+\t\t		Policy of packages you want to host, defaults to \"main\"
+\t	-k \ --key
+\t\t		ID of the package signing key
+\t	-s \ --sources
+\t\t		Folder with the packages to include in the repo
+\t	-q \ --override
+\t\t		Name of the override file
+\t	-m \ --message
+\t\t		Message to include in the commit
+\t	-c \ --check
+\t\t		Make sure the dependencies are installed
+\t	-r \ --reset
+\t\t		Re-generate all components of the repository
+\t	-u \ --user \ --org \ --organization
+\t\t		Us as user/organization page, post page to master branch
+\t	-h \ --help 
+\t\t		Display this help message
+"
+DRY_RUN="NO"
 CURDIR=pwd
 
 ORIGIN="user.github.io"
@@ -9,9 +42,11 @@ POLICY="main"
 KEY="Example"
 OVERRIDE="override.testing"
 
-. "aptgit.conf"
+SRCDIR="$CURDIR/../debpackages"
 
-while [[$# > 1]]; do
+. "./aptgit.conf"
+
+while [ [$# > 1] ]; do
 	arg="$1"
 	case $arg in
 		-d|--directory)
@@ -30,12 +65,16 @@ while [[$# > 1]]; do
 			REPOARCH="$2"
 			shift
 		;;
-		-p|--POLICY)
+		-p|--policy)
 			POLICY="$2"
 			shift
 		;;
 		-k|--key)
 			KEY="$2"
+			shift
+		;;
+		-s|--sources)
+			SRCDIR="$2"
 			shift
 		;;
 		-q|--override)
@@ -58,12 +97,15 @@ while [[$# > 1]]; do
 			ORG="YES"
 			shift
 		;;
+		-h|--help)
+			H="YES"
+			shift
+		;;
 	esac
 done
 
 BASEDIR="$CURDIR/debian"
 CONFDIR="$CURDIR/debian/conf"
-SRCDIR="$CURDIR/../debpackages"
 
 confirm()
 	read -r -p "${1: -Are you sure? [y/N]} " response
@@ -120,29 +162,38 @@ includepackages()
 	cd $BASEDIR
 	reprepo include "$SRCDIR/*"
 
-if ["$CURDIR/.git" -d]; then
-	if ["$RESET" = "YES"]; then
-		CHECK="YES"
-		rm -rf "$BASEDIR"
-	fi
-	if ["$CHECK" = "YES"]; then
-		checkdepends
-	fi
-	if ["$RESET" = "YES"]; then
-		generatekey
-		enterkey
-		createdirs
-	fi
-	gendistrofile
-	genconfoptions
-	generaterkey
-	includepackages
-	DATE=date
-	if ["$ORG" = "YES"]; then
-		git add . && git commit -am "Repository update: $MESSAGE $DATE" && git push origin master
+if ["$H" = "YES"]; then
+	echo -e $HELP
+fi
+if ["$DRY_RUN" = "NO"]; then
+if ["$SRCDIR" -d]; then
+	if ["$CURDIR/.git" -d]; then
+		if ["$RESET" = "YES"]; then
+			CHECK="YES"
+			rm -rf "$BASEDIR"
+		fi
+		if ["$CHECK" = "YES"]; then
+			checkdepends
+		fi
+		if ["$RESET" = "YES"]; then
+			generatekey
+			enterkey
+			createdirs
+		fi
+		gendistrofile
+		genconfoptions
+		generaterkey
+		includepackages
+		DATE=date
+		if ["$ORG" = "YES"]; then
+			git add . && git commit -am "Repository update: $MESSAGE $DATE" && git push origin master
+		else
+			git add . && git commit -am "Repository update: $MESSAGE $DATE" && git push origin gh-pages
+		fi
 	else
-		git add . && git commit -am "Repository update: $MESSAGE $DATE" && git push origin gh-pages
+		echo "Fatal Error, this is not a git repository. Please create a git repository and enable github pages to use this script."
 	fi
 else
-	echo "Fatal Error, this is not a git repository. Please create a git repository and enable github pages to use this script."
+	echo "Fatal Error, packages not found in package source directory"
+fi
 fi
