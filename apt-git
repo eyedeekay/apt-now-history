@@ -2,16 +2,79 @@
 
 CURDIR=pwd
 
-BASEDIR="$CURDIR/debian"
-CONFDIR="$CURDIR/debian/conf"
-SRCDIR="$CURDIR/../debpackages"
-
 ORIGIN="cmotc.github.io"
 CODENAME="testing"
 REPOARCH="all"
 POLICY="main"
 KEY="Example"
 OVERRIDE="override.testing"
+
+. "aptgit.conf"
+
+while [[$# > 1]]; do
+	arg="$1"
+	case $arg in
+		-d|--directory)
+			CURDIR="$2"
+			shift
+		;;
+		-o|--origin)
+			ORIGIN="$2"
+			shift
+		;;
+		-c|--codename)
+			CODENAME="$2"
+			shift
+		;;
+		-a|--arch)
+			REPOARCH="$2"
+			shift
+		;;
+		-p|--POLICY)
+			POLICY="$2"
+			shift
+		;;
+		-k|--key)
+			KEY="$2"
+			shift
+		;;
+		-q|--override)
+			OVERRIDE="$2"
+			shift
+		;;
+		-m,|--message)
+			MESSAGE="$2"
+			shift
+		;;
+		-c|--check)
+			CHECK="YES"
+			shift
+		;;
+		-r|--reset)
+			RESET="YES"
+			shift
+		;;
+		-u|--user|--org|--organization)
+			ORG="YES"
+			shift
+		;;
+	esac
+done
+
+BASEDIR="$CURDIR/debian"
+CONFDIR="$CURDIR/debian/conf"
+SRCDIR="$CURDIR/../debpackages"
+
+confirm()
+	read -r -p "${1: -Are you sure? [y/N]} " response
+	case $response in
+		[yY][eE][sS])
+			return "YES"
+			;;
+		*)
+			return "NO"
+			;;
+	esac
 
 checkdepends()
 	sudo apt-get install gnupg git rng-tools dpkg-sig reprepo
@@ -20,8 +83,18 @@ checkdepends()
 generatekey()
 	gpg --gen-key
 
+enterkey()
+	KEYED="NO"
+	while ["$KEYED"="NO"]; do
+		read -r -p "Enter the key that you want to use to sign your repository" KEY
+		KEYED=confirm
+	done
+
 createdirs()
-	mkdir -p "$CONFDIR"
+	if ["$CONFDIR" -d]; then
+	else
+		mkdir -p "$CONFDIR"
+	fi
 
 gendistrofile()
 	echo "Origin: $ORIGIN"		> "$CONFDIR/distributions"
@@ -47,3 +120,29 @@ includepackages()
 	cd $BASEDIR
 	reprepo include "$SRCDIR/*"
 
+if ["$CURDIR/.git" -d]; then
+	if ["$RESET" = "YES"]; then
+		CHECK="YES"
+		rm -rf "$BASEDIR"
+	fi
+	if ["$CHECK" = "YES"]; then
+		checkdepends
+	fi
+	if ["$RESET" = "YES"]; then
+		generatekey
+		enterkey
+		createdirs
+	fi
+	gendistrofile
+	genconfoptions
+	generaterkey
+	includepackages
+	DATE=date
+	if ["$ORG" = "YES"]; then
+		git add . && git commit -am "Repository update: $MESSAGE $DATE" && git push origin master
+	else
+		git add . && git commit -am "Repository update: $MESSAGE $DATE" && git push origin gh-pages
+	fi
+else
+	echo "Fatal Error, this is not a git repository. Please create a git repository and enable github pages to use this script."
+fi
