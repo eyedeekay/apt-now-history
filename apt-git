@@ -1,0 +1,49 @@
+#! /bin/sh
+
+CURDIR=pwd
+
+BASEDIR="$CURDIR/debian"
+CONFDIR="$CURDIR/debian/conf"
+SRCDIR="$CURDIR/../debpackages"
+
+ORIGIN="cmotc.github.io"
+CODENAME="testing"
+REPOARCH="all"
+POLICY="main"
+KEY="Example"
+OVERRIDE="override.testing"
+
+checkdepends()
+	sudo apt-get install gnupg git rng-tools dpkg-sig reprepo
+	sudo service rng-tools start
+
+generatekey()
+	gpg --gen-key
+
+createdirs()
+	mkdir -p "$CONFDIR"
+
+gendistrofile()
+	echo "Origin: $ORIGIN"		> "$CONFDIR/distributions"
+	echo "Label: $ORIGIN"		>> "$CONFDIR/distributions"
+	echo "Codename: $CODENAME"	>> "$CONFDIR/distributions"
+	echo "Architectures: $REPOARCH"	>> "$CONFDIR/distributions"
+	echo "Components: $POLICY"	>> "$CONFDIR/distributions"
+	echo "Description: $ORIGIN"	>> "$CONFDIR/distributions"
+	echo "SignWith: $KEY"		>> "$CONFDIR/distributions"
+	echo "DebOverride: $OVERRIDE"	>> "$CONFDIR/distributions"
+	echo "DscOverride: $OVERRIDE"	>> "$CONFDIR/distributions"
+	touch "$CONFDIR/$OVERRIDE"
+
+genconfoptions()
+	echo "verbose"
+	echo "ask-passphrase"
+	echo "basedir $BASEDIR"
+
+generaterkey()
+	gpg --armor --output "$CURDIR/$ORIGIN.gpg.key" --export $KEY
+
+includepackages()
+	cd $BASEDIR
+	reprepo include "$SRCDIR/*"
+
