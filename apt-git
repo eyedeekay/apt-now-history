@@ -46,7 +46,7 @@ SRCDIR="$CURDIR/../debpackages"
 
 . "./aptgit.conf"
 
-while [ [$# > 1] ]; do
+while [ [$# > 0] ]; do
 	arg="$1"
 	case $arg in
 		-d|--directory)
@@ -87,19 +87,15 @@ while [ [$# > 1] ]; do
 		;;
 		-c|--check)
 			CHECK="YES"
-			shift
 		;;
 		-r|--reset)
 			RESET="YES"
-			shift
 		;;
 		-u|--user|--org|--organization)
 			ORG="YES"
-			shift
 		;;
 		-h|--help)
 			H="YES"
-			shift
 		;;
 	esac
 done
