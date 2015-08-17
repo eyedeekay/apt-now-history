@@ -32,3 +32,8 @@ github pages for download.
               Us as user/organization page, post page to master branch
         -h \ --help 
               Display this help message
+
+to add this repository to your Debian-based system:  
+
+        echo \"deb https://site.github.io/apt-git/debian unstable main\" | sudo tee /etc/apt/source.list.d/site.github.io.list
+        wget -q0 - https://site.github.io/apt-git/site.github.io.gpg.key | sudo apt-key add -
