@@ -127,7 +127,7 @@ confirm(){
 }
 
 checkdepends(){
-	sudo apt-get install gnupg git rng-tools dpkg-sig reprepo
+	sudo apt-get install gnupg git rng-tools dpkg-sig reprepro
 	sudo service rng-tools start
 }
 
@@ -177,11 +177,11 @@ generaterkey(){
 includepackages(){
 	cd $SRCDIR
 	mkdir ../debian/
-	find . -wholename "*.deb" -print0 | xargs -r0 reprepro includedeb unstable 
+	find . -wholename "*.deb" -print0 | xargs -r0 reprepro includedeb unstable
 	find . -wholename "*.dsc" -print0 | xargs -r0 reprepro includedsc unstable
 	find . -wholename "*.changes" -print0 | xargs -r0 reprepro include unstable 
 	cd ..
-#	reprepo include "$SRCDIR/*"
+#	reprepro include "$SRCDIR/*"
 }
 
 if [ "$H" = "YES" ]; then
@@ -198,13 +198,13 @@ if [ "$DRY_RUN" = "NO" ]; then
 			if [ "$CHECK" = "YES" ]; then
 				echo "checking dependencies"
 				checkdepends
+				createdirs
 			fi
 			if [ "$RESET" = "YES" ]; then
 				echo "generating keys"
 				generatekey
 				enterkey
 				echo "creating directories"
-				createdirs
 			fi
 			echo "generating distro file"
 			gendistrofile
