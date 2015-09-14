@@ -1,0 +1,111 @@
+Package: apt-git
+Version: 0.1-1
+Architecture: all
+Maintainer: dyngar-m <dyngar-m@dyngar.local>
+Installed-Size: 35
+Homepage: <insert the upstream URL, if relevant>
+Priority: optional
+Section: unknown
+Filename: pool/main/a/apt-git/apt-git_0.1-1_all.deb
+Size: 3956
+SHA256: 0a09de7cdb44fa46a674491a10f687a2f8f71adcb2b376488c1e0d256616e25a
+SHA1: ac0fe067647c3f1c3d5dada2f371cd6b1feecc7b
+MD5sum: f520d498dd09a6c70060aa4d3e6b1a3a
+Description: <insert up to 60 chars description>
+ <insert long description, indented with spaces>
+
+Package: hidblock
+Version: 0.1-1
+Architecture: all
+Maintainer: dyngar-m <dyngar-m@dyngar.local>
+Installed-Size: 32
+Homepage: <insert the upstream URL, if relevant>
+Priority: optional
+Section: unknown
+Filename: pool/main/h/hidblock/hidblock_0.1-1_all.deb
+Size: 3012
+SHA256: ed2d4dff93b9e2c29ea39471ef1a6cb13dc37d47367501c468a685a0dbbb9280
+SHA1: 41c77c31a3dd756cb307d7d8dabedab88991fd12
+MD5sum: 5029a6cb64f195e4aacb972266b4cbb9
+Description: <insert up to 60 chars description>
+ <insert long description, indented with spaces>
+
+Package: libtoxcore
+Source: toxcore
+Version: 20150817-1
+Architecture: amd64
+Maintainer: dmotc cmotc@openmailbox.org
+Installed-Size: 59
+Priority: optional
+Section: misc
+Filename: pool/main/t/toxcore/libtoxcore_20150817-1_amd64.deb
+Size: 15180
+SHA256: 28d602b19a42523b65663ef4db087bdaab1e7c17319322e475dfa0f29c0f7884
+SHA1: a31ff2e65d08e200fb254e092845d79dbfd2b257
+MD5sum: 1d1eb99becc00fc2bc534eb45c9db30f
+Description: LibToxCore package for Debian.
+
+Package: libtoxcore-dev
+Source: toxcore
+Version: 20150817-1
+Architecture: all
+Maintainer: dmotc cmotc@openmailbox.org
+Installed-Size: 59
+Depends: libtoxcore (= 20150817-1)
+Homepage: https://tox.chat
+Priority: optional
+Section: misc
+Filename: pool/main/t/toxcore/libtoxcore-dev_20150817-1_all.deb
+Size: 13804
+SHA256: e6a14f1e54b66988e91d82937c3acd2199c6e97034dbb4742b463bbbd2015651
+SHA1: fc8eb1819d9856474c0f3c8bb1cab560a3870642
+MD5sum: 73c959cda61efc7401c45decee8dbb3b
+Description: LibToxCore development files
+
+Package: toxbot
+Version: 0.1-1
+Architecture: all
+Maintainer: dyngar-m <dyngar-m@dyngar.local>
+Installed-Size: 96
+Homepage: <insert the upstream URL, if relevant>
+Priority: optional
+Section: unknown
+Filename: pool/main/t/toxbot/toxbot_0.1-1_all.deb
+Size: 24890
+SHA256: fc11e90f2485360fad9e553e8a29c61878bcae8ca8f52c3827c127e12f8658dc
+SHA1: a7cb9f1ade95566909be943cb259b8a820c12b0a
+MD5sum: 1fbc3c82780efc679a8da34aa43fefbd
+Description: <insert up to 60 chars description>
+ <insert long description, indented with spaces>
+
+Package: utox
+Version: 20150817-1
+Architecture: amd64
+Maintainer: dmotc cmotc@openmailbox.org
+Installed-Size: 25
+Priority: optional
+Section: misc
+Filename: pool/main/u/utox/utox_20150817-1_amd64.deb
+Size: 3758
+SHA256: 71c44cf7d9ebc48138bf2211438a299171ba1f87b51c2e7de6104bda68641b8f
+SHA1: fa4a0705bd87b481cf40525e0450f011e4e57936
+MD5sum: 6581d558fab4c947b2416531bda9f19e
+Description: LibToxCore package for Debian.
+
+Package: utox-dev
+Source: utox
+Version: 20150817-1
+Architecture: all
+Maintainer: dmotc cmotc@openmailbox.org
+Installed-Size: 25
+Depends: libtoxcore (= 20150817-1)
+Homepage: https://tox.chat
+Priority: optional
+Section: misc
+Filename: pool/main/u/utox/utox-dev_20150817-1_all.deb
+Size: 2404
+SHA256: 3fc64c6402640368c426b312807ce17771db138eaf0696e5927cca21ca104035
+SHA1: a1b2dc34798a7af56135d7133df152f4da2caed9
+MD5sum: bad41d8f4798445bd1b5bdba24c01bbc
+Description: LibToxCore development files
+

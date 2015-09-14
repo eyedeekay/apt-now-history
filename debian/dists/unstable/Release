@@ -1,0 +1,28 @@
+Origin: cmotc.github.io
+Label: cmotc.github.io
+Codename: unstable
+Date: Mon, 14 Sep 2015 23:57:24 UTC
+Architectures: amd64 i386
+Components: main
+Description: cmotc.github.io
+MD5Sum:
+ fafe6f5b1967490c5776a672f7b02df5 3436 main/binary-amd64/Packages
+ 1bde88177446befbb26ebdbd49563fa7 1214 main/binary-amd64/Packages.gz
+ c05e63f06c96c715e0eb97afb63b6028 112 main/binary-amd64/Release
+ 943b29e7ff7b15e609c926d955448d00 2572 main/binary-i386/Packages
+ cd053a10b4e9704f0831d35b3b94518a 965 main/binary-i386/Packages.gz
+ a6f99d9dd9cebcf5a4b5a9fa3b1ce651 111 main/binary-i386/Release
+SHA1:
+ 303852f882351f84552864f00460343da8b3b1ec 3436 main/binary-amd64/Packages
+ 46ed453005fcce35e3c5e57311771eb9f7c16d80 1214 main/binary-amd64/Packages.gz
+ 59820c00e1bb50bad22f80a5cf5d4e50413191a1 112 main/binary-amd64/Release
+ 250ecf95a71178052e72690b42eeaf45aef0fa34 2572 main/binary-i386/Packages
+ 4bdb9b7638ba25eab826b8339c8036beb7b48690 965 main/binary-i386/Packages.gz
+ a6b611c1331f03dfde0434daf8db7257735f83a4 111 main/binary-i386/Release
+SHA256:
+ aac24661198f5a8853e54fcc33cfaf0e3acf520ca6c68d4295035a20edad4ce8 3436 main/binary-amd64/Packages
+ bc7898fb1a4d558bf264555c1611f7490fb0242e1912a16b98ad8c38aae2462e 1214 main/binary-amd64/Packages.gz
+ 78eb7ceeb6e957b3e4b6da4e22cea381716ea5188853c0fd86ba03a6fff87cf8 112 main/binary-amd64/Release
+ 433f925e5216752f8ba701f9b4be94ca6a03cff60593ed24e0d054471e161590 2572 main/binary-i386/Packages
+ 644ece27e12acc95ff69368f609305c82d3caa48a46f2554d69cfee183cc41ce 965 main/binary-i386/Packages.gz
+ 89b19dfa49061af7b60de20f63ae4c6ff1c2a0d8dd081acaa58f22f9c4361a3c 111 main/binary-i386/Release
