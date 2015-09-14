@@ -1,0 +1,221 @@
+ dpkg-buildpackage -rfakeroot -d -us -uc
+dpkg-buildpackage: source package utox
+dpkg-buildpackage: source version 20150817-1
+dpkg-buildpackage: source distribution UNRELEASED
+dpkg-buildpackage: source changed by dyngar-m <dyngar-m@dyngar.local>
+ dpkg-source --before-build utox_20150817-1
+dpkg-buildpackage: host architecture amd64
+ fakeroot debian/rules clean
+dh clean
+   dh_testdir
+   dh_auto_clean
+make[1]: Entering directory '/home/dyngar-m/Projects/Operating_Systems_Projects/live-build/distro/utox_20150817-1'
+rm -f utox *.o png/*.o
+make[1]: Leaving directory '/home/dyngar-m/Projects/Operating_Systems_Projects/live-build/distro/utox_20150817-1'
+   dh_clean
+ dpkg-source -b utox_20150817-1
+dpkg-source: info: using source format `3.0 (quilt)'
+dpkg-source: info: building utox using existing ./utox_20150817.orig.tar.gz
+dpkg-source: info: building utox in utox_20150817-1.debian.tar.xz
+dpkg-source: warning: missing information for output field Standards-Version
+dpkg-source: info: building utox in utox_20150817-1.dsc
+ debian/rules build
+dh build
+   dh_testdir
+   dh_auto_configure
+   dh_auto_build
+make[1]: Entering directory '/home/dyngar-m/Projects/Operating_Systems_Projects/live-build/distro/utox_20150817-1'
+  CC    tox_transfer.o
+  CC    friend.o
+  CC    button.o
+  CC    svg.o
+  CC    scrollable.o
+  CC    dropdown.o
+  CC    ui.o
+ui.c: In function ‘ui_scale’:
+ui.c:755:5: warning: unused variable ‘d_audio_filtering’ [-Wunused-variable]
+     d_audio_filtering = {
+     ^
+  CC    list.o
+  CC    dns.o
+dns.c: In function ‘dns_thread’:
+dns.c:235:25: warning: ‘ch’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+                     *id |= ch;
+                         ^
+dns.c:207:21: note: ‘ch’ was declared here
+             uint8_t ch;
+                     ^
+  CC    edit.o
+  CC    ui_dropdown.o
+  CC    main.o
+In file included from main.c:9:0:
+xlib/main.c: In function ‘video_frame’:
+xlib/main.c:1064:8: warning: declaration of ‘gc’ shadows a global declaration [-Wshadow]
+     GC gc = DefaultGC(display, screen);
+        ^
+In file included from main.c:9:0:
+xlib/main.c:52:4: warning: shadowed declaration is here [-Wshadow]
+ GC gc;
+    ^
+  CC    ui_i18n.o
+  CC    util.o
+util.c: In function ‘config_load’:
+util.c:568:37: warning: initialization from incompatible pointer type
+             UTOX_SAVE_V2 *save_v2 = save;
+                                     ^
+util.c:569:58: warning: pointer targets in passing argument 1 of ‘strlen’ differ in signedness [-Wpointer-sign]
+             save = calloc(sizeof(UTOX_SAVE) + 1 + strlen(save_v2->proxy_ip), 1);
+                                                          ^
+In file included from main.h:13:0,
+                 from util.c:1:
+/usr/include/string.h:399:15: note: expected ‘const char *’ but argument is of type ‘uint8_t *’
+ extern size_t strlen (const char *__s)
+               ^
+  CC    messages.o
+  CC    tox.o
+In file included from tox.c:248:0:
+tox_av.h: In function ‘audio_thread’:
+tox_av.h:721:21: warning: declaration of ‘i’ shadows a previous local [-Wshadow]
+                 int i;
+                     ^
+tox_av.h:483:18: warning: shadowed declaration is here [-Wshadow]
+     unsigned int i;
+                  ^
+tox_av.h:744:67: warning: passing argument 3 of ‘toxav_group_send_audio’ from incompatible pointer type
+                             toxav_group_send_audio(tox, chats[i], buf, perframe, av_DefaultSettings.audio_channels, av_DefaultSettings.audio_sample_rate);
+                                                                   ^
+In file included from main.h:19:0,
+                 from tox.c:1:
+/usr/local/include/tox/toxav.h:322:5: note: expected ‘const int16_t *’ but argument is of type ‘uint8_t *’
+ int toxav_group_send_audio(Tox *tox, int groupnumber, const int16_t *pcm, unsigned int samples, uint8_t channels,
+     ^
+In file included from tox.c:248:0:
+tox_av.h: In function ‘callback_av_audio’:
+tox_av.h:780:42: warning: passing argument 2 of ‘sourceplaybuffer’ discards ‘const’ qualifier from pointer target type
+         sourceplaybuffer(call_index + 1, data, samples, dest.audio_channels, dest.audio_sample_rate);
+                                          ^
+tox_av.h:355:13: note: expected ‘int16_t *’ but argument is of type ‘const int16_t *’
+ static void sourceplaybuffer(int i, int16_t *data, int samples, uint8_t channels, unsigned int sample_rate)
+             ^
+tox_av.h: In function ‘callback_av_video’:
+tox_av.h:934:17: warning: passing argument 1 of ‘yuv420torgb’ discards ‘const’ qualifier from pointer target type
+     yuv420torgb(img, (void*)&img_data[2]);
+                 ^
+In file included from main.h:100:0,
+                 from tox.c:1:
+util.h:64:6: note: expected ‘struct vpx_image_t *’ but argument is of type ‘const struct vpx_image_t *’
+ void yuv420torgb(vpx_image_t *img, uint8_t *out);
+      ^
+In file included from tox.c:248:0:
+tox_av.h: In function ‘set_av_callbacks’:
+tox_av.h:955:39: warning: passing argument 2 of ‘toxav_register_video_callback’ from incompatible pointer type
+     toxav_register_video_callback(av, callback_av_video, NULL);
+                                       ^
+In file included from main.h:19:0,
+                 from tox.c:1:
+/usr/local/include/tox/toxav.h:170:6: note: expected ‘ToxAvVideoCallback’ but argument is of type ‘void (*)(struct ToxAv *, int32_t,  const struct vpx_image_t *, void *)’
+ void toxav_register_video_callback (ToxAv *av, ToxAvVideoCallback cb, void *userdata);
+      ^
+tox.c: In function ‘tox_message’:
+tox.c:1692:20: warning: unused variable ‘g’ [-Wunused-variable]
+         GROUPCHAT *g = &group[param1];
+                    ^
+  CC    contextmenu.o
+  CC    text.o
+  CC    png/png.o
+  LD    utox
+make[1]: Leaving directory '/home/dyngar-m/Projects/Operating_Systems_Projects/live-build/distro/utox_20150817-1'
+   dh_auto_test
+ fakeroot debian/rules binary
+dh binary
+   dh_testroot
+   dh_prep
+   dh_auto_install
+make[1]: Entering directory '/home/dyngar-m/Projects/Operating_Systems_Projects/live-build/distro/utox_20150817-1'
+mkdir -p /home/dyngar-m/Projects/Operating_Systems_Projects/live-build/distro/utox_20150817-1/debian/tmp/usr/local/bin
+install -m 0755 utox /home/dyngar-m/Projects/Operating_Systems_Projects/live-build/distro/utox_20150817-1/debian/tmp/usr/local/bin/utox
+mkdir -p /home/dyngar-m/Projects/Operating_Systems_Projects/live-build/distro/utox_20150817-1/debian/tmp/usr/local/share/icons/hicolor/14x14/apps
+install -m 644 icons/utox-14x14.png /home/dyngar-m/Projects/Operating_Systems_Projects/live-build/distro/utox_20150817-1/debian/tmp/usr/local/share/icons/hicolor/14x14/apps/utox.png
+mkdir -p /home/dyngar-m/Projects/Operating_Systems_Projects/live-build/distro/utox_20150817-1/debian/tmp/usr/local/share/icons/hicolor/16x16/apps
+install -m 644 icons/utox-16x16.png /home/dyngar-m/Projects/Operating_Systems_Projects/live-build/distro/utox_20150817-1/debian/tmp/usr/local/share/icons/hicolor/16x16/apps/utox.png
+mkdir -p /home/dyngar-m/Projects/Operating_Systems_Projects/live-build/distro/utox_20150817-1/debian/tmp/usr/local/share/icons/hicolor/22x22/apps
+install -m 644 icons/utox-22x22.png /home/dyngar-m/Projects/Operating_Systems_Projects/live-build/distro/utox_20150817-1/debian/tmp/usr/local/share/icons/hicolor/22x22/apps/utox.png
+mkdir -p /home/dyngar-m/Projects/Operating_Systems_Projects/live-build/distro/utox_20150817-1/debian/tmp/usr/local/share/icons/hicolor/24x24/apps
+install -m 644 icons/utox-24x24.png /home/dyngar-m/Projects/Operating_Systems_Projects/live-build/distro/utox_20150817-1/debian/tmp/usr/local/share/icons/hicolor/24x24/apps/utox.png
+mkdir -p /home/dyngar-m/Projects/Operating_Systems_Projects/live-build/distro/utox_20150817-1/debian/tmp/usr/local/share/icons/hicolor/32x32/apps
+install -m 644 icons/utox-32x32.png /home/dyngar-m/Projects/Operating_Systems_Projects/live-build/distro/utox_20150817-1/debian/tmp/usr/local/share/icons/hicolor/32x32/apps/utox.png
+mkdir -p /home/dyngar-m/Projects/Operating_Systems_Projects/live-build/distro/utox_20150817-1/debian/tmp/usr/local/share/icons/hicolor/36x36/apps
+install -m 644 icons/utox-36x36.png /home/dyngar-m/Projects/Operating_Systems_Projects/live-build/distro/utox_20150817-1/debian/tmp/usr/local/share/icons/hicolor/36x36/apps/utox.png
+mkdir -p /home/dyngar-m/Projects/Operating_Systems_Projects/live-build/distro/utox_20150817-1/debian/tmp/usr/local/share/icons/hicolor/48x48/apps
+install -m 644 icons/utox-48x48.png /home/dyngar-m/Projects/Operating_Systems_Projects/live-build/distro/utox_20150817-1/debian/tmp/usr/local/share/icons/hicolor/48x48/apps/utox.png
+mkdir -p /home/dyngar-m/Projects/Operating_Systems_Projects/live-build/distro/utox_20150817-1/debian/tmp/usr/local/share/icons/hicolor/64x64/apps
+install -m 644 icons/utox-64x64.png /home/dyngar-m/Projects/Operating_Systems_Projects/live-build/distro/utox_20150817-1/debian/tmp/usr/local/share/icons/hicolor/64x64/apps/utox.png
+mkdir -p /home/dyngar-m/Projects/Operating_Systems_Projects/live-build/distro/utox_20150817-1/debian/tmp/usr/local/share/icons/hicolor/72x72/apps
+install -m 644 icons/utox-72x72.png /home/dyngar-m/Projects/Operating_Systems_Projects/live-build/distro/utox_20150817-1/debian/tmp/usr/local/share/icons/hicolor/72x72/apps/utox.png
+mkdir -p /home/dyngar-m/Projects/Operating_Systems_Projects/live-build/distro/utox_20150817-1/debian/tmp/usr/local/share/icons/hicolor/96x96/apps
+install -m 644 icons/utox-96x96.png /home/dyngar-m/Projects/Operating_Systems_Projects/live-build/distro/utox_20150817-1/debian/tmp/usr/local/share/icons/hicolor/96x96/apps/utox.png
+mkdir -p /home/dyngar-m/Projects/Operating_Systems_Projects/live-build/distro/utox_20150817-1/debian/tmp/usr/local/share/icons/hicolor/128x128/apps
+install -m 644 icons/utox-128x128.png /home/dyngar-m/Projects/Operating_Systems_Projects/live-build/distro/utox_20150817-1/debian/tmp/usr/local/share/icons/hicolor/128x128/apps/utox.png
+mkdir -p /home/dyngar-m/Projects/Operating_Systems_Projects/live-build/distro/utox_20150817-1/debian/tmp/usr/local/share/icons/hicolor/192x192/apps
+install -m 644 icons/utox-192x192.png /home/dyngar-m/Projects/Operating_Systems_Projects/live-build/distro/utox_20150817-1/debian/tmp/usr/local/share/icons/hicolor/192x192/apps/utox.png
+mkdir -p /home/dyngar-m/Projects/Operating_Systems_Projects/live-build/distro/utox_20150817-1/debian/tmp/usr/local/share/icons/hicolor/256x256/apps
+install -m 644 icons/utox-256x256.png /home/dyngar-m/Projects/Operating_Systems_Projects/live-build/distro/utox_20150817-1/debian/tmp/usr/local/share/icons/hicolor/256x256/apps/utox.png
+mkdir -p /home/dyngar-m/Projects/Operating_Systems_Projects/live-build/distro/utox_20150817-1/debian/tmp/usr/local/share/icons/hicolor/512x512/apps
+install -m 644 icons/utox-512x512.png /home/dyngar-m/Projects/Operating_Systems_Projects/live-build/distro/utox_20150817-1/debian/tmp/usr/local/share/icons/hicolor/512x512/apps/utox.png
+mkdir -p /home/dyngar-m/Projects/Operating_Systems_Projects/live-build/distro/utox_20150817-1/debian/tmp/usr/local/share/icons/hicolor/scalable/apps
+install -m 644 icons/utox.svg /home/dyngar-m/Projects/Operating_Systems_Projects/live-build/distro/utox_20150817-1/debian/tmp/usr/local/share/icons/hicolor/scalable/apps/utox.svg
+mkdir -p /home/dyngar-m/Projects/Operating_Systems_Projects/live-build/distro/utox_20150817-1/debian/tmp/usr/local/share/applications
+install -m 644 utox.desktop /home/dyngar-m/Projects/Operating_Systems_Projects/live-build/distro/utox_20150817-1/debian/tmp/usr/local/share/applications/utox.desktop
+make[1]: Leaving directory '/home/dyngar-m/Projects/Operating_Systems_Projects/live-build/distro/utox_20150817-1'
+   dh_installdocs
+   dh_installchangelogs
+   dh_perl
+   dh_link
+   dh_compress
+   dh_fixperms
+   dh_strip
+   dh_makeshlibs
+   dh_shlibdeps
+   dh_installdeb
+   dh_gencontrol
+dpkg-gencontrol: warning: Depends field of package utox: unknown substitution variable ${shlibs:Depends}
+dpkg-gencontrol: warning: Depends field of package utox-dev: unknown substitution variable ${shlibs:Depends}
+   dh_md5sums
+   dh_builddeb
+dpkg-deb: building package `utox' in `../utox_20150817-1_amd64.deb'.
+dpkg-deb: building package `utox-dev' in `../utox-dev_20150817-1_all.deb'.
+ dpkg-genchanges  >../utox_20150817-1_amd64.changes
+dpkg-genchanges: including full source code in upload
+ dpkg-source --after-build utox_20150817-1
+dpkg-buildpackage: full upload (original source is included)
+Now running lintian...
+E: utox source: maintainer-name-missing dmotc cmotc@openmailbox.org
+E: utox source: maintainer-address-malformed dmotc cmotc@openmailbox.org
+Use of uninitialized value $name in pattern match (m//) at /usr/share/perl5/Lintian/Check.pm line 214.
+E: utox source: build-depends-on-build-essential build-depends
+W: utox source: build-depends-on-1-revision build-depends: git (>= 1:2.1.3-1)
+W: utox source: changelog-should-mention-nmu
+W: utox source: source-nmu-has-incorrect-version-number 20150817-1
+W: utox source: no-debian-copyright
+E: utox source: no-standards-version-field
+W: utox: wrong-bug-number-in-closes l3:#XXXXXX
+W: utox: new-package-should-close-itp-bug
+E: utox: no-copyright-file
+E: utox: extended-description-is-empty
+E: utox: maintainer-name-missing dmotc cmotc@openmailbox.org
+E: utox: maintainer-address-malformed dmotc cmotc@openmailbox.org
+Use of uninitialized value $name in pattern match (m//) at /usr/share/perl5/Lintian/Check.pm line 214.
+W: utox: empty-binary-package
+W: utox-dev: wrong-bug-number-in-closes l3:#XXXXXX
+W: utox-dev: new-package-should-close-itp-bug
+E: utox-dev: no-copyright-file
+E: utox-dev: extended-description-is-empty
+E: utox-dev: maintainer-name-missing dmotc cmotc@openmailbox.org
+E: utox-dev: maintainer-address-malformed dmotc cmotc@openmailbox.org
+Use of uninitialized value $name in pattern match (m//) at /usr/share/perl5/Lintian/Check.pm line 214.
+W: utox-dev: empty-binary-package
+Finished running lintian.
+
+WARNING generated by debuild:
+Making debian/rules executable!
+

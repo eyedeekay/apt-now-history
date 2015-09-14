@@ -1,0 +1,67 @@
+ dpkg-buildpackage -rfakeroot -D -us -uc
+dpkg-buildpackage: source package toxbot
+dpkg-buildpackage: source version 0.1-1
+dpkg-buildpackage: source distribution unstable
+dpkg-buildpackage: source changed by dyngar-m <dyngar-m@dyngar.local>
+ dpkg-source --before-build toxbot-0.1
+dpkg-buildpackage: host architecture amd64
+ fakeroot debian/rules clean
+dh clean 
+   dh_testdir
+   dh_auto_clean
+   dh_clean
+ dpkg-source -b toxbot-0.1
+dpkg-source: info: using source format `3.0 (quilt)'
+dpkg-source: info: building toxbot using existing ./toxbot_0.1.orig.tar.xz
+dpkg-source: info: building toxbot in toxbot_0.1-1.debian.tar.xz
+dpkg-source: info: building toxbot in toxbot_0.1-1.dsc
+ debian/rules build
+dh build 
+   dh_testdir
+   dh_auto_configure
+   dh_auto_build
+   dh_auto_test
+ fakeroot debian/rules binary
+dh binary 
+   dh_testroot
+   dh_prep
+   dh_auto_install
+   dh_install
+   dh_installdocs
+   dh_installchangelogs
+   dh_perl
+   dh_link
+   dh_compress
+   dh_fixperms
+   dh_installdeb
+   dh_gencontrol
+   dh_md5sums
+   dh_builddeb
+dpkg-deb: building package `toxbot' in `../toxbot_0.1-1_all.deb'.
+ dpkg-genchanges  >../toxbot_0.1-1_amd64.changes
+dpkg-genchanges: including full source code in upload
+ dpkg-source --after-build toxbot-0.1
+dpkg-buildpackage: full upload (original source is included)
+Now running lintian...
+E: toxbot source: source-is-missing toxbot
+W: toxbot source: dh-make-template-in-source debian/toxbot.doc-base.EX
+W: toxbot source: superfluous-clutter-in-homepage <insert the upstream URL, if relevant>
+W: toxbot source: bad-homepage <insert the upstream URL, if relevant>
+W: toxbot source: space-in-std-shortname-in-dep5-copyright <special license> (paragraph at line 5)
+W: toxbot source: out-of-date-standards-version 3.9.5 (current is 3.9.6)
+E: toxbot: arch-independent-package-contains-binary-or-object usr/bin/toxbot
+E: toxbot: unstripped-binary-or-object usr/bin/toxbot
+W: toxbot: missing-depends-line
+W: toxbot: wrong-bug-number-in-closes l3:#nnnn
+W: toxbot: new-package-should-close-itp-bug
+E: toxbot: changelog-is-dh_make-template
+E: toxbot: helper-templates-in-copyright
+W: toxbot: copyright-has-url-from-dh_make-boilerplate
+E: toxbot: copyright-contains-dh_make-todo-boilerplate
+W: toxbot: readme-debian-contains-debmake-template
+E: toxbot: description-is-dh_make-template
+E: toxbot: section-is-dh_make-template
+W: toxbot: superfluous-clutter-in-homepage <insert the upstream URL, if relevant>
+W: toxbot: bad-homepage <insert the upstream URL, if relevant>
+W: toxbot: binary-without-manpage usr/bin/toxbot
+Finished running lintian.

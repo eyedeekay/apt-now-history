@@ -1,0 +1,31 @@
+Format: 1.8
+Date: Sat, 15 Aug 2015 14:55:16 -0400
+Source: hidblock
+Binary: hidblock
+Architecture: source all
+Version: 0.1-1
+Distribution: unstable
+Urgency: low
+Maintainer: dyngar-m <dyngar-m@dyngar.local>
+Changed-By: dyngar-m <dyngar-m@dyngar.local>
+Description:
+ hidblock   - <insert up to 60 chars description>
+Changes:
+ hidblock (0.1-1) unstable; urgency=low
+ .
+   * Initial release (Closes: #nnnn)  <nnnn is the bug number of your ITP>
+Checksums-Sha1:
+ e2ca1ca0a58b868ac96be43622a32310055726b4 809 hidblock_0.1-1.dsc
+ 69b996a9622f15b3d0ba75816e88dc1565844ba8 3908 hidblock_0.1.orig.tar.xz
+ 1d554c598d5ed44cc47985d5b6c39e12b5003b20 2440 hidblock_0.1-1.debian.tar.xz
+ 41c77c31a3dd756cb307d7d8dabedab88991fd12 3012 hidblock_0.1-1_all.deb
+Checksums-Sha256:
+ 17271f9ece1c4dbddba107573968d3a5901da4a4934217d85cd5504520f195b8 809 hidblock_0.1-1.dsc
+ fe983a1f2b417eb7102daaf4e21849ae14e6f021069bf10e913593279632d6fc 3908 hidblock_0.1.orig.tar.xz
+ 259de897e17875a31a1bdd1b0cbfe967122d458fe8716baa4f91e6290c574e33 2440 hidblock_0.1-1.debian.tar.xz
+ ed2d4dff93b9e2c29ea39471ef1a6cb13dc37d47367501c468a685a0dbbb9280 3012 hidblock_0.1-1_all.deb
+Files:
+ 17e554c0242160759d59d6eaa0a99545 809 unknown optional hidblock_0.1-1.dsc
+ a0404b167d2bc4bce676034508475ae2 3908 unknown optional hidblock_0.1.orig.tar.xz
+ db604c6b1aa34a53aa9cb03f17eb03d9 2440 unknown optional hidblock_0.1-1.debian.tar.xz
+ 5029a6cb64f195e4aacb972266b4cbb9 3012 unknown optional hidblock_0.1-1_all.deb

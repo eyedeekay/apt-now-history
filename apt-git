@@ -3,6 +3,8 @@ DRY_RUN="YES"
 RESET="NO"
 CHECK="NO"
 
+pwd 
+
 CURDIR=$(pwd)
 
 ORIGIN="user.github.io"
@@ -12,7 +14,7 @@ POLICY="main"
 KEY="Example"
 OVERRIDE="override.testing"
 
-SRCDIR="$CURDIR/../debpackages"
+SRCDIR="$CURDIR/packages"
 
 . "./aptgit.conf"
 
@@ -174,7 +176,10 @@ generaterkey(){
 
 includepackages(){
 	cd $BASEDIR
-	reprepo include "$SRCDIR/*"
+	find . -wholename "$CURDIR/packages/*.deb" -print0 | xargs -r0 reprepro includedeb unstable 
+	find . -wholename "$CURDIR/packages/*.dsc" -print0 | xargs -r0 reprepro includedsc unstable
+	find . -wholename "$CURDIR/packages/$SRCDIR/*.changes" -print0 | xargs -r0 reprepro include unstable 
+#	reprepo include "$SRCDIR/*"
 }
 
 if [ "$H" = "YES" ]; then

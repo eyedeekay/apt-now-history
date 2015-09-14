@@ -1,0 +1,31 @@
+Format: 1.8
+Date: Mon, 14 Sep 2015 18:46:40 -0400
+Source: toxbot
+Binary: toxbot
+Architecture: source all
+Version: 0.1-1
+Distribution: unstable
+Urgency: low
+Maintainer: dyngar-m <dyngar-m@dyngar.local>
+Changed-By: dyngar-m <dyngar-m@dyngar.local>
+Description:
+ toxbot     - <insert up to 60 chars description>
+Changes:
+ toxbot (0.1-1) unstable; urgency=low
+ .
+   * Initial release (Closes: #nnnn)  <nnnn is the bug number of your ITP>
+Checksums-Sha1:
+ c3a370e3346524eb5acf6154829f3443500358ad 794 toxbot_0.1-1.dsc
+ 74ffb247a4c1717dbcc182b2584c992e6b1bc5e5 21568 toxbot_0.1.orig.tar.xz
+ 3707e3a82fa8933580efd35c1b1c437459ac637c 2416 toxbot_0.1-1.debian.tar.xz
+ 93ff02458110818ae72ba48c7d5904368e3e9dca 23570 toxbot_0.1-1_all.deb
+Checksums-Sha256:
+ bcee4867721c6bb2be3a914fffe93f281811bd569155ddc1e2d5d4701fd40706 794 toxbot_0.1-1.dsc
+ 11bfee7644176e85e4d8bb85bfca1511ddab5cec46a3c5b0b02ac341aee016df 21568 toxbot_0.1.orig.tar.xz
+ c6209a2bdfbf845e64eaca1c92ebde7ee45b285e8b44f049e3e33a095529c088 2416 toxbot_0.1-1.debian.tar.xz
+ ed1b7e7b2f368f2c05158cffef01474f45fcba551edcbeca877eb49c57a177fc 23570 toxbot_0.1-1_all.deb
+Files:
+ 835110740fa924de2e65bab31e331f40 794 unknown optional toxbot_0.1-1.dsc
+ a808aaf7032910d6d65194047cf54455 21568 unknown optional toxbot_0.1.orig.tar.xz
+ 0b369880e47de8eabf3af113771cffd5 2416 unknown optional toxbot_0.1-1.debian.tar.xz
+ f7a8b0f82ff6beefdebb0d1185fb5dd7 23570 unknown optional toxbot_0.1-1_all.deb
