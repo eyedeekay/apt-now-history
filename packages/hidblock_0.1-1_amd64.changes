@@ -1,5 +1,5 @@
 Format: 1.8
-Date: Sat, 15 Aug 2015 14:55:16 -0400
+Date: Tue, 15 Sep 2015 01:55:47 -0400
 Source: hidblock
 Binary: hidblock
 Architecture: source all
@@ -15,17 +15,17 @@ Changes:
  .
    * Initial release (Closes: #nnnn)  <nnnn is the bug number of your ITP>
 Checksums-Sha1:
- e2ca1ca0a58b868ac96be43622a32310055726b4 809 hidblock_0.1-1.dsc
- 69b996a9622f15b3d0ba75816e88dc1565844ba8 3908 hidblock_0.1.orig.tar.xz
- 1d554c598d5ed44cc47985d5b6c39e12b5003b20 2440 hidblock_0.1-1.debian.tar.xz
- 41c77c31a3dd756cb307d7d8dabedab88991fd12 3012 hidblock_0.1-1_all.deb
+ d1c779b339080bd3c1eba0c2141c9fd34e2b942f 815 hidblock_0.1-1.dsc
+ 8903f7ca271ddd55c25d4412dcdc7b18198aebc5 100436 hidblock_0.1.orig.tar.xz
+ 9ced6685945de16bd9833d2d31301a84d59fee40 2472 hidblock_0.1-1.debian.tar.xz
+ 5ddd5c64af01a2d56e3f07df6c5aac2022a3eff4 4110 hidblock_0.1-1_all.deb
 Checksums-Sha256:
- 17271f9ece1c4dbddba107573968d3a5901da4a4934217d85cd5504520f195b8 809 hidblock_0.1-1.dsc
- fe983a1f2b417eb7102daaf4e21849ae14e6f021069bf10e913593279632d6fc 3908 hidblock_0.1.orig.tar.xz
- 259de897e17875a31a1bdd1b0cbfe967122d458fe8716baa4f91e6290c574e33 2440 hidblock_0.1-1.debian.tar.xz
- ed2d4dff93b9e2c29ea39471ef1a6cb13dc37d47367501c468a685a0dbbb9280 3012 hidblock_0.1-1_all.deb
+ c711b2727bd51156369241db221c69f02d06778dfc07e00ce9934d858f7e033f 815 hidblock_0.1-1.dsc
+ e04254f42613e31f54bbec823733162ba842614ca80d1522338fe956d75c4a2f 100436 hidblock_0.1.orig.tar.xz
+ 3c20f6307ed3adb369398c33708509fdb04ccd9381cbd7ab2e9b4b41cb5f0976 2472 hidblock_0.1-1.debian.tar.xz
+ b2b2341f3453317a5f1fabcd0131f41bbabfb074f6a5fa805cffe63b139478c1 4110 hidblock_0.1-1_all.deb
 Files:
- 17e554c0242160759d59d6eaa0a99545 809 unknown optional hidblock_0.1-1.dsc
- a0404b167d2bc4bce676034508475ae2 3908 unknown optional hidblock_0.1.orig.tar.xz
- db604c6b1aa34a53aa9cb03f17eb03d9 2440 unknown optional hidblock_0.1-1.debian.tar.xz
- 5029a6cb64f195e4aacb972266b4cbb9 3012 unknown optional hidblock_0.1-1_all.deb
+ b01cc6ac8157bbd2adc1a5d94b85a331 815 unknown optional hidblock_0.1-1.dsc
+ 47440946f350415cbfe3c8c54e47681a 100436 unknown optional hidblock_0.1.orig.tar.xz
+ 869b49d57ada7ba13199902f891dc702 2472 unknown optional hidblock_0.1-1.debian.tar.xz
+ bf90477c927839c3a3d26be2d4ce6d7e 4110 unknown optional hidblock_0.1-1_all.deb

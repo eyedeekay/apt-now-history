@@ -18,15 +18,15 @@ Package: hidblock
 Version: 0.1-1
 Architecture: all
 Maintainer: dyngar-m <dyngar-m@dyngar.local>
-Installed-Size: 32
+Installed-Size: 55
 Homepage: <insert the upstream URL, if relevant>
 Priority: optional
 Section: unknown
 Filename: pool/main/h/hidblock/hidblock_0.1-1_all.deb
-Size: 3012
-SHA256: ed2d4dff93b9e2c29ea39471ef1a6cb13dc37d47367501c468a685a0dbbb9280
-SHA1: 41c77c31a3dd756cb307d7d8dabedab88991fd12
-MD5sum: 5029a6cb64f195e4aacb972266b4cbb9
+Size: 4110
+SHA256: b2b2341f3453317a5f1fabcd0131f41bbabfb074f6a5fa805cffe63b139478c1
+SHA1: 5ddd5c64af01a2d56e3f07df6c5aac2022a3eff4
+MD5sum: bf90477c927839c3a3d26be2d4ce6d7e
 Description: <insert up to 60 chars description>
  <insert long description, indented with spaces>
 
@@ -51,15 +51,15 @@ Package: toxbot
 Version: 0.1-1
 Architecture: all
 Maintainer: dyngar-m <dyngar-m@dyngar.local>
-Installed-Size: 96
+Installed-Size: 123
 Homepage: <insert the upstream URL, if relevant>
 Priority: optional
 Section: unknown
 Filename: pool/main/t/toxbot/toxbot_0.1-1_all.deb
-Size: 24890
-SHA256: fc11e90f2485360fad9e553e8a29c61878bcae8ca8f52c3827c127e12f8658dc
-SHA1: a7cb9f1ade95566909be943cb259b8a820c12b0a
-MD5sum: 1fbc3c82780efc679a8da34aa43fefbd
+Size: 25984
+SHA256: 7efd4d8f2d36dc7317796f8bbfe715cce52672d7537814999c645135a46485c6
+SHA1: 154cc6087873a20587d79c3b10da195550dd839b
+MD5sum: 24c652dd1f7df3a7835cf99653eedbbd
 Description: <insert up to 60 chars description>
  <insert long description, indented with spaces>
 
