@@ -1,0 +1,42 @@
+<h1>apt-git</h1>
+
+<p>A tool for setting up and hosting an apt repository using github pages to host.</p>
+
+<h1>apt-git personal repository tool</h1>
+
+<p>This tool helps developers host their own applications by posting them to 
+github pages for download.  </p>
+
+<pre><code>    -d \ --directory
+          Work in this directory, uses current directory by default
+     -o \ --origin
+          URL of the repository
+    -c \ --codename
+          Codename you want to use, defaults is \"testing\"
+    -a \ --arch
+          Architecture you want to host, defaults to \"all\"
+    -p \ --policy
+          Policy of packages you want to host, defaults to \"main\"
+    -k \ --key
+          ID of the package signing key
+    -s \ --sources
+          Folder with the packages to include in the repo
+    -q \ --override
+          Name of the override file
+    -m \ --message
+          Message to include in the commit
+    -c \ --check
+          Make sure the dependencies are installed
+    -r \ --reset
+          Re-generate all components of the repository
+    -u \ --user \ --org \ --organization
+          Us as user/organization page, post page to master branch
+    -h \ --help 
+          Display this help message
+</code></pre>
+
+<p>to add this repository to your Debian-based system:  </p>
+
+<pre><code>    echo \"deb https://site.github.io/apt-git/debian unstable main\" | sudo tee /etc/apt/source.list.d/site.github.io.list
+    wget -q0 - https://site.github.io/apt-git/site.github.io.gpg.key | sudo apt-key add -
+</code></pre>
