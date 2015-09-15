@@ -30,6 +30,22 @@ MD5sum: bf90477c927839c3a3d26be2d4ce6d7e
 Description: <insert up to 60 chars description>
  <insert long description, indented with spaces>
 
+Package: intelmetool
+Version: 0.1-1
+Architecture: all
+Maintainer: dyngar-m <dyngar-m@dyngar.local>
+Installed-Size: 74
+Homepage: <insert the upstream URL, if relevant>
+Priority: optional
+Section: unknown
+Filename: pool/main/i/intelmetool/intelmetool_0.1-1_all.deb
+Size: 17478
+SHA256: 7f89214e2d6ef59b2f59f7ce597d038bcf462c9581b612bad0dc83c9cc631b59
+SHA1: 3dde50a97d3202b4efabd7b1c953394cb8bb3a6b
+MD5sum: 9a0ede1d5f3faef5b12ad97b8eac0722
+Description: <insert up to 60 chars description>
+ <insert long description, indented with spaces>
+
 Package: libtoxcore
 Source: toxcore
 Version: 20150817-1

@@ -1,0 +1,72 @@
+ dpkg-buildpackage -rfakeroot -D -us -uc
+dpkg-buildpackage: source package intelmetool
+dpkg-buildpackage: source version 0.1-1
+dpkg-buildpackage: source distribution unstable
+dpkg-buildpackage: source changed by dyngar-m <dyngar-m@dyngar.local>
+ dpkg-source --before-build intelmetool-0.1
+dpkg-buildpackage: host architecture amd64
+ fakeroot debian/rules clean
+dh clean 
+   dh_testdir
+   dh_auto_clean
+make[1]: Entering directory '/home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/intelmetool-0.1'
+rm intelmetool *.o
+make[1]: Leaving directory '/home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/intelmetool-0.1'
+   dh_clean
+ dpkg-source -b intelmetool-0.1
+dpkg-source: info: using source format `3.0 (quilt)'
+dpkg-source: info: building intelmetool using existing ./intelmetool_0.1.orig.tar.xz
+dpkg-source: warning: ignoring deletion of file me.o, use --include-removal to override
+dpkg-source: warning: ignoring deletion of file mmap.o, use --include-removal to override
+dpkg-source: warning: ignoring deletion of file intelmetool, use --include-removal to override
+dpkg-source: warning: ignoring deletion of file intelmetool.o, use --include-removal to override
+dpkg-source: warning: ignoring deletion of file me_status.o, use --include-removal to override
+dpkg-source: info: building intelmetool in intelmetool_0.1-1.debian.tar.xz
+dpkg-source: info: building intelmetool in intelmetool_0.1-1.dsc
+ debian/rules build
+dh build 
+   dh_testdir
+   dh_auto_configure
+   dh_auto_build
+make[1]: Entering directory '/home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/intelmetool-0.1'
+gcc -Wall -O0 -g -I. -c intelmetool.c  -o intelmetool.o
+gcc -Wall -O0 -g -I. -c me_status.c  -o me_status.o
+gcc -Wall -O0 -g -I. -c me.c  -o me.o
+me.c: In function ‘mei_dump’:
+me.c:63:18: warning: variable ‘csr’ set but not used [-Wunused-but-set-variable]
+  struct mei_csr *csr;
+                  ^
+gcc -Wall -O0 -g -I. -c mmap.c  -o mmap.o
+mmap.c: In function ‘map_physical_exact’:
+mmap.c:11:26: warning: passing argument 1 of ‘mmap’ makes pointer from integer without a cast
+         virt_addr = mmap(mapto, len, PROT_WRITE | PROT_READ, MAP_SHARED|MAP_FIXED,
+                          ^
+In file included from mmap.h:4:0,
+                 from mmap.c:1:
+/usr/include/x86_64-linux-gnu/sys/mman.h:57:14: note: expected ‘void *’ but argument is of type ‘uint64_t’
+ extern void *mmap (void *__addr, size_t __len, int __prot,
+              ^
+gcc -Wall -O0 -g -I. -o intelmetool intelmetool.o me_status.o me.o mmap.o -lpci
+make[1]: Leaving directory '/home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/intelmetool-0.1'
+   dh_auto_test
+ fakeroot debian/rules binary
+dh binary 
+   dh_testroot
+   dh_prep
+   dh_auto_install
+   dh_install
+   dh_installdocs
+   dh_installchangelogs
+   dh_perl
+   dh_link
+   dh_compress
+   dh_fixperms
+   dh_installdeb
+   dh_gencontrol
+   dh_md5sums
+   dh_builddeb
+dpkg-deb: building package `intelmetool' in `../intelmetool_0.1-1_all.deb'.
+ dpkg-genchanges  >../intelmetool_0.1-1_amd64.changes
+dpkg-genchanges: including full source code in upload
+ dpkg-source --after-build intelmetool-0.1
+dpkg-buildpackage: full upload (original source is included)
