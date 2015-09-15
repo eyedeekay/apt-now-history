@@ -178,8 +178,8 @@ includepackages(){
 	cd $SRCDIR
 	mkdir ../debian/
 	find . -wholename "*.deb" -print0 | xargs -r0 reprepro --basedir $BASEDIR includedeb unstable
-	find . -wholename "*.dsc" -print0 | xargs -r0 reprepro --basedir $BASEDIR includedsc unstable 
-	find . -wholename "*.changes" -print0 | xargs -r0 reprepro --basedir $BASEDIR include unstable
+	find . -wholename "*.dsc" -print0 | xargs -r0 reprepro includedsc unstable 
+	find . -wholename "*.changes" -print0 | xargs -r0 reprepro include unstable
 	cd ..
 #	reprepro include "$SRCDIR/*"
 }
