@@ -14,7 +14,7 @@ POLICY="main"
 KEY="Example"
 OVERRIDE="override.testing"
 
-SRCDIR="$CURDIR/packages"
+SRCDIR="packages"
 
 . "./aptgit.conf"
 
