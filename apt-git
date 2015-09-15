@@ -178,9 +178,9 @@ includepackages(){
 	cd $BASEDIR
 	mkdir ./debian/
 	cd debian
-	find . -wholename "$SRCDIR/*.deb" -exec "reprepro includedeb unstable {}" \;
-	find . -wholename "$SRCDIR/*.dsc" -exec "reprepro includedsc unstable {}" \;
-	find . -wholename "$SRCDIR/*.changes" -exec "reprepro include unstable {}" \;
+	find . -wholename "packages/*.deb" -exec "reprepro includedeb unstable {}" \;
+	find . -wholename "packages/*.dsc" -exec "reprepro includedsc unstable {}" \;
+	find . -wholename "packages/*.changes" -exec "reprepro include unstable {}" \;
 	cd ..
 #	reprepro include "$SRCDIR/*"
 }
