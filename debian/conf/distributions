@@ -1,0 +1,9 @@
+Origin: cmotc.github.io
+Label: cmotc.github.io
+Codename: unstable
+Architectures: amd64 i386
+Components: main
+Description: cmotc.github.io
+SignWith: 962D297E
+DebOverride: override.unstable
+DscOverride: override.unstable
