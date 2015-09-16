@@ -7,10 +7,26 @@ Homepage: <insert the upstream URL, if relevant>
 Priority: optional
 Section: unknown
 Filename: pool/main/a/apt-git/apt-git_0.1-1_all.deb
-Size: 3956
-SHA256: 0a09de7cdb44fa46a674491a10f687a2f8f71adcb2b376488c1e0d256616e25a
-SHA1: ac0fe067647c3f1c3d5dada2f371cd6b1feecc7b
-MD5sum: f520d498dd09a6c70060aa4d3e6b1a3a
+Size: 4076
+SHA256: 870d1783a99856fa602b7b4c87a1f6d218831c05e7992c7b80c268c180bdf0e4
+SHA1: 2fa5d8adb6eef497999b8e8345798697e752535b
+MD5sum: 92789281738aa576f294cb681457bfd0
+Description: <insert up to 60 chars description>
+ <insert long description, indented with spaces>
+
+Package: conkyswitcher
+Version: 0.1-1
+Architecture: all
+Maintainer: dyngar-m <dyngar-m@dyngar.local>
+Installed-Size: 34
+Homepage: <insert the upstream URL, if relevant>
+Priority: optional
+Section: unknown
+Filename: pool/main/c/conkyswitcher/conkyswitcher_0.1-1_all.deb
+Size: 3292
+SHA256: dee86b9c095fb2ab3e1391d68795645b46c0dbea2363d075812ca5fc709ced70
+SHA1: 30cb3a48b46e64fa7ee5bfce24f7dd314776e767
+MD5sum: c1f805a2eafa915b3853fa2afcad7853
 Description: <insert up to 60 chars description>
  <insert long description, indented with spaces>
 
@@ -18,15 +34,15 @@ Package: hidblock
 Version: 0.1-1
 Architecture: all
 Maintainer: dyngar-m <dyngar-m@dyngar.local>
-Installed-Size: 55
+Installed-Size: 61
 Homepage: <insert the upstream URL, if relevant>
 Priority: optional
 Section: unknown
 Filename: pool/main/h/hidblock/hidblock_0.1-1_all.deb
-Size: 4110
-SHA256: b2b2341f3453317a5f1fabcd0131f41bbabfb074f6a5fa805cffe63b139478c1
-SHA1: 5ddd5c64af01a2d56e3f07df6c5aac2022a3eff4
-MD5sum: bf90477c927839c3a3d26be2d4ce6d7e
+Size: 4178
+SHA256: df9a5ffa14b9797422c842cfb1fee89abceaa3aa467c57012679b7556e2ddd30
+SHA1: 7f527cc1db914b2dbd7f52646abf103ffb94f685
+MD5sum: 647c9dd19fd9241e5a65e9800e38134d
 Description: <insert up to 60 chars description>
  <insert long description, indented with spaces>
 
@@ -82,15 +98,15 @@ Package: toxbot
 Version: 0.1-1
 Architecture: all
 Maintainer: dyngar-m <dyngar-m@dyngar.local>
-Installed-Size: 123
+Installed-Size: 129
 Homepage: <insert the upstream URL, if relevant>
 Priority: optional
 Section: unknown
 Filename: pool/main/t/toxbot/toxbot_0.1-1_all.deb
-Size: 25984
-SHA256: 7efd4d8f2d36dc7317796f8bbfe715cce52672d7537814999c645135a46485c6
-SHA1: 154cc6087873a20587d79c3b10da195550dd839b
-MD5sum: 24c652dd1f7df3a7835cf99653eedbbd
+Size: 26028
+SHA256: 7700a83d5d0ae254599aa30790d81ed010e8d29b165d4105b4d5b2a31d51c089
+SHA1: a030798200fca4d17bf851343d71c3d89e3295d9
+MD5sum: f40aa4897a90de042aba895b163b0e73
 Description: <insert up to 60 chars description>
  <insert long description, indented with spaces>
 
