@@ -1,0 +1,31 @@
+Format: 1.8
+Date: Tue, 15 Sep 2015 22:20:41 -0400
+Source: conkyswitcher
+Binary: conkyswitcher
+Architecture: source all
+Version: 0.1-1
+Distribution: unstable
+Urgency: low
+Maintainer: dyngar-m <dyngar-m@dyngar.local>
+Changed-By: dyngar-m <dyngar-m@dyngar.local>
+Description:
+ conkyswitcher - <insert up to 60 chars description>
+Changes:
+ conkyswitcher (0.1-1) unstable; urgency=low
+ .
+   * Initial release (Closes: #nnnn)  <nnnn is the bug number of your ITP>
+Checksums-Sha1:
+ 4253dffbc48e1b59e4dd8c490c3e9c303d380ccc 854 conkyswitcher_0.1-1.dsc
+ 7301cc9ee23584f2169c476f486a242b340ff82c 1788 conkyswitcher_0.1.orig.tar.xz
+ 03cb21e38a0f1375c138acabd8261640b1a470ae 2508 conkyswitcher_0.1-1.debian.tar.xz
+ 30cb3a48b46e64fa7ee5bfce24f7dd314776e767 3292 conkyswitcher_0.1-1_all.deb
+Checksums-Sha256:
+ 13a8c8be6b4bf00984be766d98c103c8e132b8f138d0bde89ae566204aa1781e 854 conkyswitcher_0.1-1.dsc
+ 0a6c76b9e279fcf16b814f2a5986c41a0669e5640fe3ae68443585205b846943 1788 conkyswitcher_0.1.orig.tar.xz
+ 158380016075ea2a9f70b7b89085369d2807c59aeff84e87eb022a867feb2036 2508 conkyswitcher_0.1-1.debian.tar.xz
+ dee86b9c095fb2ab3e1391d68795645b46c0dbea2363d075812ca5fc709ced70 3292 conkyswitcher_0.1-1_all.deb
+Files:
+ b135d3e5e509b0628b8349df255d3b68 854 unknown optional conkyswitcher_0.1-1.dsc
+ 74680e4a6212da3d2e186caacf935da9 1788 unknown optional conkyswitcher_0.1.orig.tar.xz
+ e5dc6c19943c3edfd692515dcf53fd51 2508 unknown optional conkyswitcher_0.1-1.debian.tar.xz
+ c1f805a2eafa915b3853fa2afcad7853 3292 unknown optional conkyswitcher_0.1-1_all.deb

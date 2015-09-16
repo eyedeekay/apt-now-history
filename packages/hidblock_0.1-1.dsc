@@ -10,11 +10,11 @@ Build-Depends: debhelper (>= 9)
 Package-List:
  hidblock deb unknown optional arch=all
 Checksums-Sha1:
- 8903f7ca271ddd55c25d4412dcdc7b18198aebc5 100436 hidblock_0.1.orig.tar.xz
- 9ced6685945de16bd9833d2d31301a84d59fee40 2472 hidblock_0.1-1.debian.tar.xz
+ 4dd5cff309d74cd1930b3c28b9a73af95054516b 100436 hidblock_0.1.orig.tar.xz
+ ad97a7596350c7806bd32fc3103d260fcf2d67c2 2484 hidblock_0.1-1.debian.tar.xz
 Checksums-Sha256:
- e04254f42613e31f54bbec823733162ba842614ca80d1522338fe956d75c4a2f 100436 hidblock_0.1.orig.tar.xz
- 3c20f6307ed3adb369398c33708509fdb04ccd9381cbd7ab2e9b4b41cb5f0976 2472 hidblock_0.1-1.debian.tar.xz
+ 3b9dded454f6751c93f389d60d69bac03c1f0564aac7163c63f692a3add3cd4e 100436 hidblock_0.1.orig.tar.xz
+ 7f7468d24b4d051366336abbf67f23b1ff4bace5828c379ed8c6484da5630aa5 2484 hidblock_0.1-1.debian.tar.xz
 Files:
- 47440946f350415cbfe3c8c54e47681a 100436 hidblock_0.1.orig.tar.xz
- 869b49d57ada7ba13199902f891dc702 2472 hidblock_0.1-1.debian.tar.xz
+ 17b9e8c127b9862fea8e4c9a80d16771 100436 hidblock_0.1.orig.tar.xz
+ 02bba341a3b0cec6d1d5ed3fc9ea0a63 2484 hidblock_0.1-1.debian.tar.xz

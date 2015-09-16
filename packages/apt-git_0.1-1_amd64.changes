@@ -1,5 +1,5 @@
 Format: 1.8
-Date: Sun, 16 Aug 2015 16:05:52 -0400
+Date: Tue, 15 Sep 2015 12:37:51 -0400
 Source: apt-git
 Binary: apt-git
 Architecture: source all
@@ -15,17 +15,17 @@ Changes:
  .
    * Initial release (Closes: #nnnn)  <nnnn is the bug number of your ITP>
 Checksums-Sha1:
- 319e07f15f990dd332287c446ba3d06253555f8f 800 apt-git_0.1-1.dsc
- 5236af8c15d8d179eba576060b86d986336161cf 4896 apt-git_0.1.orig.tar.xz
- 283aeb2d109e79dfe13a26b6845ccc88130175ca 2428 apt-git_0.1-1.debian.tar.xz
- ac0fe067647c3f1c3d5dada2f371cd6b1feecc7b 3956 apt-git_0.1-1_all.deb
+ 2d2709ae8c7ddd7ceaeff5c70824bfcd42473490 800 apt-git_0.1-1.dsc
+ 0f34bfb6b58068ee64353ba84b28a64b1d4b0810 2052 apt-git_0.1.orig.tar.xz
+ 23a38642fc77815e27d0b4493d144ccb44a54d13 2420 apt-git_0.1-1.debian.tar.xz
+ 2fa5d8adb6eef497999b8e8345798697e752535b 4076 apt-git_0.1-1_all.deb
 Checksums-Sha256:
- 5d79643f9e2e87c389038db45f693aadf1d7a4eac637c44b12c1f7e73ad1e9fb 800 apt-git_0.1-1.dsc
- 0c6090a7e3e89eb7c37ce099727b198a616a3b7ae691d061a0cb7bc7d4f6f080 4896 apt-git_0.1.orig.tar.xz
- 5e2ec77a74f79a82f50ec1434691e40ddc964733f61c9140359b5fdb0a9b8650 2428 apt-git_0.1-1.debian.tar.xz
- 0a09de7cdb44fa46a674491a10f687a2f8f71adcb2b376488c1e0d256616e25a 3956 apt-git_0.1-1_all.deb
+ ef6b67e797abace87eee3951d90c8ef58251a52a951cd9c7cf5511a5af376395 800 apt-git_0.1-1.dsc
+ 40cc4f535c2475d27e6a69868a5487461dd1599698a86f474d69b832cc00d908 2052 apt-git_0.1.orig.tar.xz
+ 5a10d81ef43202e93821bbee2d86f67679b73b1fd73cc27d9feb31c5ee6c269a 2420 apt-git_0.1-1.debian.tar.xz
+ 870d1783a99856fa602b7b4c87a1f6d218831c05e7992c7b80c268c180bdf0e4 4076 apt-git_0.1-1_all.deb
 Files:
- 0555434fc03819ffcc5d12e098508c03 800 unknown optional apt-git_0.1-1.dsc
- 79be726a242b758130edac6868a05f04 4896 unknown optional apt-git_0.1.orig.tar.xz
- 2af0ba8f8a85093c26446cbed3d96bc1 2428 unknown optional apt-git_0.1-1.debian.tar.xz
- f520d498dd09a6c70060aa4d3e6b1a3a 3956 unknown optional apt-git_0.1-1_all.deb
+ c9dafe3594449452501ebc4f7ab88fec 800 unknown optional apt-git_0.1-1.dsc
+ b33ef460863bfcd92e750ee62a821524 2052 unknown optional apt-git_0.1.orig.tar.xz
+ bd32f6b4eed43645ad67ebdc3f09cd7e 2420 unknown optional apt-git_0.1-1.debian.tar.xz
+ 92789281738aa576f294cb681457bfd0 4076 unknown optional apt-git_0.1-1_all.deb
