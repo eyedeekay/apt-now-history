@@ -62,37 +62,38 @@ MD5sum: 9a0ede1d5f3faef5b12ad97b8eac0722
 Description: <insert up to 60 chars description>
  <insert long description, indented with spaces>
 
-Package: libtoxcore
-Source: toxcore
-Version: 20150817-1
+Package: libsodium
+Source: sodium
+Version: 1.0.3-1
 Architecture: amd64
-Maintainer: dmotc cmotc@openmailbox.org
-Installed-Size: 59
+Maintainer: cmotc cmotc@openmailbox.org
+Installed-Size: 29
+Homepage: https://libsodium.org
 Priority: optional
 Section: misc
-Filename: pool/main/t/toxcore/libtoxcore_20150817-1_amd64.deb
-Size: 15180
-SHA256: 28d602b19a42523b65663ef4db087bdaab1e7c17319322e475dfa0f29c0f7884
-SHA1: a31ff2e65d08e200fb254e092845d79dbfd2b257
-MD5sum: 1d1eb99becc00fc2bc534eb45c9db30f
-Description: LibToxCore package for Debian.
+Filename: pool/main/s/sodium/libsodium_1.0.3-1_amd64.deb
+Size: 7906
+SHA256: 4e0a7efa7e2b37951704ca9912a008678d33462dd4c0d1f01813cab3344bc45f
+SHA1: ec2c011f3b993e92c794b6f2cb405df284945983
+MD5sum: 3ec91b809c76375853d8d3bb4b9bf60c
+Description: libsodium
 
-Package: libtoxcore-dev
-Source: toxcore
-Version: 20150817-1
+Package: libsodium-dev
+Source: sodium
+Version: 1.0.3-1
 Architecture: all
-Maintainer: dmotc cmotc@openmailbox.org
-Installed-Size: 59
-Depends: libtoxcore (= 20150817-1)
-Homepage: https://tox.chat
+Maintainer: cmotc cmotc@openmailbox.org
+Installed-Size: 29
+Depends: libsodium (= 1.0.3-1)
+Homepage: https://libsodium.org
 Priority: optional
 Section: misc
-Filename: pool/main/t/toxcore/libtoxcore-dev_20150817-1_all.deb
-Size: 13804
-SHA256: e6a14f1e54b66988e91d82937c3acd2199c6e97034dbb4742b463bbbd2015651
-SHA1: fc8eb1819d9856474c0f3c8bb1cab560a3870642
-MD5sum: 73c959cda61efc7401c45decee8dbb3b
-Description: LibToxCore development files
+Filename: pool/main/s/sodium/libsodium-dev_1.0.3-1_all.deb
+Size: 6524
+SHA256: 048977296c706d5949b847df8754d710e16ff7be4d246378f6213ec6bee56ced
+SHA1: 17273770e8aa0f3d0d1aad6582edcd22d0555c1f
+MD5sum: cbf846db0ddba384b53d74f58b9d1867
+Description: libsodium development files
 
 Package: toxbot
 Version: 0.1-1
@@ -109,35 +110,4 @@ SHA1: a030798200fca4d17bf851343d71c3d89e3295d9
 MD5sum: f40aa4897a90de042aba895b163b0e73
 Description: <insert up to 60 chars description>
  <insert long description, indented with spaces>
-
-Package: utox
-Version: 20150817-1
-Architecture: amd64
-Maintainer: dmotc cmotc@openmailbox.org
-Installed-Size: 25
-Priority: optional
-Section: misc
-Filename: pool/main/u/utox/utox_20150817-1_amd64.deb
-Size: 3758
-SHA256: 71c44cf7d9ebc48138bf2211438a299171ba1f87b51c2e7de6104bda68641b8f
-SHA1: fa4a0705bd87b481cf40525e0450f011e4e57936
-MD5sum: 6581d558fab4c947b2416531bda9f19e
-Description: LibToxCore package for Debian.
-
-Package: utox-dev
-Source: utox
-Version: 20150817-1
-Architecture: all
-Maintainer: dmotc cmotc@openmailbox.org
-Installed-Size: 25
-Depends: libtoxcore (= 20150817-1)
-Homepage: https://tox.chat
-Priority: optional
-Section: misc
-Filename: pool/main/u/utox/utox-dev_20150817-1_all.deb
-Size: 2404
-SHA256: 3fc64c6402640368c426b312807ce17771db138eaf0696e5927cca21ca104035
-SHA1: a1b2dc34798a7af56135d7133df152f4da2caed9
-MD5sum: bad41d8f4798445bd1b5bdba24c01bbc
-Description: LibToxCore development files
 
