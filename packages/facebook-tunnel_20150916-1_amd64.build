@@ -1,0 +1,296 @@
+ dpkg-buildpackage -rfakeroot -d -us -uc
+dpkg-buildpackage: source package facebook-tunnel
+dpkg-buildpackage: source version 20150916-1
+dpkg-buildpackage: source distribution UNRELEASED
+dpkg-buildpackage: source changed by dyngar-m <dyngar-m@dyngar.local>
+ dpkg-source --before-build facebook-tunnel_20150916-1
+dpkg-buildpackage: host architecture amd64
+ fakeroot debian/rules clean
+dh clean
+   dh_testdir
+   dh_auto_clean
+   dh_clean
+ dpkg-source -b facebook-tunnel_20150916-1
+dpkg-source: info: using source format `3.0 (quilt)'
+dpkg-source: info: building facebook-tunnel using existing ./facebook-tunnel_20150916.orig.tar.gz
+dpkg-source: warning: ignoring deletion of directory gumbo/autom4te.cache
+dpkg-source: warning: ignoring deletion of file gumbo/autom4te.cache/requests, use --include-removal to override
+dpkg-source: warning: ignoring deletion of file gumbo/autom4te.cache/traces.1, use --include-removal to override
+dpkg-source: warning: ignoring deletion of file gumbo/autom4te.cache/traces.0, use --include-removal to override
+dpkg-source: warning: ignoring deletion of file gumbo/autom4te.cache/output.1, use --include-removal to override
+dpkg-source: warning: ignoring deletion of file gumbo/autom4te.cache/output.0, use --include-removal to override
+dpkg-source: info: building facebook-tunnel in facebook-tunnel_20150916-1.debian.tar.xz
+dpkg-source: warning: missing information for output field Standards-Version
+dpkg-source: info: building facebook-tunnel in facebook-tunnel_20150916-1.dsc
+ debian/rules build
+make: 'build' is up to date.
+ fakeroot debian/rules binary
+dh binary
+   dh_testdir
+   dh_auto_configure
+-- The C compiler identification is GNU 4.9.2
+-- The CXX compiler identification is GNU 4.9.2
+-- Check for working C compiler: /usr/bin/cc
+-- Check for working C compiler: /usr/bin/cc -- works
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++
+-- Check for working CXX compiler: /usr/bin/c++ -- works
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Found CURL: /usr/lib/x86_64-linux-gnu/libcurl.so (found version "7.38.0") 
+-- Found libgumbo: /usr/local/lib/libgumbo.so  
+-- Looking for include file pthread.h
+-- Looking for include file pthread.h - found
+-- Looking for pthread_create
+-- Looking for pthread_create - not found
+-- Looking for pthread_create in pthreads
+-- Looking for pthread_create in pthreads - not found
+-- Looking for pthread_create in pthread
+-- Looking for pthread_create in pthread - found
+-- Found Threads: TRUE  
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/obj-x86_64-linux-gnu
+   dh_auto_build
+make[1]: Entering directory '/home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/obj-x86_64-linux-gnu'
+/usr/bin/cmake -H/home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1 -B/home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/obj-x86_64-linux-gnu --check-build-system CMakeFiles/Makefile.cmake 0
+/usr/bin/cmake -E cmake_progress_start /home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/obj-x86_64-linux-gnu/CMakeFiles /home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/obj-x86_64-linux-gnu/CMakeFiles/progress.marks
+make -f CMakeFiles/Makefile2 all
+make[2]: Entering directory '/home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/obj-x86_64-linux-gnu'
+make -f CMakeFiles/base64encode.dir/build.make CMakeFiles/base64encode.dir/depend
+make[3]: Entering directory '/home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/obj-x86_64-linux-gnu'
+cd /home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/obj-x86_64-linux-gnu && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1 /home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1 /home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/obj-x86_64-linux-gnu /home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/obj-x86_64-linux-gnu /home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/obj-x86_64-linux-gnu/CMakeFiles/base64encode.dir/DependInfo.cmake --color=
+Scanning dependencies of target base64encode
+make[3]: Leaving directory '/home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/obj-x86_64-linux-gnu'
+make -f CMakeFiles/base64encode.dir/build.make CMakeFiles/base64encode.dir/build
+make[3]: Entering directory '/home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/obj-x86_64-linux-gnu'
+/usr/bin/cmake -E cmake_progress_report /home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/obj-x86_64-linux-gnu/CMakeFiles 1
+[ 14%] Building C object CMakeFiles/base64encode.dir/base64encode.c.o
+/usr/bin/cc   -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -D_FORTIFY_SOURCE=2    -o CMakeFiles/base64encode.dir/base64encode.c.o   -c /home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/base64encode.c
+Linking C static library libbase64encode.a
+/usr/bin/cmake -P CMakeFiles/base64encode.dir/cmake_clean_target.cmake
+/usr/bin/cmake -E cmake_link_script CMakeFiles/base64encode.dir/link.txt --verbose=1
+/usr/bin/ar cr libbase64encode.a  CMakeFiles/base64encode.dir/base64encode.c.o
+/usr/bin/ranlib libbase64encode.a
+make[3]: Leaving directory '/home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/obj-x86_64-linux-gnu'
+/usr/bin/cmake -E cmake_progress_report /home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/obj-x86_64-linux-gnu/CMakeFiles  1
+[ 14%] Built target base64encode
+make -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/depend
+make[3]: Entering directory '/home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/obj-x86_64-linux-gnu'
+cd /home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/obj-x86_64-linux-gnu && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1 /home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1 /home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/obj-x86_64-linux-gnu /home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/obj-x86_64-linux-gnu /home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/obj-x86_64-linux-gnu/CMakeFiles/client.dir/DependInfo.cmake --color=
+Scanning dependencies of target client
+make[3]: Leaving directory '/home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/obj-x86_64-linux-gnu'
+make -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/build
+make[3]: Entering directory '/home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/obj-x86_64-linux-gnu'
+/usr/bin/cmake -E cmake_progress_report /home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/obj-x86_64-linux-gnu/CMakeFiles 2
+[ 28%] Building CXX object CMakeFiles/client.dir/client.cpp.o
+/usr/bin/c++    -std=c++0x   -o CMakeFiles/client.dir/client.cpp.o -c /home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/client.cpp
+Linking CXX static library libclient.a
+/usr/bin/cmake -P CMakeFiles/client.dir/cmake_clean_target.cmake
+/usr/bin/cmake -E cmake_link_script CMakeFiles/client.dir/link.txt --verbose=1
+/usr/bin/ar cr libclient.a  CMakeFiles/client.dir/client.cpp.o
+/usr/bin/ranlib libclient.a
+make[3]: Leaving directory '/home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/obj-x86_64-linux-gnu'
+/usr/bin/cmake -E cmake_progress_report /home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/obj-x86_64-linux-gnu/CMakeFiles  2
+[ 28%] Built target client
+make -f CMakeFiles/facebook.dir/build.make CMakeFiles/facebook.dir/depend
+make[3]: Entering directory '/home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/obj-x86_64-linux-gnu'
+cd /home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/obj-x86_64-linux-gnu && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1 /home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1 /home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/obj-x86_64-linux-gnu /home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/obj-x86_64-linux-gnu /home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/obj-x86_64-linux-gnu/CMakeFiles/facebook.dir/DependInfo.cmake --color=
+Scanning dependencies of target facebook
+make[3]: Leaving directory '/home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/obj-x86_64-linux-gnu'
+make -f CMakeFiles/facebook.dir/build.make CMakeFiles/facebook.dir/build
+make[3]: Entering directory '/home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/obj-x86_64-linux-gnu'
+/usr/bin/cmake -E cmake_progress_report /home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/obj-x86_64-linux-gnu/CMakeFiles 3
+[ 42%] Building CXX object CMakeFiles/facebook.dir/facebook.cpp.o
+/usr/bin/c++    -std=c++0x   -o CMakeFiles/facebook.dir/facebook.cpp.o -c /home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/facebook.cpp
+Linking CXX static library libfacebook.a
+/usr/bin/cmake -P CMakeFiles/facebook.dir/cmake_clean_target.cmake
+/usr/bin/cmake -E cmake_link_script CMakeFiles/facebook.dir/link.txt --verbose=1
+/usr/bin/ar cr libfacebook.a  CMakeFiles/facebook.dir/facebook.cpp.o
+/usr/bin/ranlib libfacebook.a
+make[3]: Leaving directory '/home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/obj-x86_64-linux-gnu'
+/usr/bin/cmake -E cmake_progress_report /home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/obj-x86_64-linux-gnu/CMakeFiles  3
+[ 42%] Built target facebook
+make -f CMakeFiles/utils.dir/build.make CMakeFiles/utils.dir/depend
+make[3]: Entering directory '/home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/obj-x86_64-linux-gnu'
+cd /home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/obj-x86_64-linux-gnu && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1 /home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1 /home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/obj-x86_64-linux-gnu /home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/obj-x86_64-linux-gnu /home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/obj-x86_64-linux-gnu/CMakeFiles/utils.dir/DependInfo.cmake --color=
+Scanning dependencies of target utils
+make[3]: Leaving directory '/home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/obj-x86_64-linux-gnu'
+make -f CMakeFiles/utils.dir/build.make CMakeFiles/utils.dir/build
+make[3]: Entering directory '/home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/obj-x86_64-linux-gnu'
+/usr/bin/cmake -E cmake_progress_report /home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/obj-x86_64-linux-gnu/CMakeFiles 7
+[ 57%] Building CXX object CMakeFiles/utils.dir/utils.cpp.o
+/usr/bin/c++    -std=c++0x   -o CMakeFiles/utils.dir/utils.cpp.o -c /home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/utils.cpp
+Linking CXX static library libutils.a
+/usr/bin/cmake -P CMakeFiles/utils.dir/cmake_clean_target.cmake
+/usr/bin/cmake -E cmake_link_script CMakeFiles/utils.dir/link.txt --verbose=1
+/usr/bin/ar cr libutils.a  CMakeFiles/utils.dir/utils.cpp.o
+/usr/bin/ranlib libutils.a
+make[3]: Leaving directory '/home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/obj-x86_64-linux-gnu'
+/usr/bin/cmake -E cmake_progress_report /home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/obj-x86_64-linux-gnu/CMakeFiles  7
+[ 57%] Built target utils
+make -f CMakeFiles/tun_dev.dir/build.make CMakeFiles/tun_dev.dir/depend
+make[3]: Entering directory '/home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/obj-x86_64-linux-gnu'
+cd /home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/obj-x86_64-linux-gnu && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1 /home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1 /home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/obj-x86_64-linux-gnu /home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/obj-x86_64-linux-gnu /home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/obj-x86_64-linux-gnu/CMakeFiles/tun_dev.dir/DependInfo.cmake --color=
+Scanning dependencies of target tun_dev
+make[3]: Leaving directory '/home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/obj-x86_64-linux-gnu'
+make -f CMakeFiles/tun_dev.dir/build.make CMakeFiles/tun_dev.dir/build
+make[3]: Entering directory '/home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/obj-x86_64-linux-gnu'
+/usr/bin/cmake -E cmake_progress_report /home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/obj-x86_64-linux-gnu/CMakeFiles 6
+[ 71%] Building C object CMakeFiles/tun_dev.dir/tun_dev.c.o
+/usr/bin/cc   -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -D_FORTIFY_SOURCE=2    -o CMakeFiles/tun_dev.dir/tun_dev.c.o   -c /home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/tun_dev.c
+Linking C static library libtun_dev.a
+/usr/bin/cmake -P CMakeFiles/tun_dev.dir/cmake_clean_target.cmake
+/usr/bin/cmake -E cmake_link_script CMakeFiles/tun_dev.dir/link.txt --verbose=1
+/usr/bin/ar cr libtun_dev.a  CMakeFiles/tun_dev.dir/tun_dev.c.o
+/usr/bin/ranlib libtun_dev.a
+make[3]: Leaving directory '/home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/obj-x86_64-linux-gnu'
+/usr/bin/cmake -E cmake_progress_report /home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/obj-x86_64-linux-gnu/CMakeFiles  6
+[ 71%] Built target tun_dev
+make -f CMakeFiles/tun.dir/build.make CMakeFiles/tun.dir/depend
+make[3]: Entering directory '/home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/obj-x86_64-linux-gnu'
+cd /home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/obj-x86_64-linux-gnu && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1 /home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1 /home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/obj-x86_64-linux-gnu /home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/obj-x86_64-linux-gnu /home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/obj-x86_64-linux-gnu/CMakeFiles/tun.dir/DependInfo.cmake --color=
+Scanning dependencies of target tun
+make[3]: Leaving directory '/home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/obj-x86_64-linux-gnu'
+make -f CMakeFiles/tun.dir/build.make CMakeFiles/tun.dir/build
+make[3]: Entering directory '/home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/obj-x86_64-linux-gnu'
+/usr/bin/cmake -E cmake_progress_report /home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/obj-x86_64-linux-gnu/CMakeFiles 5
+[ 85%] Building CXX object CMakeFiles/tun.dir/tun.cpp.o
+/usr/bin/c++    -std=c++0x   -o CMakeFiles/tun.dir/tun.cpp.o -c /home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/tun.cpp
+Linking CXX static library libtun.a
+/usr/bin/cmake -P CMakeFiles/tun.dir/cmake_clean_target.cmake
+/usr/bin/cmake -E cmake_link_script CMakeFiles/tun.dir/link.txt --verbose=1
+/usr/bin/ar cr libtun.a  CMakeFiles/tun.dir/tun.cpp.o
+/usr/bin/ranlib libtun.a
+make[3]: Leaving directory '/home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/obj-x86_64-linux-gnu'
+/usr/bin/cmake -E cmake_progress_report /home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/obj-x86_64-linux-gnu/CMakeFiles  5
+[ 85%] Built target tun
+make -f CMakeFiles/facebook-tunnel.dir/build.make CMakeFiles/facebook-tunnel.dir/depend
+make[3]: Entering directory '/home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/obj-x86_64-linux-gnu'
+cd /home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/obj-x86_64-linux-gnu && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1 /home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1 /home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/obj-x86_64-linux-gnu /home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/obj-x86_64-linux-gnu /home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/obj-x86_64-linux-gnu/CMakeFiles/facebook-tunnel.dir/DependInfo.cmake --color=
+Scanning dependencies of target facebook-tunnel
+make[3]: Leaving directory '/home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/obj-x86_64-linux-gnu'
+make -f CMakeFiles/facebook-tunnel.dir/build.make CMakeFiles/facebook-tunnel.dir/build
+make[3]: Entering directory '/home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/obj-x86_64-linux-gnu'
+/usr/bin/cmake -E cmake_progress_report /home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/obj-x86_64-linux-gnu/CMakeFiles 4
+[100%] Building CXX object CMakeFiles/facebook-tunnel.dir/main.cpp.o
+/usr/bin/c++    -std=c++0x   -o CMakeFiles/facebook-tunnel.dir/main.cpp.o -c /home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/main.cpp
+Linking CXX executable facebook-tunnel
+/usr/bin/cmake -E cmake_link_script CMakeFiles/facebook-tunnel.dir/link.txt --verbose=1
+/usr/bin/c++   -std=c++0x   -Wl,-z,relro CMakeFiles/facebook-tunnel.dir/main.cpp.o  -o facebook-tunnel -rdynamic libbase64encode.a libtun.a libclient.a libfacebook.a libutils.a -lcurl /usr/local/lib/libgumbo.so -lpthread libbase64encode.a libtun_dev.a -Wl,-rpath,/usr/local/lib 
+make[3]: Leaving directory '/home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/obj-x86_64-linux-gnu'
+/usr/bin/cmake -E cmake_progress_report /home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/obj-x86_64-linux-gnu/CMakeFiles  4
+[100%] Built target facebook-tunnel
+make[2]: Leaving directory '/home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/obj-x86_64-linux-gnu'
+/usr/bin/cmake -E cmake_progress_start /home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/obj-x86_64-linux-gnu/CMakeFiles 0
+make[1]: Leaving directory '/home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/obj-x86_64-linux-gnu'
+   dh_auto_test
+   dh_testroot
+   dh_prep
+   dh_auto_install
+make[1]: Entering directory '/home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/obj-x86_64-linux-gnu'
+/usr/bin/cmake -H/home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1 -B/home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/obj-x86_64-linux-gnu --check-build-system CMakeFiles/Makefile.cmake 0
+/usr/bin/cmake -E cmake_progress_start /home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/obj-x86_64-linux-gnu/CMakeFiles /home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/obj-x86_64-linux-gnu/CMakeFiles/progress.marks
+make -f CMakeFiles/Makefile2 all
+make[2]: Entering directory '/home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/obj-x86_64-linux-gnu'
+make -f CMakeFiles/base64encode.dir/build.make CMakeFiles/base64encode.dir/depend
+make[3]: Entering directory '/home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/obj-x86_64-linux-gnu'
+cd /home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/obj-x86_64-linux-gnu && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1 /home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1 /home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/obj-x86_64-linux-gnu /home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/obj-x86_64-linux-gnu /home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/obj-x86_64-linux-gnu/CMakeFiles/base64encode.dir/DependInfo.cmake --color=
+make[3]: Leaving directory '/home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/obj-x86_64-linux-gnu'
+make -f CMakeFiles/base64encode.dir/build.make CMakeFiles/base64encode.dir/build
+make[3]: Entering directory '/home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/obj-x86_64-linux-gnu'
+make[3]: Nothing to be done for 'CMakeFiles/base64encode.dir/build'.
+make[3]: Leaving directory '/home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/obj-x86_64-linux-gnu'
+/usr/bin/cmake -E cmake_progress_report /home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/obj-x86_64-linux-gnu/CMakeFiles  1
+[ 14%] Built target base64encode
+make -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/depend
+make[3]: Entering directory '/home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/obj-x86_64-linux-gnu'
+cd /home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/obj-x86_64-linux-gnu && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1 /home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1 /home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/obj-x86_64-linux-gnu /home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/obj-x86_64-linux-gnu /home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/obj-x86_64-linux-gnu/CMakeFiles/client.dir/DependInfo.cmake --color=
+make[3]: Leaving directory '/home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/obj-x86_64-linux-gnu'
+make -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/build
+make[3]: Entering directory '/home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/obj-x86_64-linux-gnu'
+make[3]: Nothing to be done for 'CMakeFiles/client.dir/build'.
+make[3]: Leaving directory '/home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/obj-x86_64-linux-gnu'
+/usr/bin/cmake -E cmake_progress_report /home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/obj-x86_64-linux-gnu/CMakeFiles  2
+[ 28%] Built target client
+make -f CMakeFiles/facebook.dir/build.make CMakeFiles/facebook.dir/depend
+make[3]: Entering directory '/home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/obj-x86_64-linux-gnu'
+cd /home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/obj-x86_64-linux-gnu && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1 /home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1 /home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/obj-x86_64-linux-gnu /home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/obj-x86_64-linux-gnu /home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/obj-x86_64-linux-gnu/CMakeFiles/facebook.dir/DependInfo.cmake --color=
+make[3]: Leaving directory '/home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/obj-x86_64-linux-gnu'
+make -f CMakeFiles/facebook.dir/build.make CMakeFiles/facebook.dir/build
+make[3]: Entering directory '/home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/obj-x86_64-linux-gnu'
+make[3]: Nothing to be done for 'CMakeFiles/facebook.dir/build'.
+make[3]: Leaving directory '/home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/obj-x86_64-linux-gnu'
+/usr/bin/cmake -E cmake_progress_report /home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/obj-x86_64-linux-gnu/CMakeFiles  3
+[ 42%] Built target facebook
+make -f CMakeFiles/utils.dir/build.make CMakeFiles/utils.dir/depend
+make[3]: Entering directory '/home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/obj-x86_64-linux-gnu'
+cd /home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/obj-x86_64-linux-gnu && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1 /home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1 /home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/obj-x86_64-linux-gnu /home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/obj-x86_64-linux-gnu /home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/obj-x86_64-linux-gnu/CMakeFiles/utils.dir/DependInfo.cmake --color=
+make[3]: Leaving directory '/home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/obj-x86_64-linux-gnu'
+make -f CMakeFiles/utils.dir/build.make CMakeFiles/utils.dir/build
+make[3]: Entering directory '/home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/obj-x86_64-linux-gnu'
+make[3]: Nothing to be done for 'CMakeFiles/utils.dir/build'.
+make[3]: Leaving directory '/home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/obj-x86_64-linux-gnu'
+/usr/bin/cmake -E cmake_progress_report /home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/obj-x86_64-linux-gnu/CMakeFiles  7
+[ 57%] Built target utils
+make -f CMakeFiles/tun_dev.dir/build.make CMakeFiles/tun_dev.dir/depend
+make[3]: Entering directory '/home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/obj-x86_64-linux-gnu'
+cd /home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/obj-x86_64-linux-gnu && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1 /home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1 /home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/obj-x86_64-linux-gnu /home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/obj-x86_64-linux-gnu /home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/obj-x86_64-linux-gnu/CMakeFiles/tun_dev.dir/DependInfo.cmake --color=
+make[3]: Leaving directory '/home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/obj-x86_64-linux-gnu'
+make -f CMakeFiles/tun_dev.dir/build.make CMakeFiles/tun_dev.dir/build
+make[3]: Entering directory '/home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/obj-x86_64-linux-gnu'
+make[3]: Nothing to be done for 'CMakeFiles/tun_dev.dir/build'.
+make[3]: Leaving directory '/home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/obj-x86_64-linux-gnu'
+/usr/bin/cmake -E cmake_progress_report /home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/obj-x86_64-linux-gnu/CMakeFiles  6
+[ 71%] Built target tun_dev
+make -f CMakeFiles/tun.dir/build.make CMakeFiles/tun.dir/depend
+make[3]: Entering directory '/home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/obj-x86_64-linux-gnu'
+cd /home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/obj-x86_64-linux-gnu && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1 /home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1 /home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/obj-x86_64-linux-gnu /home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/obj-x86_64-linux-gnu /home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/obj-x86_64-linux-gnu/CMakeFiles/tun.dir/DependInfo.cmake --color=
+make[3]: Leaving directory '/home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/obj-x86_64-linux-gnu'
+make -f CMakeFiles/tun.dir/build.make CMakeFiles/tun.dir/build
+make[3]: Entering directory '/home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/obj-x86_64-linux-gnu'
+make[3]: Nothing to be done for 'CMakeFiles/tun.dir/build'.
+make[3]: Leaving directory '/home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/obj-x86_64-linux-gnu'
+/usr/bin/cmake -E cmake_progress_report /home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/obj-x86_64-linux-gnu/CMakeFiles  5
+[ 85%] Built target tun
+make -f CMakeFiles/facebook-tunnel.dir/build.make CMakeFiles/facebook-tunnel.dir/depend
+make[3]: Entering directory '/home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/obj-x86_64-linux-gnu'
+cd /home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/obj-x86_64-linux-gnu && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1 /home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1 /home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/obj-x86_64-linux-gnu /home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/obj-x86_64-linux-gnu /home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/obj-x86_64-linux-gnu/CMakeFiles/facebook-tunnel.dir/DependInfo.cmake --color=
+make[3]: Leaving directory '/home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/obj-x86_64-linux-gnu'
+make -f CMakeFiles/facebook-tunnel.dir/build.make CMakeFiles/facebook-tunnel.dir/build
+make[3]: Entering directory '/home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/obj-x86_64-linux-gnu'
+make[3]: Nothing to be done for 'CMakeFiles/facebook-tunnel.dir/build'.
+make[3]: Leaving directory '/home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/obj-x86_64-linux-gnu'
+/usr/bin/cmake -E cmake_progress_report /home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/obj-x86_64-linux-gnu/CMakeFiles  4
+[100%] Built target facebook-tunnel
+make[2]: Leaving directory '/home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/obj-x86_64-linux-gnu'
+/usr/bin/cmake -E cmake_progress_start /home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/obj-x86_64-linux-gnu/CMakeFiles 0
+make -f CMakeFiles/Makefile2 preinstall
+make[2]: Entering directory '/home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/obj-x86_64-linux-gnu'
+make[2]: Nothing to be done for 'preinstall'.
+make[2]: Leaving directory '/home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/obj-x86_64-linux-gnu'
+Install the project...
+/usr/bin/cmake -P cmake_install.cmake
+-- Install configuration: "None"
+-- Installing: /home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/debian/facebook-tunnel/usr/share/applications/facebook-tunnel.desktop
+-- Installing: /home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/debian/facebook-tunnel/usr/bin/facebook-tunnel
+-- Installing: /home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/debian/facebook-tunnel/usr/lib/fbtun/facebook.h
+-- Installing: /home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/debian/facebook-tunnel/usr/lib/fbtun/client.h
+make[1]: Leaving directory '/home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/facebook-tunnel_20150916-1/obj-x86_64-linux-gnu'
+   dh_install
+   dh_installdocs
+   dh_installchangelogs
+   dh_perl
+   dh_link
+   dh_compress
+   dh_fixperms
+   dh_strip
+   dh_makeshlibs
+   dh_shlibdeps
+dpkg-shlibdeps: error: no dependency information found for /usr/local/lib/libgumbo.so.1 (used by debian/facebook-tunnel/usr/bin/facebook-tunnel)
+Hint: check if the library actually comes from a package.
+dh_shlibdeps: dpkg-shlibdeps -Tdebian/facebook-tunnel.substvars debian/facebook-tunnel/usr/lib/facebook-tunnel debian/facebook-tunnel/usr/lib/CMakeFiles/3.0.2/CMakeDetermineCompilerABI_CXX.bin debian/facebook-tunnel/usr/lib/CMakeFiles/3.0.2/CompilerIdCXX/a.out debian/facebook-tunnel/usr/lib/CMakeFiles/3.0.2/CompilerIdC/a.out debian/facebook-tunnel/usr/lib/CMakeFiles/3.0.2/CMakeDetermineCompilerABI_C.bin debian/facebook-tunnel/usr/bin/facebook-tunnel returned exit code 2
+debian/rules:3: recipe for target 'binary' failed
+make: *** [binary] Error 2
+dpkg-buildpackage: error: fakeroot debian/rules binary gave error exit status 2
