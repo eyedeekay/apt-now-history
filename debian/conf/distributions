@@ -1,6 +1,6 @@
 Origin: cmotc.github.io
 Label: cmotc.github.io
-Codename: testing
+Codename: unstable
 Architectures: amd64 i386
 Components: main
 Description: cmotc.github.io
