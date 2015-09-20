@@ -68,6 +68,7 @@ while [ "$#" -gt 0 ]; do
 		;;
 		-h|--help)
 			H="YES"
+			DRY_RUN="YES"
 		;;
 	esac
 	shift
@@ -176,6 +177,7 @@ generaterkey(){
 
 includepackages(){
 	cd $SRCDIR
+	rm -rf ../debian/
 	mkdir ../debian/
 	find . -wholename "*.deb" -print0 | xargs -r0 reprepro --basedir $BASEDIR includedeb unstable
 	find . -wholename "*.dsc" -print0 | xargs -r0 reprepro --basedir $BASEDIR includedsc unstable
