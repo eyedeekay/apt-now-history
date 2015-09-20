@@ -9,7 +9,7 @@ CURDIR=$(pwd)
 
 ORIGIN="user.github.io"
 CODENAME="testing"
-REPOARCH="all"
+REPOARCH="i386"
 POLICY="main"
 KEY="Example"
 OVERRIDE="override.testing"

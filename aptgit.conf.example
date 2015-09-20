@@ -2,7 +2,7 @@
 #CURDIR=""
 ORIGIN="user.github.io"
 CODENAME="testing"
-REPOARCH="all"
+REPOARCH="amd64 i386"
 POLICY="main"
 KEY="Example"
 OVERRIDE="override.testing"
