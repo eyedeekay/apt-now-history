@@ -1,0 +1,31 @@
+Format: 1.8
+Date: Sat, 19 Sep 2015 20:46:37 -0400
+Source: debian-awesome-gnome
+Binary: debian-awesome-gnome
+Architecture: source all
+Version: 20150919-1
+Distribution: unstable
+Urgency: low
+Maintainer: dyngar-m <dyngar-m@dyngar.local>
+Changed-By: dyngar-m <dyngar-m@dyngar.local>
+Description:
+ debian-awesome-gnome - <insert up to 60 chars description>
+Changes:
+ debian-awesome-gnome (20150919-1) unstable; urgency=low
+ .
+   * Initial release (Closes: #nnnn)  <nnnn is the bug number of your ITP>
+Checksums-Sha1:
+ e4f3d0671192eab18ae23d2ba9680fbf40e07890 955 debian-awesome-gnome_20150919-1.dsc
+ 03b030b6575e75b52672e325d0c78454a281de33 12224 debian-awesome-gnome_20150919.orig.tar.xz
+ a209f637ef89e511c03a054b60fb6bd1e6fd97cd 2512 debian-awesome-gnome_20150919-1.debian.tar.xz
+ b5943061e67aea050dfa6ff4b18278797db45186 2950 debian-awesome-gnome_20150919-1_all.deb
+Checksums-Sha256:
+ f9d1fef3a8381ba0ff8034c5cdd483b724671bd57b50adf885d0d5c4d3e1c07f 955 debian-awesome-gnome_20150919-1.dsc
+ 7c6dec34e9b17648b9ba037fffdc662bfdd89d022ca2f0527a5ace89d70e67c5 12224 debian-awesome-gnome_20150919.orig.tar.xz
+ 774bdd5e1bf77d3afa39ba621e212665e023c92faf80f62a846eae399c18723b 2512 debian-awesome-gnome_20150919-1.debian.tar.xz
+ b8b3695f94c5877946eb7925970c29dca6506c140426a758734fe26e4f491610 2950 debian-awesome-gnome_20150919-1_all.deb
+Files:
+ d1009df0e4670d8159b0e44b8a47e1d6 955 unknown optional debian-awesome-gnome_20150919-1.dsc
+ a5bce2e10635410683a336e7117901af 12224 unknown optional debian-awesome-gnome_20150919.orig.tar.xz
+ 387f2008990f3744a2f7cd1bd6eb9afe 2512 unknown optional debian-awesome-gnome_20150919-1.debian.tar.xz
+ b1948219541dc8979fef90a9ded5964a 2950 unknown optional debian-awesome-gnome_20150919-1_all.deb

@@ -1,0 +1,31 @@
+Format: 1.8
+Date: Sat, 19 Sep 2015 20:48:42 -0400
+Source: intelmetool
+Binary: intelmetool
+Architecture: source all
+Version: 20150919-1
+Distribution: unstable
+Urgency: low
+Maintainer: dyngar-m <dyngar-m@dyngar.local>
+Changed-By: dyngar-m <dyngar-m@dyngar.local>
+Description:
+ intelmetool - <insert up to 60 chars description>
+Changes:
+ intelmetool (20150919-1) unstable; urgency=low
+ .
+   * Initial release (Closes: #nnnn)  <nnnn is the bug number of your ITP>
+Checksums-Sha1:
+ 033413b4257f38202c82ad7a64cd202d90b79484 877 intelmetool_20150919-1.dsc
+ d8a4ef377dd652b313591a16451c4f69d27b8f8a 118484 intelmetool_20150919.orig.tar.xz
+ 682b1b115a3862a998b39161cf79e424a929357e 2452 intelmetool_20150919-1.debian.tar.xz
+ 086b2cd05f8ea28945a6b0fff14e29491df3adc3 17482 intelmetool_20150919-1_all.deb
+Checksums-Sha256:
+ 28ff67919cc6a9da859cfe979510d00b57f1c85f826d134004f609c6870b1046 877 intelmetool_20150919-1.dsc
+ cc0a4f2819586d27dacbf2aa1c621a105f1679cec908fa20ee8d9f0343ec6d89 118484 intelmetool_20150919.orig.tar.xz
+ 8cefea52e7f0b79e1924f2a3bcf0790ad23844ab0a7ead35be07dbb5792dc98f 2452 intelmetool_20150919-1.debian.tar.xz
+ ba7c604424a35c9e071bb2719365df73e5bf8d19f1f80b705bb9a41b7f3fd811 17482 intelmetool_20150919-1_all.deb
+Files:
+ ad0c38652a13e4877268a31cd3ca4f1f 877 unknown optional intelmetool_20150919-1.dsc
+ d5c1fec3ce4d3ad365971d36ac93d613 118484 unknown optional intelmetool_20150919.orig.tar.xz
+ f883e3c59bfa5962a34dd623398da2a9 2452 unknown optional intelmetool_20150919-1.debian.tar.xz
+ cd217edd7ddebe0284d756cd3f3da200 17482 unknown optional intelmetool_20150919-1_all.deb
