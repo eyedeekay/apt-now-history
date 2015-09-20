@@ -1,5 +1,5 @@
 #! /bin/sh
-DRY_RUN="YES"
+DRY_RUN="NO"
 RESET="NO"
 CHECK="NO"
 
