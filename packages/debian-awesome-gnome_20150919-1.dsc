@@ -13,29 +13,29 @@ Build-Depends: debhelper (>= 9)
 Package-List:
  debian-awesome-gnome deb unknown optional arch=all
 Checksums-Sha1:
- ed38b14c2bb2f46dc4d46d2e7ea8bc7a9e4d95fb 12500 debian-awesome-gnome_20150919.orig.tar.xz
- 259dba7ea2efef7d113cff5743e5ae74ca1354b9 2524 debian-awesome-gnome_20150919-1.debian.tar.xz
+ eecd219f9d4684de6b3c6619aaaaa2492303d12f 15824 debian-awesome-gnome_20150919.orig.tar.xz
+ 217fd50c2d189df4ebb7e0fb114cb247f1940130 2576 debian-awesome-gnome_20150919-1.debian.tar.xz
 Checksums-Sha256:
- 2cf0732bf7341f4da1a3c81933b52297a37325a2498842b0728895592d0f1971 12500 debian-awesome-gnome_20150919.orig.tar.xz
- 05eda3b935873cbc36502104fbc0c45bc0c5b27a211c332ec754ccece9f9d49f 2524 debian-awesome-gnome_20150919-1.debian.tar.xz
+ ca582064c70ca375802bb720fc2a5d1fec5e174518668349053603a19208b65b 15824 debian-awesome-gnome_20150919.orig.tar.xz
+ 1fed78fbd12288884207660c4b8bfe4bbc976f13937e97afe2556c3e4e5917af 2576 debian-awesome-gnome_20150919-1.debian.tar.xz
 Files:
- 9ce59921aa258a01cb5f70f2091043f7 12500 debian-awesome-gnome_20150919.orig.tar.xz
- ec338990de185a16311551450b1f2b1a 2524 debian-awesome-gnome_20150919-1.debian.tar.xz
+ 96fc43d1d12087494e9fb1bc18a8d56a 15824 debian-awesome-gnome_20150919.orig.tar.xz
+ 2ef3836f05afd4069da87ca5ffd0e510 2576 debian-awesome-gnome_20150919-1.debian.tar.xz
 
 -----BEGIN PGP SIGNATURE-----
 Version: GnuPG v1
 
-iQIcBAEBAgAGBQJV/g4MAAoJEAg7dXeWLSl+EhEP/3BlRctwefRjjNCSOBsMHGBi
-HBZ4ZxwDZzKNU5CN28XOzErlKCUSIfFYSZO0B6UyakIQ6RdkOtx4rTGhNPcVWgge
-TPI1Wt119FeNYim6Hym3jBXkI70UPjmxkfjofwDp6lCANPXxTuNycXrc0K60B9rZ
-/TFkf/tB3gECZxEmehe02PN5E/SVpKKkYlj0vzj1o+qT+t8jOALGMcHSCQZOs3Hs
-P8qKhPCu44t8gftMfVRc4C/70G56K0LB1fwl3nojH9J+bjz7YuauFgpp3Ak15578
-jr697LuAA3g9TVg0LUpP9r6Y4gn9IDZKvOit520oMNaRrh+hcU4+whN0aFEjidY8
-STnZw/ubOPKsTJ0qzkIPF2kzo1zCfziUcku1dCm8a44cJQrgp7wJ4EZED+dvTNhq
-91fAyMjX2rupqMVNNHQJjA5wvOTsOAKncKmw+kCXo+U9e+Z0STGP+CC+1kJBf/pj
-VNrOnO4pJ2yLuWG8LJHGuKNAW0lFdP2t3tJ15qf4vOINc0vXeBe9V+ZOn4z4qWVF
-PlQAt50qRe4ioTPB1Hw2cFfgvog3Vlpsd8n1YO7dgJR4YaubnwaCEQTQu0VoBV/2
-Wfv/2E3NLqYYDc9/7MCqVwrHNtT8JNS4m1X4gj5nDHcKFDWRu+Uo3Ylqj0PiUSgt
-Yc2GtUBbRthBpiy+Cq5y
-=sG7/
+iQIcBAEBAgAGBQJV/hz+AAoJEAg7dXeWLSl+RTAQALZl6amFZI5MY6+MNal2Y7QW
+1pvx/QtohMJXvchJMhd/uEdfYE2C49BsbaHWajoM/TCmN23bVXM4cmLc0SDqU6zU
+EIvkFobOgI2MNCamAydM8iHy0pP1epUz7ifc9oumK6zK+uijdpquElEky+UtMy9X
+4XN5Z6ymJkWSbkgzGDdH2JFGwN8J6+HIRptUq0ITCsz2zfruoOMV2GDlSV45k1eP
+YhZ77qh0uEYzDA7Yq4V3CNX3Gd2NicAVFBvO+5elXRf7RcOevEH5Xlq4C3IamU4n
+wjqqHW5nKeHIevKkEUlCXDIcYDD/szWLtevG+hfUYsQakQTRcsBjb15oz1JG30nL
+T2O3SWkx9FgkgnluDNnQvMygOGP5kfZK6VTCYshbUzpr1MrW3zEKk3W+sNVej7l4
++uTe8l2rabeN68SVBgZuM4BK25Z43OFbouynEgBhfuEGXU0tOWYDaIOwguqL9zMe
+1V3oRiyql2wqOV7XIu5QdEv8tiDNMvDjJeQxdq8UkKxMQOnncFT7IGUCn9Z48hsK
+mDVMpq1+yy6Er80ROmIRtdyg2f0AAFTbpHp96kao6AIohA4g6mjVbXGGzsGKIDx0
+9Hdl/n55H6HzhCPyQRxWxBlIOXQG22BMIEzt3puG190zwj0Pw+ZlQZrQYELuhZPk
+pxIy49fOsgVEBQ8ABa1P
+=RUeO
 -----END PGP SIGNATURE-----

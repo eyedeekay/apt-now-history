@@ -43,6 +43,7 @@ dpkg-genchanges: including full source code in upload
  dpkg-source --after-build debian-awesome-gnome-20150919
 dpkg-buildpackage: full upload (original source is included)
 Now running lintian...
+W: debian-awesome-gnome source: maintainer-script-lacks-debhelper-token debian/postinst
 W: debian-awesome-gnome source: dh-make-template-in-source debian/debian-awesome-gnome.doc-base.EX
 W: debian-awesome-gnome source: superfluous-clutter-in-homepage <insert the upstream URL, if relevant>
 W: debian-awesome-gnome source: bad-homepage <insert the upstream URL, if relevant>
