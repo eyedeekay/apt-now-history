@@ -1,0 +1,54 @@
+ dpkg-buildpackage -rfakeroot -D -us -uc
+dpkg-buildpackage: source package toxbot
+dpkg-buildpackage: source version 20150919-1
+dpkg-buildpackage: source distribution unstable
+dpkg-buildpackage: source changed by dyngar-m <dyngar-m@dyngar.local>
+ dpkg-source --before-build toxbot-20150919
+dpkg-buildpackage: host architecture amd64
+ fakeroot debian/rules clean
+dh clean 
+   dh_testdir
+   dh_auto_clean
+make[1]: Entering directory '/home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/toxbot-20150919'
+rm -f *.d *.o toxbot
+make[1]: Leaving directory '/home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/toxbot-20150919'
+   dh_clean
+ dpkg-source -b toxbot-20150919
+dpkg-source: info: using source format `3.0 (quilt)'
+dpkg-source: info: building toxbot using existing ./toxbot_20150919.orig.tar.xz
+dpkg-source: info: building toxbot in toxbot_20150919-1.debian.tar.xz
+dpkg-source: info: building toxbot in toxbot_20150919-1.dsc
+ debian/rules build
+dh build 
+   dh_testdir
+   dh_auto_configure
+   dh_auto_build
+make[1]: Entering directory '/home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/toxbot-20150919'
+  CC    toxbot.o
+  CC    misc.o
+  CC    commands.o
+  CC    groupchats.o
+  LD    all
+make[1]: Leaving directory '/home/dyngar-m/Projects/Operating_Systems_Projects/packages-installers/distro/toxbot-20150919'
+   dh_auto_test
+ fakeroot debian/rules binary
+dh binary 
+   dh_testroot
+   dh_prep
+   dh_auto_install
+   dh_install
+   dh_installdocs
+   dh_installchangelogs
+   dh_perl
+   dh_link
+   dh_compress
+   dh_fixperms
+   dh_installdeb
+   dh_gencontrol
+   dh_md5sums
+   dh_builddeb
+dpkg-deb: building package `toxbot' in `../toxbot_20150919-1_all.deb'.
+ dpkg-genchanges  >../toxbot_20150919-1_amd64.changes
+dpkg-genchanges: including full source code in upload
+ dpkg-source --after-build toxbot-20150919
+dpkg-buildpackage: full upload (original source is included)
