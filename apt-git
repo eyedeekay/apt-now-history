@@ -177,8 +177,6 @@ generaterkey(){
 
 includepackages(){
 	cd $SRCDIR
-	rm -rf ../debian/
-	mkdir ../debian/
     for f in *.deb ; do reprepro --basedir $BASEDIR includedeb unstable "$f"; done
 	for f in *.dsc ; do reprepro --basedir $BASEDIR includedsc unstable "$f"; done
 	for f in *.changes ; do reprepro --basedir $BASEDIR include unstable "$f"; done
