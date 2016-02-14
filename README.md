@@ -37,3 +37,12 @@ to add this repository to your Debian-based system:
 
         echo "deb https://cmotc.github.io/apt-git/debian unstable main" | sudo tee /etc/apt/source.list.d/cmotc.github.io.list
         wget -qO - https://cmotc.github.io/apt-git/cmotc.github.io.gpg.key | sudo apt-key add -
+
+apt-git to-do list
+------------------
+
+   * Break more functionality into smaller chunks. Right now the generate
+   function is huge and duplicates a pretty sizable amount of code. Write a
+   generic function for building according to script, then existing spec, then
+   guessing. This will make supporting more package types and more package
+   building tools and techniques easier.
