@@ -20,6 +20,36 @@ repository to the remote storage service can be included in the program.
 Use Cases
 ---------
 
+  * Personal Use: Independent, hobbyist, and self-employed developers can use
+  this program to host their own packages in a way which allows them to use
+  their package management interface, encourages them to learn more about their
+  choices of software and GNU/Linux distributions, and which provides an easy
+  way for them to back up their configuration.
+  * Educational Use: Educational and corporate training programs which work with
+  Open-Source projects can use this program to host code repositories for
+  employees during training, and in turn their trainers and supervisors can
+  follow versioned updates and use them to build redistributable packages of
+  viable projects.
+  * Activist Use: Activists who deliver things like privacy and security related
+  packages that might find their main repositories censored in some regions can
+  use this tool to maintain mirrors on sites which will prove much more
+  difficult to keep people from accessing, like "burner" accounts on free
+  file hosting sites, distributed file systems, and fire-and-forget hidden
+  services.
+  * Small Groups: Small groups of hobbyists and hackers can collaborate on
+  projects and take advantage of the instant clonability of github repositories
+  to create instant mirrors of their group's packages, sharing, testing, and
+  growing their projects potential userbase and lowering barriers to entry for
+  their ideas.
+  * Small Businesses: Small businesses can save costs on hosting their in-house
+  process software and encourage a culture of peer review by hosting both their
+  source repositories and tiny package repositories on github, bitbucket, or
+  similar versioned web hosting services.
+  * Large Businesses: Larger businesses which allow their employees to use "20%
+  time" or similar programs to develop projects can use this in conjunction with
+  tools like dh_make or fpm to roll out an instant package repository when a
+  program is ready for testing with a wider audience.
+
 Versioning and Features
 -----------------------
 Right now, binary repository generation for Debian(APT Repositories) is stable and
@@ -47,6 +77,36 @@ polyglot(But probably not agnostic) way.
     - Binary Repository(Experimental, Still researching)
     - Source Repository(Experimental, Still researching)
     - Notes: None yet. But I'm sure there's something.
+	
+###Transport Types
+  * Version-Controlled
+    - git(Complete)
+	- hg(Not started)
+	- svn(Not started)
+  * File Transfer Based
+    - FTP(Not started)
+	- SFTP(Not started)
+  * More Exotic, Sync, Filesharing oriented
+    - gittorrent(Not started)
+	- Zeronet(Experimental, broken, probably requires a change to the transport
+	layer used by apt, see apt-transport-https, apt-transport-tor,)
+	- bittorrent(Not started)
+	- Freenet(Not started)
+  * Self-Hosted, Local Network
+    - i2p eepsites(Experimental, but it's easy)
+    - lighttpd(Should be just a little less easy than i2p)
+	- Tor HS(Should be just a little less easy than i2p)
+    - aptly(Not started)
+
+On Deck
+-------
+
+   * Break more functionality into smaller chunks. Right now the generate
+   function is huge and duplicates a pretty sizable amount of code. Write a
+   generic function for building according to script, then existing spec, then
+   guessing. This will make supporting more package types and more package
+   building tools and techniques easier.
+
 
 Related Projects
 ----------------
@@ -92,11 +152,3 @@ to add this repository to your Debian-based system:
         echo "deb https://cmotc.github.io/apt-git/debian unstable main" | sudo tee /etc/apt/source.list.d/cmotc.github.io.list
         wget -qO - https://cmotc.github.io/apt-git/cmotc.github.io.gpg.key | sudo apt-key add -
 
-apt-git to-do list
-------------------
-
-   * Break more functionality into smaller chunks. Right now the generate
-   function is huge and duplicates a pretty sizable amount of code. Write a
-   generic function for building according to script, then existing spec, then
-   guessing. This will make supporting more package types and more package
-   building tools and techniques easier.
