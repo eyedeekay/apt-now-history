@@ -70,33 +70,63 @@ polyglot(But probably not agnostic) way.
     - Source Repository(Final stages, Unstable)
     - Notes: Depends on normal debian tools, including reprepro
   * Android/F-Droid
-    - Binary Repository(Experimental, Unstable, broken, see fdroid-git)
+    - Binary Repository(Experimental, Unstable, broken, see fdroid-git. The
+	documentation for fdroidserver sometimes implies that the system requires
+	some small amount of server-side code.)
     - Source Repository(Research phases)
     - Notes: Android implies somewhat different separation of logic from GNU/Linux
   * Redhat/YUM
-    - Binary Repository(Experimental, Still researching)
-    - Source Repository(Experimental, Still researching)
+    - Binary Repository(Experimental, Still researching, but from the looks of
+	things it's really straightforward. I do not know how to build RPM packages
+	though, so we'll be working with Fedora's rpm's.)
+    - Source Repository(Experimental, Still researching, but the YUM paradigm
+	seems to be astoundingly simple.)
     - Notes: None yet. But I'm sure there's something.
 	
 ###Transport Types
   * Version-Controlled
-    - git(Complete)
-	- hg(Not started)
-	- svn(Not started)
+    - git(Complete as a way up updating the server, but can't be used to
+	retrieve individual software packages or update software. Might be possible
+	to implement as a method driver? That would be cool. Also cloning is pretty
+	much like making an instant mirror, which is cool.)
+	- hg(Not started, but straightforward. Pretty much the same as the git code
+	with very little alteration, just some transliterating of commands with
+	identical benefits.)
+	- svn(Not started, but basically the same story for the purposes of this
+	system.)
   * File Transfer Based
-    - FTP(Not started)
-	- SFTP(Not started)
+    - FTP(Not started, but really pretty easy, involves composing some commands
+	and configuring some usernames/passwords/keys/etc.)
+	- SFTP(Not started, but basically maps onto ftp. Probably like, one
+	additional line of code and a teeny bit of planning to support.)
   * More Exotic, Sync, Filesharing oriented
-    - gittorrent(Not started)
+    - gittorrent(Not started, Probably easy, but will require a change to the
+	transport layer used by apt to treat git as a way of retrieving some
+	information.)
 	- Zeronet(Experimental, broken, probably requires a change to the transport
-	layer used by apt, see apt-transport-https, apt-transport-tor,)
-	- bittorrent(Not started)
-	- Freenet(Not started)
+	layer used by apt, see [apt-transport-https](https://anonscm.debian.org/cgit/apt/apt.git/tree/methods), 
+	[apt-transport-tor](https://github.com/diocles/apt-transport-tor).)
+	- bittorrent(Not started, probably will work with [apt-p2p](http://www.camrdale.org/apt-p2p/)
+	or [debtorrent](http://debtorrent.alioth.debian.org/) with minimal to no 
+	modification. Might have to generate some magnet links. Probably going to
+	conflict with Tor, but may be able to encourage use within i2p?)
+	- Freenet(Not started, but it would be really interesting to do freenet-as-
+	eepsite via some sort of proxy, possibly? Similar complications to Zeronet,
+	which I'll probably do first.)
   * Self-Hosted, Local Network
-    - i2p eepsites(Experimental, but it's easy)
+    - i2p eepsites(Experimental, but it's easy, you can even manage it with git
+	if you want.)
     - lighttpd(Should be just a little less easy than i2p)
 	- Tor HS(Should be just a little less easy than i2p)
-    - aptly(Not started)
+    - aptly(Not started, I don't really get aptly but I learned about it in
+	the context of reading documentation in what I'm pretty sure was Portuguese
+	so I'm probably overthinking it.)
+
+###Misc Features
+  * Output a site. Collect information from within the packages, list them in
+  well-formatted markdown files, and emit the markdown into html files which
+  link to eachother, also a sitemap. This is all really easy to do on the client
+  side.
 
 On Deck
 -------
@@ -125,7 +155,7 @@ Related Projects
 Links
 -----
   * [CreateRepo Tutorial](https://www.godaddy.com/help/how-to-set-up-a-yum-repository-on-centos-6-12297)
-
+  
 apt-git personal repository tool
 ================================
 This tool helps developers host their own applications by posting them to 
