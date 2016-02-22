@@ -110,10 +110,21 @@ On Deck
 
 Related Projects
 ----------------
-[Reprepro, obviously](http://mirrorer.alioth.debian.org/)
-[Effing Package Management](https://github.com/jordansissel/fpm) - Some packages
-depend on this, but it isn't in may repo's besides the ruby gems, somewhat ironically.
 
+  * [Reprepro, obviously](http://mirrorer.alioth.debian.org/) for APT repo
+  management
+  * [Createrepo, also obviously](http://createrepo.baseurl.org/)
+  for YUM repo management
+  * [Fdroidserver, also also obvious](https://gitlab.com/fdroid/fdroidserver)
+  * [Effing Package Management](https://github.com/jordansissel/fpm) Some
+  packages depend on this, but it isn't in may repo's besides the ruby gems
+  somewhat ironically.
+  * dh_make, live-build, lots of others, I mean it's a package management
+  component, so it's loosely related to almost everything if it has to be.
+
+Links
+-----
+  * [CreateRepo Tutorial](https://www.godaddy.com/help/how-to-set-up-a-yum-repository-on-centos-6-12297)
 
 apt-git personal repository tool
 ================================
