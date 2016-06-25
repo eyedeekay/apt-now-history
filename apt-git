@@ -234,8 +234,8 @@ generator which emits apt repositories\n
 
 ###to add this repository to your Debian-based system:\n
 
-\t\t        echo \"deb https://$ORIGIN/apt-git/debian unstable main\" | sudo tee /etc/apt/source.list.d/$ORIGIN.list\n
-\t\t        wget -q0 - https://$ORIGIN/apt-git/$ORIGIN.gpg.key | sudo apt-key add - \n
+        echo \"deb https://$ORIGIN/apt-git/debian unstable main\" | sudo tee /etc/apt/source.list.d/$ORIGIN.list\n
+        wget -q0 - https://$ORIGIN/apt-git/$ORIGIN.gpg.key | sudo apt-key add - \n
 "
         echo $INDEX_HEADER | sed -e 's/^[ \t]*//' > $INFODIR/index.md
         echo $INDEX_DETAILS | sed -e 's/^[ \t]*//' >> $INFODIR/index.md
@@ -245,7 +245,7 @@ generator which emits apt repositories\n
                 echo "  * [$TRIMMED_CLEAN]($ORIGIN/info/$f) "
         done
         cd ..
-        echo $INDEX_FOOTER | sed -e 's/^[ \t]*//' >> $INFODIR/index.md
+        echo $INDEX_FOOTER #| sed -e 's/^[ \t]*//' >> $INFODIR/index.md
         markdown $INFODIR/index.md > $CURDIR/index.html
 }
 
