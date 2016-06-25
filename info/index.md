@@ -9,8 +9,9 @@ testing
 ####Latest update: date
 
 
-  * [awesome_3.5.9-1_amd64.deb ](user.github.io/info/awesome_3.5.9-1_amd64.deb.html) 
+  * [apt-git_20160625-1_all.deb ](user.github.io/info/apt-git_20160625-1_all.deb.html) 
 
+  * [awesome_3.5.9-1_amd64.deb ](user.github.io/info/awesome_3.5.9-1_amd64.deb.html) 
 
 This repository was generated with [apt-git](https://cmotc.github.io/apt-git), a static site
 generator which emits apt repositories
