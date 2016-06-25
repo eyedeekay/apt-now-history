@@ -232,7 +232,7 @@ $REPODESC\n"
 This repository was generated with [apt-git](https://cmotc.github.io/apt-git), a static site
 generator which emits apt repositories\n\n
 
-###to add this repository to your Debian-based system:\n
+###to add this repository to your Debian-based system:\n\n
 
 \t        echo \"deb https://$ORIGIN/apt-git/debian unstable main\" | sudo tee /etc/apt/source.list.d/$ORIGIN.list\n
 \t        wget -q0 - https://$ORIGIN/apt-git/$ORIGIN.gpg.key | sudo apt-key add - \n
