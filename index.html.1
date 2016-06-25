@@ -141,10 +141,10 @@ additional line of code and a teeny bit of planning to support.)</li>
 transport layer used by apt to treat git as a way of retrieving some
 information.)</li>
 <li>Zeronet(Experimental, broken, probably requires a change to the transport
-layer used by apt, see <a href="https://anonscm.debian.org/cgit/apt/apt.git/tree/methods">apt-transport-https</a>, 
+layer used by apt, see <a href="https://anonscm.debian.org/cgit/apt/apt.git/tree/methods">apt-transport-https</a>,
 <a href="https://github.com/diocles/apt-transport-tor">apt-transport-tor</a>.)</li>
 <li>bittorrent(Not started, probably will work with <a href="http://www.camrdale.org/apt-p2p/">apt-p2p</a>
-or <a href="http://debtorrent.alioth.debian.org/">debtorrent</a> with minimal to no 
+or <a href="http://debtorrent.alioth.debian.org/">debtorrent</a> with minimal to no
 modification. Might have to generate some magnet links. Probably going to
 conflict with Tor, but may be able to encourage use within i2p?)</li>
 <li>Freenet(Not started, but it would be really interesting to do freenet-as-
@@ -205,7 +205,7 @@ component, so it's loosely related to almost everything if it has to be.</li>
 
 <h1>apt-git personal repository tool</h1>
 
-<p>This tool helps developers host their own applications by posting them to 
+<p>This tool helps developers host their own applications by posting them to
 github pages for download.  </p>
 
 <pre><code>    -d \ --directory
@@ -232,7 +232,7 @@ github pages for download.  </p>
           Re-generate all components of the repository
     -u \ --user \ --org \ --organization
           Us as user/organization page, post page to master branch
-    -h \ --help 
+    -h \ --help
           Display this help message
 </code></pre>
 
@@ -241,3 +241,10 @@ github pages for download.  </p>
 <pre><code>    echo "deb https://cmotc.github.io/apt-git/debian unstable main" | sudo tee /etc/apt/source.list.d/cmotc.github.io.list
     wget -qO - https://cmotc.github.io/apt-git/cmotc.github.io.gpg.key | sudo apt-key add -
 </code></pre>
+
+<p>In this repository, you'll find
+<ul>
+<li><p><a href="user.github.io/info/apt-git_20160625-1_all.deb.html">apt-git<em>20160625-1</em>all.deb </a> </p></li>
+<li><p><a href="user.github.io/info/pkpage_20160625-1_all.deb.html">pkpage<em>20160625-1</em>all.deb </a> </p></li>
+</ul>
+</p>
