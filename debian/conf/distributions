@@ -3,7 +3,7 @@ Label: user.github.io
 Codename: testing
 Architectures: amd64 i386
 Components: main
-Description: user.github.io
+Description: This is a place where I put testable packages of my apps.
 SignWith: Example
 DebOverride: override.testing
 DscOverride: override.testing

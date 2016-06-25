@@ -7,6 +7,8 @@ pwd
 
 CURDIR=$(pwd)
 
+REPONAME="Testing Repository"
+REPODESC="This is a place where I put testable packages of my apps."
 ORIGIN="user.github.io"
 CODENAME="testing"
 REPOARCH="i386"
@@ -62,6 +64,14 @@ while [ "$#" -gt 0 ]; do
 			MESSAGE="$2"
 			shift
 		;;
+                -n,|--name)
+			REPONAME="$2"
+			shift
+		;;
+                -v,|--desc)
+			REPODESC="$2"
+			shift
+		;;
 		-c|--check)
 			CHECK="YES"
 		;;
@@ -102,6 +112,10 @@ github pages for download. \n
 \t\t		Name of the override file\n
 \t	-m \ --message\n
 \t\t		Message to include in the commit\n
+\t	-n \ --name\n
+\t\t		Human-readable name of the Repository\n
+\t	-v \ --desc\n
+\t\t		Detailed repository description\n
 \t	-c \ --check\n
 \t\t		Make sure the dependencies are installed\n
 \t	-r \ --reset\n
@@ -167,7 +181,7 @@ gendistrofile(){
 	echo "Codename: $CODENAME"	>> "$CONFDIR/distributions"
 	echo "Architectures: $REPOARCH"	>> "$CONFDIR/distributions"
 	echo "Components: $POLICY"	>> "$CONFDIR/distributions"
-	echo "Description: $ORIGIN"	>> "$CONFDIR/distributions"
+	echo "Description: $REPODESC"	>> "$CONFDIR/distributions"
 	echo "SignWith: $KEY"		>> "$CONFDIR/distributions"
 	echo "DebOverride: $OVERRIDE"	>> "$CONFDIR/distributions"
 	echo "DscOverride: $OVERRIDE"	>> "$CONFDIR/distributions"
@@ -201,7 +215,38 @@ includepackages(){
 }
 
 constructindex(){
-        echo $HELP > index.html
+        INDEX_HEADER="
+$REPONAME
+============
+$CODENAME
+------------
+###$REPOARCH
+###$POLICY
+###$KEY
+###$ORIGIN
+####Latest update: $DATE
+"
+        INDEX_DETAIL="###Description:
+$REPODESC"
+        INDEX_FINAL="
+This repository was generated with [apt-git](https://cmotc.github.io/apt-git), a static site
+generator which emits apt repositories
+
+###to add this repository to your Debian-based system:
+
+        echo \"deb https://$ORIGIN/apt-git/debian unstable main\" | sudo tee /etc/apt/source.list.d/$ORIGIN.list\n
+        wget -q0 - https://$ORIGIN/apt-git/$ORIGIN.gpg.key | sudo apt-key add -\n
+"
+        echo $INDEX_HEADER > $INFODIR/index.md
+        echo $INDEX_DETAILS >> $INFODIR/index.md
+        cd $INFODIR
+	for f in *.html ; do
+                TRIMMED_CLEAN=$(echo $f | sed -e 's/.html/ /')
+                echo "  * [$TRIMMED_CLEAN]($ORIGIN/info/$f) "
+        done
+        cd ..
+        echo $INDEX_FOOTER >> $INFODIR/index.md
+        markdown $INFODIR/index.md > $CURDIR/index.html
 }
 
 if [ "$H" = "YES" ]; then
@@ -236,6 +281,7 @@ if [ "$DRY_RUN" = "NO" ]; then
 			echo "setting up packages"
 			includepackages
 			DATE=date
+                        constructindex
 			if [ "$ORG" = "YES" ]; then
 				git add . && git commit -am "Repository update: $MESSAGE $DATE" && git push origin master
 			else
