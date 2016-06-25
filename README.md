@@ -17,6 +17,10 @@ resource over the web, doesn't need to support ssh or remote desktop, and doesn'
 technically need to support ftp or git, as long as a way of transferring the
 repository to the remote storage service can be included in the program.
 
+**IMPORTANT:** When cloning this repository, be sure to specify "-b master" or
+you'll be cloning my live copy. I'm working on moving them to a separate
+instance and the gh-pages will be cleaned and become the de-facto master.
+
 Use Cases
 ---------
 
@@ -82,7 +86,7 @@ polyglot(But probably not agnostic) way.
     - Source Repository(Experimental, Still researching, but the YUM paradigm
 	seems to be astoundingly simple.)
     - Notes: None yet. But I'm sure there's something.
-	
+
 ###Transport Types
   * Version-Controlled
     - git(Complete as a way up updating the server, but can't be used to
@@ -104,10 +108,10 @@ polyglot(But probably not agnostic) way.
 	transport layer used by apt to treat git as a way of retrieving some
 	information.)
 	- Zeronet(Experimental, broken, probably requires a change to the transport
-	layer used by apt, see [apt-transport-https](https://anonscm.debian.org/cgit/apt/apt.git/tree/methods), 
+	layer used by apt, see [apt-transport-https](https://anonscm.debian.org/cgit/apt/apt.git/tree/methods),
 	[apt-transport-tor](https://github.com/diocles/apt-transport-tor).)
 	- bittorrent(Not started, probably will work with [apt-p2p](http://www.camrdale.org/apt-p2p/)
-	or [debtorrent](http://debtorrent.alioth.debian.org/) with minimal to no 
+	or [debtorrent](http://debtorrent.alioth.debian.org/) with minimal to no
 	modification. Might have to generate some magnet links. Probably going to
 	conflict with Tor, but may be able to encourage use within i2p?)
 	- Freenet(Not started, but it would be really interesting to do freenet-as-
@@ -155,11 +159,11 @@ Related Projects
 Links
 -----
   * [CreateRepo Tutorial](https://www.godaddy.com/help/how-to-set-up-a-yum-repository-on-centos-6-12297)
-  
+
 apt-git personal repository tool
 ================================
-This tool helps developers host their own applications by posting them to 
-github pages for download.  
+This tool helps developers host their own applications by posting them to
+github pages for download.
 
         -d \ --directory
               Work in this directory, uses current directory by default
@@ -185,10 +189,10 @@ github pages for download.
               Re-generate all components of the repository
         -u \ --user \ --org \ --organization
               Us as user/organization page, post page to master branch
-        -h \ --help 
+        -h \ --help
               Display this help message
 
-to add this repository to your Debian-based system:  
+to add this repository to your Debian-based system:
 
         echo "deb https://cmotc.github.io/apt-git/debian unstable main" | sudo tee /etc/apt/source.list.d/cmotc.github.io.list
         wget -qO - https://cmotc.github.io/apt-git/cmotc.github.io.gpg.key | sudo apt-key add -

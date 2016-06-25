@@ -215,8 +215,7 @@ includepackages(){
 }
 
 constructindex(){
-        INDEX_HEADER="
-$REPONAME\n
+        INDEX_HEADER="$REPONAME\n
 ============\n
 $CODENAME\n
 ------------\n
@@ -228,8 +227,7 @@ $CODENAME\n
 "
         INDEX_DETAIL="###Description:\n
 $REPODESC\n"
-        INDEX_FOOTER="
-This repository was generated with [apt-git](https://cmotc.github.io/apt-git), a static site
+        INDEX_FOOTER="This repository was generated with [apt-git](https://cmotc.github.io/apt-git), a static site
 generator which emits apt repositories
 
 ###to add this repository to your Debian-based system:
