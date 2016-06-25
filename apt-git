@@ -216,23 +216,23 @@ includepackages(){
 
 constructindex(){
         INDEX_HEADER="
-$REPONAME
+$REPONAME\n
 ============
-$CODENAME
+$CODENAME\n
 ------------
-###$REPOARCH
-###$POLICY
-###$KEY
-###$ORIGIN
-####Latest update: $DATE
+###$REPOARCH\n
+###$POLICY\n
+###$KEY\n
+###$ORIGIN\n
+####Latest update: $DATE\n
 "
-        INDEX_DETAIL="###Description:
-$REPODESC"
+        INDEX_DETAIL="###Description:\n
+$REPODESC\n"
         INDEX_FINAL="
 This repository was generated with [apt-git](https://cmotc.github.io/apt-git), a static site
-generator which emits apt repositories
+generator which emits apt repositories\n
 
-###to add this repository to your Debian-based system:
+###to add this repository to your Debian-based system:\n
 
         echo \"deb https://$ORIGIN/apt-git/debian unstable main\" | sudo tee /etc/apt/source.list.d/$ORIGIN.list\n
         wget -q0 - https://$ORIGIN/apt-git/$ORIGIN.gpg.key | sudo apt-key add -\n
