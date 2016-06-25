@@ -14,9 +14,9 @@ POLICY="main"
 KEY="Example"
 OVERRIDE="override.testing"
 
-if [ -f /usr/local/bin/pkpage-html]; then
+if [ -f /usr/local/bin/pkpage-html ]; then
         alias pkpage-html=/usr/local/bin/pkpage-html
-elif [ -f ./pkpage.sh]; then
+elif [ -f ./pkpage.sh ]; then
         alias pkpage-html="/bin/bash -c \"markdown <($CURDIR/pkpage $@)\""
 fi
 SRCDIR="$CURDIR/packages"
@@ -200,8 +200,13 @@ includepackages(){
 #	reprepro include "$SRCDIR/*"
 }
 
+constructindex(){
+        echo $HELP > index.html
+}
+
 if [ "$H" = "YES" ]; then
-	echo -e $HELP
+	echo $HELP
+        exit 1
 fi
 if [ "$DRY_RUN" = "NO" ]; then
 	if [ -d "$SRCDIR" ]; then

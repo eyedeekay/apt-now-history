@@ -1,0 +1,9 @@
+Origin: user.github.io
+Label: user.github.io
+Codename: testing
+Architectures: amd64 i386
+Components: main
+Description: user.github.io
+SignWith: Example
+DebOverride: override.testing
+DscOverride: override.testing
