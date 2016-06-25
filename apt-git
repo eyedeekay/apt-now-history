@@ -3,7 +3,7 @@ DRY_RUN="NO"
 RESET="NO"
 CHECK="YES"
 
-pwd 
+pwd
 
 CURDIR=$(pwd)
 
@@ -14,6 +14,11 @@ POLICY="main"
 KEY="Example"
 OVERRIDE="override.testing"
 
+if [ -f /usr/local/bin/pkpage-html]; then
+        alias pkpage-html=/usr/local/bin/pkpage-html
+elif [ -f ./pkpage.sh]; then
+        alias pkpage-html="/bin/bash -c \"markdown <($CURDIR/pkpage $@)\""
+fi
 SRCDIR="$CURDIR/packages"
 
 . "./aptgit.conf"
@@ -113,6 +118,10 @@ to add this repository to your Debian-based system:\n
 
 BASEDIR="$CURDIR/debian"
 CONFDIR="$CURDIR/debian/conf"
+INFODIR="$CURDIR/info"
+if [ ! -d "$INFODIR" ]; then
+        mkdir -p "$INFODIR"
+fi
 
 confirm(){
 	read -r -p "${1: -Are you sure? [y/N]} " response
@@ -177,9 +186,16 @@ generaterkey(){
 
 includepackages(){
 	cd $SRCDIR
-    for f in *.deb ; do reprepro --basedir $BASEDIR includedeb unstable "$f"; done
-	for f in *.dsc ; do reprepro --basedir $BASEDIR includedsc unstable "$f"; done
-	for f in *.changes ; do reprepro --basedir $BASEDIR include unstable "$f"; done
+	for f in *.deb ; do
+                reprepro --basedir $BASEDIR includedeb $CODENAME "$f";
+                pkpage-html -f $f > $INFODIR/$f.html
+        done
+	for f in *.dsc ; do
+                reprepro --basedir $BASEDIR includedsc $CODENAME "$f";
+        done
+	for f in *.changes ; do
+                reprepro --basedir $BASEDIR include $CODENAME "$f";
+        done
 	cd ..
 #	reprepro include "$SRCDIR/*"
 }
