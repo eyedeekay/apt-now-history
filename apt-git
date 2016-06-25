@@ -242,7 +242,7 @@ generator which emits apt repositories\n
         cd $INFODIR
 	for f in *.html ; do
                 TRIMMED_CLEAN=$(echo $f | sed -e 's/.html/ /')
-                echo "  * [$TRIMMED_CLEAN]($ORIGIN/info/$f) " >> $INFODIR/index.md
+                echo "  * [$TRIMMED_CLEAN]($ORIGIN/info/$f) \n" >> $INFODIR/index.md
         done
         cd ..
         #echo $INDEX_FOOTER >> $INFODIR/index.md
