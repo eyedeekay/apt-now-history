@@ -1,10 +1,10 @@
-apt-git
+apt-now
 -------
 A tool for setting up and hosting an apt repository using arbitrary http/s hosts to
 make files accessible with extra features for git-enabled hosting sites.
 
-This tool, currently called apt-git but soon to be changed to apt-now, then repo-git,
-then repo-now, is essentially a static site generator geared toward generating and
+This tool, currently called apt-now but soon to be changed to repo-now, is
+essentially a static site generator geared toward generating and
 formatting a specific type of content in a specific type of way, the content being
 GNU/Linux or Android/Linux binary packages, and the format being a signed repository
 accessible from the web or something like it(It can also, for instance, be used to
