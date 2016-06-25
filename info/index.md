@@ -18,5 +18,7 @@ generator which emits apt repositories
 ###to add this repository to your Debian-based system:
 
 echo "deb https://user.github.io/apt-git/debian unstable main" | sudo tee /etc/apt/source.list.d/user.github.io.list
+
 wget -q0 - https://user.github.io/apt-git/user.github.io.gpg.key | sudo apt-key add -
+
 
