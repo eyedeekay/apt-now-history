@@ -237,15 +237,15 @@ generator which emits apt repositories\n
         echo \"deb https://$ORIGIN/apt-git/debian unstable main\" | sudo tee /etc/apt/source.list.d/$ORIGIN.list\n
         wget -q0 - https://$ORIGIN/apt-git/$ORIGIN.gpg.key | sudo apt-key add -\n
 "
-        echo $INDEX_HEADER > $INFODIR/index.md
-        echo $INDEX_DETAILS >> $INFODIR/index.md
+        echo $INDEX_HEADER | sed -e 's/^[ \t]*//' > $INFODIR/index.md
+        echo $INDEX_DETAILS | sed -e 's/^[ \t]*//' >> $INFODIR/index.md
         cd $INFODIR
 	for f in *.html ; do
                 TRIMMED_CLEAN=$(echo $f | sed -e 's/.html/ /')
                 echo "  * [$TRIMMED_CLEAN]($ORIGIN/info/$f) "
         done
         cd ..
-        echo $INDEX_FOOTER >> $INFODIR/index.md
+        echo $INDEX_FOOTER | sed -e 's/^[ \t]*//' >> $INFODIR/index.md
         markdown $INFODIR/index.md > $CURDIR/index.html
 }
 
