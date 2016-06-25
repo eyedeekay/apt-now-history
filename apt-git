@@ -246,7 +246,7 @@ generator which emits apt repositories\n\n
         done
         cd ..
         #echo $INDEX_FOOTER >> $INFODIR/index.md
-        echo $INDEX_FOOTER | sed -e 's/^[ \t]*//' >> $INFODIR/index.md
+        echo "$INDEX_FOOTER" | sed -e 's/^[ \t]*//' >> $INFODIR/index.md
         markdown $INFODIR/index.md > $CURDIR/index.html
 }
 
