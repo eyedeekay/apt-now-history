@@ -217,9 +217,9 @@ includepackages(){
 constructindex(){
         INDEX_HEADER="
 $REPONAME\n
-============
+============\n
 $CODENAME\n
-------------
+------------\n
 ###$REPOARCH\n
 ###$POLICY\n
 ###$KEY\n
@@ -228,14 +228,14 @@ $CODENAME\n
 "
         INDEX_DETAIL="###Description:\n
 $REPODESC\n"
-        INDEX_FINAL="
+        INDEX_FOOTER="
 This repository was generated with [apt-git](https://cmotc.github.io/apt-git), a static site
 generator which emits apt repositories\n
 
 ###to add this repository to your Debian-based system:\n
 
-        echo \"deb https://$ORIGIN/apt-git/debian unstable main\" | sudo tee /etc/apt/source.list.d/$ORIGIN.list\n
-        wget -q0 - https://$ORIGIN/apt-git/$ORIGIN.gpg.key | sudo apt-key add -\n
+        echo \"deb https://$ORIGIN/apt-git/debian unstable main\"\n | sudo tee /etc/apt/source.list.d/$ORIGIN.list\n
+        wget -q0 - https://$ORIGIN/apt-git/$ORIGIN.gpg.key | sudo apt-key add -\n\n
 "
         echo $INDEX_HEADER | sed -e 's/^[ \t]*//' > $INFODIR/index.md
         echo $INDEX_DETAILS | sed -e 's/^[ \t]*//' >> $INFODIR/index.md

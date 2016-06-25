@@ -1,6 +1,8 @@
-<p>Testing Repository
-============ testing
------------- ###amd64 i386</p>
+<h1>Testing Repository</h1>
+
+<h2>testing</h2>
+
+<h3>amd64 i386</h3>
 
 <h3>main</h3>
 
@@ -9,3 +11,11 @@
 <h3>user.github.io</h3>
 
 <h4>Latest update: date</h4>
+
+<p>This repository was generated with <a href="https://cmotc.github.io/apt-git">apt-git</a>, a static site generator which emits apt repositories</p>
+
+<h3>to add this repository to your Debian-based system:</h3>
+
+<p>echo "deb https://user.github.io/apt-git/debian unstable main"
+| sudo tee /etc/apt/source.list.d/user.github.io.list
+wget -q0 - https://user.github.io/apt-git/user.github.io.gpg.key | sudo apt-key add -</p>
