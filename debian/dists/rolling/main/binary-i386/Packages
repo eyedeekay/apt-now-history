@@ -8,10 +8,10 @@ Homepage: https://cmotc.github.io/apt-git/
 Priority: optional
 Section: admin
 Filename: pool/main/a/apt-now/apt-now_20160625-1_all.deb
-Size: 5212
-SHA256: e576a5378ba12554abd5cc7df4fef2c9e3858044530c4408cff0e81141b98c16
-SHA1: ca2a7820f84142497e58e5a584b5e37aeb548309
-MD5sum: c03a6943b06f39ce9a48a1484e1dfdb2
+Size: 5206
+SHA256: c980b9dfc8cda1c5ccd70762b14752cb171ff6dfb5813a10e6473728f2b9fa81
+SHA1: 273ea84999ef2c6629d5252e1443de8bb0c634f2
+MD5sum: 7e8c2b8d721395e15a59314551e38937
 Description: A tool for setting up and hosting an apt repository using arbitrary
  http/s hosts to make files accessible with extra features for git-enabled
  hosting sites.
@@ -39,12 +39,12 @@ Installed-Size: 32
 Depends: markdown
 Homepage: https://cmotc.github.io/pkpage/
 Priority: optional
-Section: unknown
+Section: admin
 Filename: pool/main/p/pkpage/pkpage_20160625-1_all.deb
-Size: 3142
-SHA256: 39c6e647eeebb1ef4b0bc5f4fe7a952fc71995ef7e0ac7396d20a345594889cb
-SHA1: 5614fa4300dcb15dd5b78cbb30e6848bd16c1ada
-MD5sum: e72df00693605724dffa1e7fd5d7cc45
+Size: 3138
+SHA256: 3202a50fc2124b8aceb42fef0c8d4952957dde829884500293bff1795e79ddf4
+SHA1: 25134a89c1619e970efea2f2cebbd1d11aa78006
+MD5sum: feef43e8482d8c9bfff11871fd757f94
 Description: Generates a Markdown-formatted description of a software package
  and a corresponding html page. For use with my repo generator, apt-git so that
  it can generate package description pages automatically and make the

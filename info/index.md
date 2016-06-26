@@ -9,8 +9,6 @@ rolling
 ####Latest update: date
 
 
-  * [apt-git_20160625-1_all.deb ](info/apt-git_20160625-1_all.deb.html) 
-
   * [apt-now_20160625-1_all.deb ](info/apt-now_20160625-1_all.deb.html) 
 
   * [pkpage_20160625-1_all.deb ](info/pkpage_20160625-1_all.deb.html) 
