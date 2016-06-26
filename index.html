@@ -1,27 +1,250 @@
-<h1>apt-now</h1>
+<h1>apt-git</h1>
 
-<h2>rolling</h2>
+<p>A tool for setting up and hosting an apt repository using arbitrary http/s hosts to
+make files accessible with extra features for git-enabled hosting sites.</p>
 
-<h3>amd64 i386 armhf</h3>
+<p>This tool, currently called apt-git but soon to be changed to apt-now, then repo-git,
+then repo-now, is essentially a static site generator geared toward generating and
+formatting a specific type of content in a specific type of way, the content being
+GNU/Linux or Android/Linux binary packages, and the format being a signed repository
+accessible from the web or something like it(It can also, for instance, be used to
+statically host software repositories over i2p with no substantial modification.) It
+does this by taking advantage of the structural regularity of these types of resources
+and constructs the whole site on the client side, transmitting content to the server
+only after a valid repository has been built. This means that the server doesn't have
+to run any code at all to present the site to the end-user taking advantage of the
+resource over the web, doesn't need to support ssh or remote desktop, and doesn't even
+technically need to support ftp or git, as long as a way of transferring the
+repository to the remote storage service can be included in the program.</p>
 
-<h3>main</h3>
-
-<h3>554DB437</h3>
-
-<h3>cmotc.github.io</h3>
-
-<h4>Latest update: date</h4>
+<h2>Use Cases</h2>
 
 <ul>
-<li><p><a href="info/apt-now_20160625-1_all.deb.html">apt-now<em>20160625-1</em>all.deb </a> </p></li>
-<li><p><a href="info/pkpage_20160625-1_all.deb.html">pkpage<em>20160625-1</em>all.deb </a> </p></li>
+<li>Personal Use: Independent, hobbyist, and self-employed developers can use
+this program to host their own packages in a way which allows them to use
+their package management interface, encourages them to learn more about their
+choices of software and GNU/Linux distributions, and which provides an easy
+way for them to back up their configuration. For more info on this use case,
+check out the article series on my personal blog.</li>
+<li>Educational Use: Educational and corporate training programs which work with
+Open-Source projects can use this program to host code repositories for
+employees during training, and in turn their trainers and supervisors can
+follow versioned updates and use them to build redistributable packages of
+viable projects.</li>
+<li>Activist Use: Activists who deliver things like privacy and security related
+packages that might find their main repositories censored in some regions can
+use this tool to maintain mirrors on sites which will prove much more
+difficult to keep people from accessing, like "burner" accounts on free
+file hosting sites, distributed file systems, and fire-and-forget hidden
+services.</li>
+<li>Small Groups: Small groups of hobbyists and hackers can collaborate on
+projects and take advantage of the instant clonability of github repositories
+to create instant mirrors of their group's packages, sharing, testing, and
+growing their projects potential userbase and lowering barriers to entry for
+their ideas.</li>
+<li>Small Businesses: Small businesses can save costs on hosting their in-house
+process software and encourage a culture of peer review by hosting both their
+source repositories and tiny package repositories on github, bitbucket, or
+similar versioned web hosting services.</li>
+<li>Large Businesses: Larger businesses which allow their employees to use "20%
+time" or similar programs to develop projects can use this in conjunction with
+tools like dh_make or fpm to roll out an instant package repository when a
+program is ready for testing with a wider audience.</li>
 </ul>
 
-<p>This repository was generated with <a href="https://cmotc.github.io/apt-git">apt-git</a>, a static site
-generator which emits apt repositories</p>
+<h2>Usage</h2>
 
-<h3>to add this repository to your Debian-based system:</h3>
+<p>For now, only APT(Debian) repositories are fully functioning, but the idea is
+that you create the config file(apt-git.conf), build the packages and put them
+in the package folder, then run the script. Alternatively, you can specify all
+the configuration options at the terminal if you want. Signing is enabled by
+default, and if you don't have a key in the repository one will be generated for
+you. Currently, if you already have a key in the repository it will ask if you
+want to overwrite the key. If you've specified the key you want to use in the
+config file, then this choice will have no effect. It's actually really easy to
+use.</p>
 
-<p>echo "deb https://cmotc.github.io/apt-git/debian unstable main" | sudo tee /etc/apt/source.list.d/cmotc.github.io.list</p>
+<ul>
+<li>Clone the repo.</li>
+<li>Create apt-git.conf</li>
+<li>Add your packages to ./packages/</li>
+<li>run ./apt-git</li>
+</ul>
 
-<p>wget -q0 - https://cmotc.github.io/apt-git/cmotc.github.io.gpg.key | sudo apt-key add -</p>
+<h2>Versioning and Features</h2>
+
+<p>Right now, binary repository generation for Debian(APT Repositories) is stable and
+source repository generation for Debian/Apt is nearing stability and are in usuable
+form. While these are the only working types of repositories, the pre-hyphenate part
+of this project's name will be "apt." Additionally, while an end user could use any
+means to transfer the repository constructed by the apt-git tool, there is currently
+only support for the use of github-pages as a hosting medium in the code. While this
+remains the case the post-hyphenate part of this project's name will be "git." When
+experimental support for F-Droid and Redhat(Yellowdog Updater) are complete,
+additional ways of transferring the files will be considered and added, and the final
+version will implement APT, YUM, and F-Droid repositories in an easy to configure,
+polyglot(But probably not agnostic) way.</p>
+
+<h3>Repository Types</h3>
+
+<ul>
+<li>Debian/APT
+<ul>
+<li>Binary Repository(Complete, Stable)</li>
+<li>Source Repository(Final stages, Unstable)</li>
+<li>Notes: Depends on normal debian tools, including reprepro</li>
+</ul></li>
+<li>Android/F-Droid
+<ul>
+<li>Binary Repository(Experimental, Unstable, broken, see fdroid-git. The
+documentation for fdroidserver sometimes implies that the system requires
+some small amount of server-side code.)</li>
+<li>Source Repository(Research phases)</li>
+<li>Notes: Android implies somewhat different separation of logic from GNU/Linux</li>
+</ul></li>
+<li>Redhat/YUM
+<ul>
+<li>Binary Repository(Experimental, Still researching, but from the looks of
+things it's really straightforward. I do not know how to build RPM packages
+though, so we'll be working with Fedora's rpm's.)</li>
+<li>Source Repository(Experimental, Still researching, but the YUM paradigm
+seems to be astoundingly simple.)</li>
+<li>Notes: None yet. But I'm sure there's something.</li>
+</ul></li>
+</ul>
+
+<h3>Transport Types</h3>
+
+<ul>
+<li>Version-Controlled
+<ul>
+<li>git(Complete as a way up updating the server, but can't be used to
+retrieve individual software packages or update software. Might be possible
+to implement as a method driver? That would be cool. Also cloning is pretty
+much like making an instant mirror, which is cool.)</li>
+<li>hg(Not started, but straightforward. Pretty much the same as the git code
+with very little alteration, just some transliterating of commands with
+identical benefits.)</li>
+<li>svn(Not started, but basically the same story for the purposes of this
+system.)</li>
+</ul></li>
+<li>File Transfer Based
+<ul>
+<li>FTP(Not started, but really pretty easy, involves composing some commands
+and configuring some usernames/passwords/keys/etc.)</li>
+<li>SFTP(Not started, but basically maps onto ftp. Probably like, one
+additional line of code and a teeny bit of planning to support.)</li>
+</ul></li>
+<li>More Exotic, Sync, Filesharing oriented
+<ul>
+<li>gittorrent(Not started, Probably easy, but will require a change to the
+transport layer used by apt to treat git as a way of retrieving some
+information.)</li>
+<li>Zeronet(Experimental, broken, probably requires a change to the transport
+layer used by apt, see <a href="https://anonscm.debian.org/cgit/apt/apt.git/tree/methods">apt-transport-https</a>,
+<a href="https://github.com/diocles/apt-transport-tor">apt-transport-tor</a>.)</li>
+<li>bittorrent(Not started, probably will work with <a href="http://www.camrdale.org/apt-p2p/">apt-p2p</a>
+or <a href="http://debtorrent.alioth.debian.org/">debtorrent</a> with minimal to no
+modification. Might have to generate some magnet links. Probably going to
+conflict with Tor, but may be able to encourage use within i2p?)</li>
+<li>Freenet(Not started, but it would be really interesting to do freenet-as-
+eepsite via some sort of proxy, possibly? Similar complications to Zeronet,
+which I'll probably do first.)</li>
+</ul></li>
+<li>Self-Hosted, Local Network
+<ul>
+<li>i2p eepsites(Experimental, but it's easy, you can even manage it with git
+if you want.)</li>
+<li>lighttpd(Should be just a little less easy than i2p)</li>
+<li>Tor HS(Should be just a little less easy than i2p)</li>
+<li>aptly(Not started, I don't really get aptly but I learned about it in
+the context of reading documentation in what I'm pretty sure was Portuguese
+so I'm probably overthinking it.)</li>
+</ul></li>
+</ul>
+
+<h3>Misc Features</h3>
+
+<ul>
+<li>Output a site. Collect information from within the packages, list them in
+well-formatted markdown files, and emit the markdown into html files which
+link to eachother, also a sitemap. This is all really easy to do on the client
+side.</li>
+</ul>
+
+<h2>On Deck</h2>
+
+<ul>
+<li>Break more functionality into smaller chunks. Right now the generate
+function is huge and duplicates a pretty sizable amount of code. Write a
+generic function for building according to script, then existing spec, then
+guessing. This will make supporting more package types and more package
+building tools and techniques easier.</li>
+</ul>
+
+<h2>Related Projects</h2>
+
+<ul>
+<li><a href="http://mirrorer.alioth.debian.org/">Reprepro, obviously</a> for APT repo
+management</li>
+<li><a href="http://createrepo.baseurl.org/">Createrepo, also obviously</a>
+for YUM repo management</li>
+<li><a href="https://gitlab.com/fdroid/fdroidserver">Fdroidserver, also also obvious</a></li>
+<li><a href="https://github.com/jordansissel/fpm">Effing Package Management</a> Some
+packages depend on this, but it isn't in may repo's besides the ruby gems
+somewhat ironically.</li>
+<li>dh_make, live-build, lots of others, I mean it's a package management
+component, so it's loosely related to almost everything if it has to be.</li>
+</ul>
+
+<h2>Links</h2>
+
+<ul>
+<li><a href="https://www.godaddy.com/help/how-to-set-up-a-yum-repository-on-centos-6-12297">CreateRepo Tutorial</a></li>
+</ul>
+
+<h1>apt-git personal repository tool</h1>
+
+<p>This tool helps developers host their own applications by posting them to
+github pages for download.  </p>
+
+<pre><code>    -d \ --directory
+          Work in this directory, uses current directory by default
+     -o \ --origin
+          URL of the repository
+    -c \ --codename
+          Codename you want to use, defaults is \"testing\"
+    -a \ --arch
+          Architecture you want to host, defaults to \"all\"
+    -p \ --policy
+          Policy of packages you want to host, defaults to \"main\"
+    -k \ --key
+          ID of the package signing key
+    -s \ --sources
+          Folder with the packages to include in the repo
+    -q \ --override
+          Name of the override file
+    -m \ --message
+          Message to include in the commit
+    -c \ --check
+          Make sure the dependencies are installed
+    -r \ --reset
+          Re-generate all components of the repository
+    -u \ --user \ --org \ --organization
+          Us as user/organization page, post page to master branch
+    -h \ --help
+          Display this help message
+</code></pre>
+
+<p>to add this repository to your Debian-based system:  </p>
+
+<pre><code>    echo "deb https://cmotc.github.io/apt-git/debian unstable main" | sudo tee /etc/apt/source.list.d/cmotc.github.io.list
+    wget -qO - https://cmotc.github.io/apt-git/cmotc.github.io.gpg.key | sudo apt-key add -
+</code></pre>
+
+<p>In this repository, you'll find
+<ul>
+<li><p><a href="info/apt-now_20160625-1_all.deb.html">apt-git<em>20160625-1</em>all.deb </a> </p></li>
+<li><p><a href="info/pkpage_20160625-1_all.deb.html">pkpage<em>20160625-1</em>all.deb </a> </p></li>
+</ul>
+</p>
