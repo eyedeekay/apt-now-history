@@ -12,11 +12,11 @@ Build-Depends: debhelper (>= 9)
 Package-List:
  pkpage deb unknown optional arch=all
 Checksums-Sha1:
- f2d0ffddd792114241173b86266e68c13d4fbf58 676 pkpage_20160625.orig.tar.xz
- 04249e1976074fca1f9157f3e50fdfbbc6c9e479 3256 pkpage_20160625-1.debian.tar.xz
+ 922990d63530d41a28cff317ca06a1a0a86a7941 800 pkpage_20160625.orig.tar.xz
+ d52ae8f453e7ff96c4507dca8257ea653cd5a695 2648 pkpage_20160625-1.debian.tar.xz
 Checksums-Sha256:
- 61851d4897fc2d4b8877edc3e091ed5024e4c869404fae5d7a38764595392490 676 pkpage_20160625.orig.tar.xz
- 3b357e696230dcd767fcab557b324dfe9ccf23784a528cbb0a669d7843ce526d 3256 pkpage_20160625-1.debian.tar.xz
+ 57d2a3da1b01af876e3d368ac788de5bb7fd5fcf3c41f89abb479e9ec8876bb3 800 pkpage_20160625.orig.tar.xz
+ 72b5442426ac73aa99d79a533cb076ae2fb8832287dba105f351c8cd8732d757 2648 pkpage_20160625-1.debian.tar.xz
 Files:
- 6105449fcaf89f18ea7cfa6d5d9aacd4 676 pkpage_20160625.orig.tar.xz
- 4e9c6034873302225d7face8464f10bc 3256 pkpage_20160625-1.debian.tar.xz
+ 3891a64eb3453dbb0e7d57faa046f87a 800 pkpage_20160625.orig.tar.xz
+ 8fa3f0d1884fefc0dbb7d83b70380351 2648 pkpage_20160625-1.debian.tar.xz
