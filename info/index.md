@@ -4,8 +4,8 @@ rolling
 ------------
 ###amd64 i386 armhf
 ###main
-###
-###cmotc.github.io/apt-git
+###554DB437
+###cmotc.github.io
 ####Latest update: date
 
 
@@ -18,8 +18,8 @@ generator which emits apt repositories
 
 ###to add this repository to your Debian-based system:
 
-echo "deb https://cmotc.github.io/apt-git/apt-git/debian unstable main" | sudo tee /etc/apt/source.list.d/cmotc.github.io/apt-git.list
+echo "deb https://cmotc.github.io/apt-git/debian unstable main" | sudo tee /etc/apt/source.list.d/cmotc.github.io.list
 
-wget -q0 - https://cmotc.github.io/apt-git/apt-git/cmotc.github.io/apt-git.gpg.key | sudo apt-key add -
+wget -q0 - https://cmotc.github.io/apt-git/cmotc.github.io.gpg.key | sudo apt-key add -
 
 

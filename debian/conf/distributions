@@ -1,10 +1,10 @@
-Origin: cmotc.github.io/apt-git
-Label: cmotc.github.io/apt-git
+Origin: cmotc.github.io
+Label: cmotc.github.io
 Codename: rolling
 Architectures: amd64 i386 armhf
 Components: main
 Description: Repository for apt-now, a system for setting up apt repositories on
 static hosts.
-SignWith: 
+SignWith: 554DB437
 DebOverride: override.testing
 DscOverride: override.testing
