@@ -1,11 +1,11 @@
-Testing Repository
+apt-now
 ============
-testing
+rolling
 ------------
-###amd64 i386
+###amd64 i386 armhf
 ###main
-###Example
-###user.github.io
+###
+###cmotc.github.io/apt-git
 ####Latest update: date
 
 
@@ -18,8 +18,8 @@ generator which emits apt repositories
 
 ###to add this repository to your Debian-based system:
 
-echo "deb https://user.github.io/apt-git/debian unstable main" | sudo tee /etc/apt/source.list.d/user.github.io.list
+echo "deb https://cmotc.github.io/apt-git/apt-git/debian unstable main" | sudo tee /etc/apt/source.list.d/cmotc.github.io/apt-git.list
 
-wget -q0 - https://user.github.io/apt-git/user.github.io.gpg.key | sudo apt-key add -
+wget -q0 - https://cmotc.github.io/apt-git/apt-git/cmotc.github.io/apt-git.gpg.key | sudo apt-key add -
 
 

@@ -1,9 +1,10 @@
-Origin: user.github.io
-Label: user.github.io
-Codename: testing
-Architectures: amd64 i386
+Origin: cmotc.github.io/apt-git
+Label: cmotc.github.io/apt-git
+Codename: rolling
+Architectures: amd64 i386 armhf
 Components: main
-Description: This is a place where I put testable packages of my apps.
-SignWith: Example
+Description: Repository for apt-now, a system for setting up apt repositories on
+static hosts.
+SignWith: 
 DebOverride: override.testing
 DscOverride: override.testing
