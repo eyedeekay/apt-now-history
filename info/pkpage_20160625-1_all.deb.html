@@ -4,7 +4,7 @@
 
 <h3>Version: 20160625-1</h3>
 
-<h4>Maintainer: idk <a href="&#x6D;&#x61;i&#108;t&#x6F;:&#x65;&#x79;&#x65;&#100;&#x65;&#x65;&#x6B;&#97;&#x79;&#64;&#105;2&#112;&#109;&#97;&#x69;&#108;&#46;&#x6F;&#x72;&#103;">&#x65;&#x79;&#x65;&#100;&#x65;&#x65;&#x6B;&#97;&#x79;&#64;&#105;2&#112;&#109;&#97;&#x69;&#108;&#46;&#x6F;&#x72;&#103;</a></h4>
+<h4>Maintainer: idk <a href="&#x6D;&#x61;&#105;l&#x74;o:&#x65;&#121;&#x65;&#100;&#101;&#101;&#107;&#97;&#121;&#64;&#105;&#50;&#x70;&#109;a&#x69;&#x6C;&#46;&#x6F;&#114;&#103;">&#x65;&#121;&#x65;&#100;&#101;&#101;&#107;&#97;&#121;&#64;&#105;&#50;&#x70;&#109;a&#x69;&#x6C;&#46;&#x6F;&#114;&#103;</a></h4>
 
 <h4>Installed-Size: 32</h4>
 
@@ -16,5 +16,29 @@
 </ul>
 
 <h4>Priority: optional</h4>
+
+<p>size 3034 bytes: control archive=858 bytes.
+788 bytes,    17 lines      control <br />
+258 bytes,     4 lines      md5sums <br />
+Package: pkpage
+Version: 20160625-1
+Architecture: all
+Maintainer: idk <a href="&#x6D;&#x61;&#x69;&#x6C;&#x74;o:&#101;&#x79;&#101;&#x64;&#101;&#x65;k&#x61;&#121;&#64;&#105;&#50;&#x70;&#x6D;&#x61;&#105;l&#46;&#x6F;&#114;&#x67;">&#101;&#x79;&#101;&#x64;&#101;&#x65;k&#x61;&#121;&#64;&#105;&#50;&#x70;&#x6D;&#x61;&#105;l&#46;&#x6F;&#114;&#x67;</a>
+Installed-Size: 32
+Depends: markdown
+Section: unknown
+Priority: optional
+Homepage: https://cmotc.github.io/pkpage/</p>
+
+<h3>Description:</h3>
+
+<p>[ Generates a Markdown-formatted description of a software package
+and a corresponding html page. For use with my repo generator, apt-git so that
+it can generate package description pages automatically and make the
+repositories easier to browse. It's a very, very basic little script. I don't
+intend to expand it or make it smarter, instead I'm going to use it by
+redirecting it's output and processing that. It uses dpkg --info to read the
+contents of your debian package, grep and sed, and doesn't need bash, so it
+should run fine on any Debian-based system.</p>
 
 <h2>Homepage:<a href="https://cmotc.github.io/pkpage/"> https://cmotc.github.io/pkpage/ </a></h2>
