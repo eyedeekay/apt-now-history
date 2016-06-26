@@ -1,0 +1,90 @@
+Package: apt-git
+Version: 20160625-1
+Architecture: all
+Maintainer: idk <eyedeekay@i2pmail.org>
+Installed-Size: 37
+Depends: markdown, reprepro
+Homepage: https://cmotc.github.io/apt-git/
+Priority: optional
+Section: unknown
+Filename: pool/main/a/apt-git/apt-git_20160625-1_all.deb
+Size: 5208
+SHA256: 873863201031081c0209c55e7d7498590eb3bc34d3badf7e877e15b2ddb783d6
+SHA1: c4512b98addfefa7e6e15f85767b5b6e03ae1210
+MD5sum: b54d2e5dd2f094c3850c138f4910ac7e
+Description: A tool for setting up and hosting an apt repository using arbitrary
+ http/s hosts to make files accessible with extra features for git-enabled
+ hosting sites.
+ .
+ This tool, currently called apt-git but soon to be changed to apt-now, then
+ repo-git, then repo-now, is essentially a static site generator geared
+ toward generating and formatting a specific type of content in a specific type
+ of way, the content being GNU/Linux or Android/Linux binary packages, and the
+ format being a signed repository accessible from the web or something like
+ it  (It can also, for instance, be used to statically host software
+ repositories over i2p with no substantial modification.) It does this by taking
+ advantage of the structural regularity of these types of resources and
+ constructs the whole site on the client side, transmitting content to the
+ server only after a valid repository has been built. This means that the server
+ doesn't have to run any code at all to present the site to the end-user taking
+ advantage of the resource over the web, doesn't need to support ssh or remote
+ desktop, and doesn't even technically need to support ftp or git, as long as a
+ way of transferring the repository to the remote storage service can be
+ included in the program.
+
+Package: apt-now
+Version: 20160625-1
+Architecture: all
+Maintainer: idk <eyedeekay@i2pmail.org>
+Installed-Size: 37
+Depends: markdown, reprepro
+Homepage: https://cmotc.github.io/apt-git/
+Priority: optional
+Section: admin
+Filename: pool/main/a/apt-now/apt-now_20160625-1_all.deb
+Size: 5212
+SHA256: e576a5378ba12554abd5cc7df4fef2c9e3858044530c4408cff0e81141b98c16
+SHA1: ca2a7820f84142497e58e5a584b5e37aeb548309
+MD5sum: c03a6943b06f39ce9a48a1484e1dfdb2
+Description: A tool for setting up and hosting an apt repository using arbitrary
+ http/s hosts to make files accessible with extra features for git-enabled
+ hosting sites.
+ .
+ This tool, currently called apt-now but soon to be changed to repo-now, is
+ essentially a static site generator geared toward generating and formatting a
+ specific type of content in a specific type of way, the content being GNU/Linux
+ or Android/Linux binary packages, and the format being a signed repository
+ accessible from the web or something like  it  (It can also, for instance, be
+ used to statically host software  repositories over i2p with no substantial
+ modification.) It does this by taking  advantage of the structural regularity
+ of these types of resources and  constructs the whole site on the client side,
+ transmitting content to the  server only after a valid repository has been
+ built. This means that the server  doesn't have to run any code at all to
+ present the site to the end-user taking advantage of the resource over the web,
+ doesn't need to support ssh or remote desktop, and doesn't even technically
+ need to support ftp or git, as long as a way of transferring the repository to
+ the remote storage service can be included in the program.
+
+Package: pkpage
+Version: 20160625-1
+Architecture: all
+Maintainer: idk <eyedeekay@i2pmail.org>
+Installed-Size: 32
+Depends: markdown
+Homepage: https://cmotc.github.io/pkpage/
+Priority: optional
+Section: unknown
+Filename: pool/main/p/pkpage/pkpage_20160625-1_all.deb
+Size: 3142
+SHA256: 39c6e647eeebb1ef4b0bc5f4fe7a952fc71995ef7e0ac7396d20a345594889cb
+SHA1: 5614fa4300dcb15dd5b78cbb30e6848bd16c1ada
+MD5sum: e72df00693605724dffa1e7fd5d7cc45
+Description: Generates a Markdown-formatted description of a software package
+ and a corresponding html page. For use with my repo generator, apt-git so that
+ it can generate package description pages automatically and make the
+ repositories easier to browse. It's a very, very basic little script. I don't
+ intend to expand it or make it smarter, instead I'm going to use it by
+ redirecting it's output and processing that. It uses dpkg --info to read the
+ contents of your debian package, grep and sed, and doesn't need bash, so it
+ should run fine on any Debian-based system.
+

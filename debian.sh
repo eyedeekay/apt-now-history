@@ -6,7 +6,7 @@ SOURCEDOC=README.md
 DEBFOLDER=apt-now
 DEBVERSION=$(date +%Y%m%d)
 CONTROL_FILE="Source: apt-now
-Section: unknown
+Section: admin
 Priority: optional
 Maintainer: idk <eyedeekay@i2pmail.org>
 Build-Depends: debhelper (>= 9)
@@ -45,7 +45,7 @@ cd $DEBFOLDER
 mkdir $DEBFOLDERNAME
 
 # Copy your script to the source dir
-cp $SOURCEBINPATH/$SOURCEBIN $DEBFOLDERNAME
+cp $SOURCEBINPATH/$SOURCEBIN $DEBFOLDERNAME/$DEBFOLDER
 cd $DEBFOLDERNAME
 
 # Create the packaging skeleton (debian/*)
@@ -58,7 +58,7 @@ mv debian/rules.new debian/rules
 
 # debian/install must contain the list of scripts to install
 # as well as the target directory
-echo $SOURCEBIN usr/bin > debian/install
+echo $DEBFOLDER usr/bin > debian/install
 #echo $SOURCEDOC usr/share/doc/apt-git >> debian/install
 
 # Remove the example files

@@ -11,6 +11,8 @@ rolling
 
   * [apt-git_20160625-1_all.deb ](info/apt-git_20160625-1_all.deb.html) 
 
+  * [apt-now_20160625-1_all.deb ](info/apt-now_20160625-1_all.deb.html) 
+
   * [pkpage_20160625-1_all.deb ](info/pkpage_20160625-1_all.deb.html) 
 
 This repository was generated with [apt-git](https://cmotc.github.io/apt-git), a static site
