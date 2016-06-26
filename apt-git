@@ -181,7 +181,7 @@ gendistrofile(){
 	echo "Codename: $CODENAME"	>> "$CONFDIR/distributions"
 	echo "Architectures: $REPOARCH"	>> "$CONFDIR/distributions"
 	echo "Components: $POLICY"	>> "$CONFDIR/distributions"
-	echo "Description: $REPODESC"	>> "$CONFDIR/distributions"
+	#echo "Description: $REPODESC"	>> "$CONFDIR/distributions"
 	echo "SignWith: $KEY"		>> "$CONFDIR/distributions"
 	echo "DebOverride: $OVERRIDE"	>> "$CONFDIR/distributions"
 	echo "DscOverride: $OVERRIDE"	>> "$CONFDIR/distributions"
