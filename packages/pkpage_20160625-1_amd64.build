@@ -13,8 +13,35 @@ dh clean
  dpkg-source -b pkpage-20160625
 dpkg-source: info: using source format `3.0 (quilt)'
 dpkg-source: info: building pkpage using existing ./pkpage_20160625.orig.tar.xz
-dpkg-source: info: local changes detected, the modified files are:
- pkpage-20160625/pkpage
-dpkg-source: error: aborting due to unexpected upstream changes, see /tmp/pkpage_20160625-1.diff.lc32P3
-dpkg-source: info: you can integrate the local changes with dpkg-source --commit
-dpkg-buildpackage: error: dpkg-source -b pkpage-20160625 gave error exit status 2
+dpkg-source: info: building pkpage in pkpage_20160625-1.debian.tar.xz
+dpkg-source: info: building pkpage in pkpage_20160625-1.dsc
+ debian/rules build
+dh build 
+   dh_testdir
+   dh_auto_configure
+   dh_auto_build
+   dh_auto_test
+ fakeroot debian/rules binary
+dh binary 
+   dh_testroot
+   dh_prep
+   dh_auto_install
+   dh_install
+   dh_installdocs
+   dh_installchangelogs
+   dh_perl
+   dh_link
+   dh_compress
+   dh_fixperms
+   dh_installdeb
+   dh_gencontrol
+   dh_md5sums
+   dh_builddeb
+dpkg-deb: building package `pkpage' in `../pkpage_20160625-1_all.deb'.
+ dpkg-genchanges  >../pkpage_20160625-1_amd64.changes
+dpkg-genchanges: including full source code in upload
+ dpkg-source --after-build pkpage-20160625
+dpkg-buildpackage: full upload (original source is included)
+Now running lintian...
+Could not find a profile matching "{VENDOR}/main" for vendor devuan at /usr/bin/lintian line 979.
+Finished running lintian.
