@@ -135,6 +135,9 @@ CONFDIR="$CURDIR/debian/conf"
 INFODIR="$CURDIR/info"
 if [ ! -d "$INFODIR" ]; then
         mkdir -p "$INFODIR"
+else
+        \rm -rf "$INFODIR"
+        mkdir -p "$INFODIR"
 fi
 
 confirm(){
