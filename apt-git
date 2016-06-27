@@ -209,6 +209,7 @@ includepackages(){
 		TITLE="$f"
 		hdpage > $INFODIR/$f.html
                 pkpage-html -f $f >> $INFODIR/$f.html
+                echo "</html>" >> $INFODIR/$f.html
         done
 	for f in *.dsc ; do
                 reprepro --basedir $BASEDIR includedsc $CODENAME "$f";
@@ -254,6 +255,7 @@ generator which emits apt repositories
         export TITLE="$REPONAME"
         hdpage > index.html
         markdown $INFODIR/index.md >> $CURDIR/index.html
+        echo "</html>" >> $CURDIR/index.html
 }
 
 if [ "$H" = "YES" ]; then
