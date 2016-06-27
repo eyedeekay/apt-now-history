@@ -3,6 +3,14 @@ apt-now
 A tool for setting up and hosting an apt repository using arbitrary http/s hosts to
 make files accessible with extra features for git-enabled hosting sites.
 
+usage
+-----
+
+For usage help, [go here](https://cmotc.github.io/apt-git/).
+
+Details
+-------
+
 This tool, currently called apt-now but soon to be changed to repo-now, is
 essentially a static site generator geared toward generating and
 formatting a specific type of content in a specific type of way, the content being
