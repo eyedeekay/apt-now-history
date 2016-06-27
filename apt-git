@@ -198,6 +198,7 @@ genconfoptions(){
 }
 
 generaterkey(){
+        KEYNAME=$(echo $ORIGIN | tr "/" ".")
 	gpg --armor --output "$CURDIR/$ORIGIN.gpg.key" --export $KEY
 }
 
@@ -248,7 +249,9 @@ generator which emits apt repositories
         cd ..
         #echo $INDEX_FOOTER >> $INFODIR/index.md
         echo "$INDEX_FOOTER" | sed -e 's/^[ \t]*//' >> $INFODIR/index.md
-        markdown $INFODIR/index.md > $CURDIR/index.html
+        export TITLE="$REPONAME"
+        hdpage > index.html
+        markdown $INFODIR/index.md >> $CURDIR/index.html
 }
 
 if [ "$H" = "YES" ]; then
