@@ -6,7 +6,7 @@ make files accessible with extra features for git-enabled hosting sites.
 usage
 -----
 
-For usage help, [go here](https://cmotc.github.io/apt-git/).
+For usage help, [go here](https://cmotc.github.io/apt-git/usage.html).
 
 Details
 -------
