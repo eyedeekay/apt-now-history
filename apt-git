@@ -206,7 +206,9 @@ includepackages(){
 	cd $SRCDIR
 	for f in *.deb ; do
                 reprepro --basedir $BASEDIR includedeb $CODENAME "$f";
-                pkpage-html -f $f > $INFODIR/$f.html
+		TITLE="$f"
+		hdpage > $INFODIR/$f.html
+                pkpage-html -f $f >> $INFODIR/$f.html
         done
 	for f in *.dsc ; do
                 reprepro --basedir $BASEDIR includedsc $CODENAME "$f";
