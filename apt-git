@@ -1,7 +1,6 @@
-#! /bin/sh
+﻿#! /bin/sh
 DRY_RUN="NO"
 RESET="NO"
-CHECK="YES"
 
 pwd
 
@@ -23,7 +22,7 @@ elif [ -f ./pkpage.sh ]; then
 fi
 SRCDIR="$CURDIR/packages"
 
-. "./aptgit.conf"
+. "./aptnow.conf"
 
 while [ "$#" -gt 0 ]; do
 	arg="$1"
@@ -88,12 +87,12 @@ while [ "$#" -gt 0 ]; do
 	esac
 	shift
 done
-
+KEYNAME=$(echo $ORIGIN | tr "/" ".")
 HELP="
-apt-git personal repository tool\n
+apt-now personal repository tool\n
 ================================\n
 This tool helps developers host their own applications by posting them to \n
-github pages for download. \n
+static pages for download. \n
 \t	-d \ --directory\n
 \t\t		Work in this directory, uses current directory by default\n
 \t	-o \ --origin\n
@@ -126,8 +125,8 @@ github pages for download. \n
 \t\t		Display this help message\n
 
 to add this repository to your Debian-based system:\n
-\t\t	echo \"deb https://$ORIGIN/apt-git/debian unstable main\" | sudo tee /etc/apt/source.list.d/$ORIGIN.list\n
-\t	wget -q0 - https://$ORIGIN/apt-git/$ORIGIN.gpg.key | sudo apt-key add -\n
+\t\t	echo \"deb https://$ORIGIN/debian unstable main\" | sudo tee /etc/apt/source.list.d/$ORIGIN.list\n
+\t	wget -q0 - https://$ORIGIN/$KEYNAME.gpg.key | sudo apt-key add -\n
 "
 
 BASEDIR="$CURDIR/debian"
@@ -199,7 +198,7 @@ genconfoptions(){
 
 generaterkey(){
         KEYNAME=$(echo $ORIGIN | tr "/" ".")
-	gpg --armor --output "$CURDIR/$ORIGIN.gpg.key" --export $KEY
+	gpg --armor --output "$CURDIR/$KEYNAME.gpg.key" --export $KEY
 }
 
 includepackages(){
@@ -222,6 +221,7 @@ includepackages(){
 }
 
 constructindex(){
+    KEYNAME=$(echo $ORIGIN | tr "/" ".")
         INDEX_HEADER="$REPONAME\n
 ============\n
 $CODENAME\n
@@ -239,8 +239,8 @@ generator which emits apt repositories
 
 ###to add this repository to your Debian-based system:
 
-        echo \"deb https://$ORIGIN/apt-git/debian unstable main\" | sudo tee /etc/apt/source.list.d/$ORIGIN.list\n
-        wget -q0 - https://$ORIGIN/apt-git/$ORIGIN.gpg.key | sudo apt-key add -\n
+        echo \"deb https://$ORIGIN/debian unstable main\" | sudo tee /etc/apt/source.list.d/$KEYNAME.list\n
+        wget -q0 - https://$ORIGIN/$KEYNAME.gpg.key | sudo apt-key add -\n
 "
         echo $INDEX_HEADER | sed -e 's/^[ \t]*//' > $INFODIR/index.md
         echo $INDEX_DETAILS | sed -e 's/^[ \t]*//' >> $INFODIR/index.md
