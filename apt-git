@@ -1,6 +1,7 @@
 ﻿#! /bin/sh
 DRY_RUN="NO"
 RESET="NO"
+POSSIBLE_EXTANT_KEY=$(ls *.gpg.key)
 
 pwd
 
@@ -197,8 +198,11 @@ genconfoptions(){
 }
 
 generaterkey(){
-        KEYNAME=$(echo $ORIGIN | tr "/" ".")
-	gpg --armor --output "$CURDIR/$KEYNAME.gpg.key" --export $KEY
+    if [ $POSSIBLE_EXTANT_KEY != $KEYNAME.gpg.key ]; then
+	    gpg --armor --output "$CURDIR/$KEYNAME.gpg.key" --export $KEY
+	elif [ ! -f $KEYNAME.gpg.key ]; then
+        gpg --armor --output "$CURDIR/$KEYNAME.gpg.key" --export $KEY
+	fi
 }
 
 includepackages(){
@@ -221,7 +225,6 @@ includepackages(){
 }
 
 constructindex(){
-    KEYNAME=$(echo $ORIGIN | tr "/" ".")
         INDEX_HEADER="$REPONAME\n
 ============\n
 $CODENAME\n
