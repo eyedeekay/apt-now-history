@@ -1,4 +1,4 @@
-apt-now
+﻿apt-now
 -------
 A tool for setting up and hosting an apt repository using arbitrary http/s hosts to
 make files accessible with extra features for git-enabled hosting sites.
@@ -24,10 +24,6 @@ to run any code at all to present the site to the end-user taking advantage of t
 resource over the web, doesn't need to support ssh or remote desktop, and doesn't even
 technically need to support ftp or git, as long as a way of transferring the
 repository to the remote storage service can be included in the program.
-
-**IMPORTANT:** When cloning this repository, be sure to specify "-b master" or
-you'll be cloning my live copy. I'm working on moving them to a separate
-instance and the gh-pages will be cleaned and become the de-facto master.
 
 Use Cases
 ---------
