@@ -1,9 +1,11 @@
 #! /bin/sh
 # Configure your paths and filenames
 SOURCEBINPATH=.
-SOURCEBIN=apt-git
+SOURCEBIN=apt-now
 SOURCEDOC=README.md
 DEBFOLDER=apt-now
+UHTTPD=uhttpd.go
+UHTTPD_BIN=httpd-now
 DEBVERSION=$(date +%Y%m%d)
 CONTROL_FILE="Source: apt-now
 Section: admin
@@ -46,7 +48,9 @@ mkdir $DEBFOLDERNAME
 
 # Copy your script to the source dir
 cp $SOURCEBINPATH/$SOURCEBIN $DEBFOLDERNAME/$DEBFOLDER
+cp $SOURCEBINPATH/$UHTTPD $DEBFOLDERNAME/$UHTTPD
 cd $DEBFOLDERNAME
+gccgo $UHTTPD -o $UHTTPD_BIN
 
 # Create the packaging skeleton (debian/*)
 dh_make -s --indep --createorig

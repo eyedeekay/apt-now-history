@@ -121,11 +121,13 @@ polyglot(But probably not agnostic) way.
 	- Freenet(Not started, but it would be really interesting to do freenet-as-
 	eepsite via some sort of proxy, possibly? Similar complications to Zeronet,
 	which I'll probably do first.)
-  * Self-Hosted, Local Network
+  * Self-Hosted
+    - Self Hosting with local static httpd written in go. Stupid easy to turn
+	on, just build the web site with the -l / --serve command line option
+	or the START_HTTPD option in the config file/environment variable.
     - i2p eepsites(Experimental, but it's easy, you can even manage it with git
 	if you want.)
-    - lighttpd(Should be just a little less easy than i2p)
-	- Tor HS(Should be just a little less easy than i2p)
+    - Tor HS(Should be just a little less easy than i2p)
     - aptly(Not started, I don't really get aptly but I learned about it in
 	the context of reading documentation in what I'm pretty sure was Portuguese
 	so I'm probably overthinking it.)
@@ -197,6 +199,8 @@ github pages for download.
                 Re-generate all components of the repository\n
         -u \ --user \ --org \ --organization\n
                 Us as user/organization page, post page to master branch\n
+        -l \ --serve
+                Serve with a local, static httpd on port 45291(debia).
         -h \ --help\n
                 Display this help message\n
 

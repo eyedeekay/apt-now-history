@@ -2,7 +2,7 @@
 DRY_RUN="NO"
 RESET="NO"
 POSSIBLE_EXTANT_KEY=$(ls *.gpg.key)
-
+START_HTTPD="now"
 pwd
 
 CURDIR=$(pwd)
@@ -81,6 +81,9 @@ while [ "$#" -gt 0 ]; do
 		-u|--user|--org|--organization)
 			ORG="YES"
 		;;
+                -l|--serve)
+			START_HTTPD="YES"
+		;;
 		-h|--help)
 			H="YES"
 			DRY_RUN="YES"
@@ -122,6 +125,8 @@ static pages for download. \n
 \t\t		Re-generate all components of the repository\n
 \t	-u \ --user \ --org \ --organization\n
 \t\t		Us as user/organization page, post page to master branch\n
+\t	-l \ --serve\n
+\t\t		Serve with a local, static httpd on port 45291(debia).
 \t	-h \ --help\n
 \t\t		Display this help message\n
 
@@ -207,7 +212,7 @@ generaterkey(){
         if [ $(diff $CURDIR/$KEYNAME.gpg.key.tmp $POSSIBLE_EXTANT_KEY) ]; then
             mv $CURDIR/$KEYNAME.gpg.key.tmp $CURDIR/$KEYNAME.gpg.key
         fi
-	fi
+    fi
 }
 
 includepackages(){
@@ -310,4 +315,12 @@ if [ "$DRY_RUN" = "NO" ]; then
 	else
 		echo "Fatal Error, packages not found in package source directory"
 	fi
+fi
+
+if [ "$START_HTTPD" = "YES" ]; then
+    if [ -f /usr/bin/httpd-now ]; then
+        httpd-now -dir="." -addr=":45291" &
+    elif [ -f ./httpd-now ]; then
+        ./httpd-now -dir="." -addr=":45291" &
+    fi
 fi
