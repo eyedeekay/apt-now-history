@@ -224,7 +224,7 @@ includepackages(){
 	cd $SRCDIR
 	for f in *.deb ; do
                 reprepro --basedir $BASEDIR includedeb $CODENAME "$f";
-		TITLE="$f"
+		export TITLE="$f"
                 pkpage-html -f $f >> $INFODIR/$f.html
         done
 	for f in *.dsc ; do
@@ -278,16 +278,16 @@ generator which emits apt repositories
         echo \"deb https://$ORIGIN/debian unstable main\" | sudo tee /etc/apt/source.list.d/$KEYNAME.list\n
         wget -q0 - https://$ORIGIN/$KEYNAME.gpg.key | sudo apt-key add -\n
 "
-        echo $INDEX_HEADER | sed -e 's/^[ \t]*//' > $INFODIR/index.md
-        echo $INDEX_DETAILS | sed -e 's/^[ \t]*//' >> $INFODIR/index.md
+        echo -e $INDEX_HEADER | sed -e 's/^[ \t]*//' > $INFODIR/index.md
+        echo -e $INDEX_DETAILS | sed -e 's/^[ \t]*//' >> $INFODIR/index.md
         cd $INFODIR
 	for f in *.html ; do
                 TRIMMED_CLEAN=$(echo $f | sed -e 's/.html/ /')
-                echo "  * [$TRIMMED_CLEAN](info/$f) \n" >> $INFODIR/index.md
+                echo -e "  * [$TRIMMED_CLEAN](info/$f) \n" >> $INFODIR/index.md
         done
         cd ..
         #echo $INDEX_FOOTER >> $INFODIR/index.md
-        echo "$INDEX_FOOTER" | sed -e 's/^[ \t]*//' >> $INFODIR/index.md
+        echo -e "$INDEX_FOOTER" | sed -e 's/^[ \t]*//' >> $INFODIR/index.md
         export TITLE="$REPONAME"
         hdpage > index.html
         markdown $INFODIR/index.md >> $CURDIR/index.html
