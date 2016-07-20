@@ -1,0 +1,8 @@
+Origin: cmotc.github.io
+Label: cmotc.github.io
+Codename: rolling
+Architectures: amd64 i386 armhf
+Components: main
+SignWith: 554DB437
+DebOverride: override.testing
+DscOverride: override.testing
