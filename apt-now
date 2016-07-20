@@ -209,9 +209,14 @@ generaterkey(){
     fi
     if [ -f $POSSIBLE_EXTANT_KEY ]; then
         gpg --armor --output "$CURDIR/$KEYNAME.gpg.key.tmp" --export $KEY
-        if [ $(diff $CURDIR/$KEYNAME.gpg.key.tmp $POSSIBLE_EXTANT_KEY) ]; then
+        if [ $(diff $CURDIR/$KEYNAME.gpg.key.tmp $POSSIBLE_EXTANT_KEY) != "" ]; then
+            mv $CURDIR/$KEYNAME.gpg.key.tmp $CURDIR/$KEYNAME.gpg.key
+        elif [ ! -f "$CURDIR/$KEYNAME.gpg.key" ]; then
             mv $CURDIR/$KEYNAME.gpg.key.tmp $CURDIR/$KEYNAME.gpg.key
         fi
+    fi
+    if [ -f "$CURDIR/$KEYNAME.gpg.key" ]; then
+        \rm $CURDIR/$KEYNAME.gpg.key.tmp
     fi
 }
 
