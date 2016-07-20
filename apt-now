@@ -345,5 +345,8 @@ if [ "$START_HTTPD" = "YES" ]; then
         httpd-now -dir="." -addr=":45291" &
     elif [ -f ./httpd-now ]; then
         ./httpd-now -dir="." -addr=":45291" &
+    elif [ -f ./uhttpd.go ]; then
+        gccgo uhttpd.go -o httpd-now
+        ./httpd-now -dir="." -addr=":45291" &
     fi
 fi
