@@ -1,5 +1,5 @@
 Package: apt-now
-Version: 20160627-1
+Version: 20160719-1
 Architecture: all
 Maintainer: idk <eyedeekay@i2pmail.org>
 Installed-Size: 38
@@ -7,11 +7,11 @@ Depends: markdown, reprepro
 Homepage: https://cmotc.github.io/apt-git/
 Priority: optional
 Section: admin
-Filename: pool/main/a/apt-now/apt-now_20160627-1_all.deb
-Size: 5276
-SHA256: 32cbcdd8b3b67d6787ead2b0152a94b089d8805e8a724aecc1cb598cc02d8ba9
-SHA1: d56ddbe4f7439f39bfd246044163fe3aabb8ef56
-MD5sum: 08186b93201ac726241d9a1f080fe9dd
+Filename: pool/main/a/apt-now/apt-now_20160719-1_all.deb
+Size: 5482
+SHA256: 1bfaf293b271e798734db384555b1e37e6412cd14fd5006ab5cb878ed34c9dd3
+SHA1: 01fd6163f7165222de0cb0e139d7a1571ad6ad90
+MD5sum: d029ba2cef3de7e94bdb4d4be340d1af
 Description: A tool for setting up and hosting an apt repository using arbitrary
  http/s hosts to make files accessible with extra features for git-enabled
  hosting sites.
