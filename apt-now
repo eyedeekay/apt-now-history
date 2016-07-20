@@ -220,7 +220,7 @@ includepackages(){
 	for f in *.deb ; do
                 reprepro --basedir $BASEDIR includedeb $CODENAME "$f";
 		TITLE="$f"
-                pkpage-wrap -f $f >> $INFODIR/$f.html
+                pkpage-html -f $f >> $INFODIR/$f.html
         done
 	for f in *.dsc ; do
                 reprepro --basedir $BASEDIR includedsc $CODENAME "$f";
