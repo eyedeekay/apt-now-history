@@ -146,7 +146,7 @@ polyglot(But probably not agnostic) way.
 Screenshot
 ----------
 
-![apt-now hosted 4 ways](aptnow-4.png)
+![apt-now hosted 4 ways](aptnow-4.png "Packageception")
 
 On Deck
 -------
