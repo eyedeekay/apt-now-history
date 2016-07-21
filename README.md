@@ -6,7 +6,7 @@ make files accessible with extra features for git-enabled hosting sites.
 usage
 -----
 
-For usage help, [go here](https://cmotc.github.io/apt-git/usage.html).
+For usage help, [go here](usage.html).
 
 Details
 -------
@@ -64,7 +64,7 @@ Right now, binary repository generation for Debian(APT Repositories) is stable a
 source repository generation for Debian/Apt is nearing stability and are in usuable
 form. While these are the only working types of repositories, the pre-hyphenate part
 of this project's name will be "apt." Additionally, while an end user could use any
-means to transfer the repository constructed by the apt-git tool, there is currently
+means to transfer the repository constructed by the apt-now tool, there is currently
 only support for the use of github-pages as a hosting medium in the code. While this
 remains the case the post-hyphenate part of this project's name will be "git." When
 experimental support for F-Droid and Redhat(Yellowdog Updater) are complete,
@@ -74,7 +74,7 @@ polyglot(But probably not agnostic) way.
 
 ###Repository Types
   * Debian/APT
-    - Binary Repository(Complete, Stable)
+    - Binary Repository(Complete, Stable, Generates Web Pages from package info)
     - Source Repository(Final stages, Unstable)
     - Notes: Depends on normal debian tools, including reprepro
   * Android/F-Droid
@@ -94,8 +94,7 @@ polyglot(But probably not agnostic) way.
 ###Transport Types
   * Version-Controlled
     - git(Complete as a way up updating the server, but can't be used to
-	retrieve individual software packages or update software. Might be possible
-	to implement as a method driver? That would be cool. Also cloning is pretty
+	retrieve individual software packages or update software. Cloning is pretty
 	much like making an instant mirror, which is cool.)
 	- hg(Not started, but straightforward. Pretty much the same as the git code
 	with very little alteration, just some transliterating of commands with
@@ -125,12 +124,18 @@ polyglot(But probably not agnostic) way.
     - Self Hosting with local static httpd written in go. Stupid easy to turn
 	on, just build the web site with the -l / --serve command line option
 	or the START_HTTPD option in the config file/environment variable.
-    - i2p eepsites(Experimental, but it's easy, you can even manage it with git
-	if you want.)
-    - Tor HS(Should be just a little less easy than i2p)
-    - aptly(Not started, I don't really get aptly but I learned about it in
-	the context of reading documentation in what I'm pretty sure was Portuguese
-	so I'm probably overthinking it.)
+    - i2p eepsites are now also supported, and in fact this exact repository is
+	mirrored at [fireaxe.i2p/apt-now](http://fireaxe.i2p/apt-now), or
+	[ov3ev5dplhdz6ipy442ftb4kzz4dembm3ifs2jo25qhiyw6f4ogq.b32.i2p/apt-now](http://ov3ev5dplhdz6ipy442ftb4kzz4dembm3ifs2jo25qhiyw6f4ogq.b32.i2p/apt-now)
+	if you need the b32 address. These are not set up automatically yet, but
+	all you have to do is point your eepsite at the apt-now directory.
+    - Tor HS are now also supported and automatic, and they are also available
+	as a mirror at [hmuc3ffhrehwuenz.onion/apt-now](http://hmuc3ffhrehwuenz.onion/apt-now)
+	to prove the concept. These must be configured using the config file,
+	using the USE\_TOR and LOCAL\_ONLY\_HTTPD options in conjunction with
+	the START_HTTPD option. If you're only interested in making packages
+	available to Tor users and not your own anonymity, you can omit
+	LOCAL\_ONLY\_HTTPD.
 
 ###Misc Features
   * Output a site. Collect information from within the packages, list them in
@@ -166,7 +171,7 @@ Links
 -----
   * [CreateRepo Tutorial](https://www.godaddy.com/help/how-to-set-up-a-yum-repository-on-centos-6-12297)
 
-apt-git personal repository tool
+apt-now personal repository tool
 ================================
 This tool helps developers host their own applications by posting them to
 github pages for download.
@@ -206,6 +211,11 @@ github pages for download.
 
 to add this repository to your Debian-based system:
 
-        echo "deb https://cmotc.github.io/apt-git/debian unstable main" | sudo tee /etc/apt/source.list.d/cmotc.github.io.list
-        wget -qO - https://cmotc.github.io/apt-git/cmotc.github.io.gpg.key | sudo apt-key add -
+        echo "deb https://cmotc.github.io/apt-now/debian unstable main" | sudo tee /etc/apt/source.list.d/cmotc.github.io.list
+        wget -qO - https://cmotc.github.io/apt-now/cmotc.github.io.gpg.key | sudo apt-key add -
+
+In this respository, you'll find
+
+  * (the latest apt-now)[info/apt-now_20160719-1_all.deb.html]
+  * (the pkpage helper)[info/pkpage_20160719-1_all.deb.html]
 

@@ -1,9 +1,16 @@
-<h1>apt-now</h1>
+<h2>﻿apt-now</h2>
 
 <p>A tool for setting up and hosting an apt repository using arbitrary http/s hosts to
 make files accessible with extra features for git-enabled hosting sites.</p>
 
-<p>This tool, currently called apt-now is essentially a static site generator geared toward generating and
+<h2>usage</h2>
+
+<p>For usage help, <a href="usage.html">go here</a>.</p>
+
+<h2>Details</h2>
+
+<p>This tool, currently called apt-now but soon to be changed to repo-now, is
+essentially a static site generator geared toward generating and
 formatting a specific type of content in a specific type of way, the content being
 GNU/Linux or Android/Linux binary packages, and the format being a signed repository
 accessible from the web or something like it(It can also, for instance, be used to
@@ -16,10 +23,6 @@ resource over the web, doesn't need to support ssh or remote desktop, and doesn'
 technically need to support ftp or git, as long as a way of transferring the
 repository to the remote storage service can be included in the program.</p>
 
-<h2>Usage Instructions</h2>
-
-<p>See <a href="usage.html">this page.</a></p>
-
 <h2>Use Cases</h2>
 
 <ul>
@@ -27,8 +30,7 @@ repository to the remote storage service can be included in the program.</p>
 this program to host their own packages in a way which allows them to use
 their package management interface, encourages them to learn more about their
 choices of software and GNU/Linux distributions, and which provides an easy
-way for them to back up their configuration. For more info on this use case,
-check out the article series on my personal blog.</li>
+way for them to back up their configuration.</li>
 <li>Educational Use: Educational and corporate training programs which work with
 Open-Source projects can use this program to host code repositories for
 employees during training, and in turn their trainers and supervisors can
@@ -55,25 +57,6 @@ tools like dh_make or fpm to roll out an instant package repository when a
 program is ready for testing with a wider audience.</li>
 </ul>
 
-<h2>Usage</h2>
-
-<p>For now, only APT(Debian) repositories are fully functioning, but the idea is
-that you create the config file(apt-git.conf), build the packages and put them
-in the package folder, then run the script. Alternatively, you can specify all
-the configuration options at the terminal if you want. Signing is enabled by
-default, and if you don't have a key in the repository one will be generated for
-you. Currently, if you already have a key in the repository it will ask if you
-want to overwrite the key. If you've specified the key you want to use in the
-config file, then this choice will have no effect. It's actually really easy to
-use.</p>
-
-<ul>
-<li>Clone the repo.</li>
-<li>Create apt-git.conf</li>
-<li>Add your packages to ./packages/</li>
-<li>run ./apt-now</li>
-</ul>
-
 <h2>Versioning and Features</h2>
 
 <p>Right now, binary repository generation for Debian(APT Repositories) is stable and
@@ -93,7 +76,7 @@ polyglot(But probably not agnostic) way.</p>
 <ul>
 <li>Debian/APT
 <ul>
-<li>Binary Repository(Complete, Stable)</li>
+<li>Binary Repository(Complete, Stable, Generates Web Pages from package info)</li>
 <li>Source Repository(Final stages, Unstable)</li>
 <li>Notes: Depends on normal debian tools, including reprepro</li>
 </ul></li>
@@ -122,8 +105,7 @@ seems to be astoundingly simple.)</li>
 <li>Version-Controlled
 <ul>
 <li>git(Complete as a way up updating the server, but can't be used to
-retrieve individual software packages or update software. Might be possible
-to implement as a method driver? That would be cool. Also cloning is pretty
+retrieve individual software packages or update software. Cloning is pretty
 much like making an instant mirror, which is cool.)</li>
 <li>hg(Not started, but straightforward. Pretty much the same as the git code
 with very little alteration, just some transliterating of commands with
@@ -154,15 +136,23 @@ conflict with Tor, but may be able to encourage use within i2p?)</li>
 eepsite via some sort of proxy, possibly? Similar complications to Zeronet,
 which I'll probably do first.)</li>
 </ul></li>
-<li>Self-Hosted, Local Network
+<li>Self-Hosted
 <ul>
-<li>i2p eepsites(Experimental, but it's easy, you can even manage it with git
-if you want.)</li>
-<li>lighttpd(Should be just a little less easy than i2p)</li>
-<li>Tor HS(Should be just a little less easy than i2p)</li>
-<li>aptly(Not started, I don't really get aptly but I learned about it in
-the context of reading documentation in what I'm pretty sure was Portuguese
-so I'm probably overthinking it.)</li>
+<li>Self Hosting with local static httpd written in go. Stupid easy to turn
+on, just build the web site with the -l / --serve command line option
+or the START<em>HTTPD option in the config file/environment variable.</li>
+<li>i2p eepsites are now also supported, and in fact this exact repository is
+mirrored at <a href="http://fireaxe.i2p/apt-now">fireaxe.i2p/apt-now</a>, or
+<a href="http://ov3ev5dplhdz6ipy442ftb4kzz4dembm3ifs2jo25qhiyw6f4ogq.b32.i2p/apt-now">ov3ev5dplhdz6ipy442ftb4kzz4dembm3ifs2jo25qhiyw6f4ogq.b32.i2p/apt-now</a>
+if you need the b32 address. These are not set up automatically yet, but
+all you have to do is point your eepsite at the apt-now directory.</li>
+<li>Tor HS are now also supported and automatic, and they are also available
+as a mirror at <a href="http://hmuc3ffhrehwuenz.onion/apt-now">hmuc3ffhrehwuenz.onion/apt-now</a>
+to prove the concept. These must be configured using the config file,
+using the USE_TOR and LOCAL_ONLY_HTTPD options in conjunction with
+the START</em>HTTPD option. If you're only interested in making packages
+available to Tor users and not your own anonymity, you can omit
+LOCAL_ONLY_HTTPD.</li>
 </ul></li>
 </ul>
 
@@ -209,47 +199,51 @@ component, so it's loosely related to almost everything if it has to be.</li>
 <h1>apt-now personal repository tool</h1>
 
 <p>This tool helps developers host their own applications by posting them to
-github pages for download.  </p>
+github pages for download.</p>
 
-<pre><code>    -d \ --directory
-          Work in this directory, uses current directory by default
-     -o \ --origin
-          URL of the repository
-    -c \ --codename
-          Codename you want to use, defaults is \"testing\"
-    -a \ --arch
-          Architecture you want to host, defaults to \"all\"
-    -p \ --policy
-          Policy of packages you want to host, defaults to \"main\"
-    -k \ --key
-          ID of the package signing key
-    -s \ --sources
-          Folder with the packages to include in the repo
-    -q \ --override
-          Name of the override file
-    -m \ --message
-          Message to include in the commit
-    -c \ --check
-          Make sure the dependencies are installed
-    -r \ --reset
-          Re-generate all components of the repository
-    -u \ --user \ --org \ --organization
-          Us as user/organization page, post page to master branch
-    -l \ --serve\n
-          Serve with a local, static httpd on port 45291(debia).
-    -h \ --help
-          Display this help message
+<pre><code>    -d \ --directory\n
+            Work in this directory, uses current directory by default\n
+    -o \ --origin\n
+            URL of the repository\n
+    -c \ --codename\n
+            Codename you want to use, defaults is \"testing\"\n
+    -a \ --arch\n
+            Architecture you want to host, defaults to \"all\"\n
+    -p \ --policy\n
+            Policy of packages you want to host, defaults to \"main\"\n
+    -k \ --key\n
+            ID of the package signing key\n
+    -s \ --sources\n
+            Folder with the packages to include in the repo\n
+    -q \ --override\n
+            Name of the override file\n
+    -m \ --message\n
+            Message to include in the commit\n
+    -n \ --name\n
+            Human-readable name of the Repository\n
+    -v \ --desc\n
+            Detailed repository description\n
+    -c \ --check\n
+            Make sure the dependencies are installed\n
+    -r \ --reset\n
+            Re-generate all components of the repository\n
+    -u \ --user \ --org \ --organization\n
+            Us as user/organization page, post page to master branch\n
+    -l \ --serve
+            Serve with a local, static httpd on port 45291(debia).
+    -h \ --help\n
+            Display this help message\n
 </code></pre>
 
-<p>to add this repository to your Debian-based system:  </p>
+<p>to add this repository to your Debian-based system:</p>
 
-<pre><code>    echo "deb https://cmotc.github.io/apt-git/debian rolling main" | sudo tee /etc/apt/sources.list.d/cmotc.github.io.list
-    wget -qO - https://cmotc.github.io/apt-git/cmotc.github.io.gpg.key | sudo apt-key add -
+<pre><code>    echo "deb https://cmotc.github.io/apt-now/debian unstable main" | sudo tee /etc/apt/source.list.d/cmotc.github.io.list
+    wget -qO - https://cmotc.github.io/apt-now/cmotc.github.io.gpg.key | sudo apt-key add -
 </code></pre>
 
-<p>In this repository, you'll find
+<p>In this respository, you'll find</p>
+
 <ul>
-<li><p><a href="info/apt-now_20160719-1_all.deb.html">apt-now<em>20160625-1</em>all.deb </a> </p></li>
-<li><p><a href="info/pkpage_20160719-1_all.deb.html">pkpage<em>20160625-1</em>all.deb </a> </p></li>
+<li>(the latest apt-now)[info/apt-now<em>20160719-1</em>all.deb.html]</li>
+<li>(the pkpage helper)[info/pkpage<em>20160719-1</em>all.deb.html]</li>
 </ul>
-</p>

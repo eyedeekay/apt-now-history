@@ -2,7 +2,9 @@
 DRY_RUN="NO"
 RESET="NO"
 POSSIBLE_EXTANT_KEY=$(ls *.gpg.key)
-START_HTTPD="now"
+START_HTTPD="NO"
+HTTPD_LOCAL_ONLY="NO"
+USE_TOR="NO"
 pwd
 
 CURDIR=$(pwd)
@@ -340,6 +342,11 @@ if [ "$DRY_RUN" = "NO" ]; then
 	fi
 fi
 
+if [ "$LOCAL_ONLY_HTTPD" = "YES" ]; then
+        sudo iptables -A INPUT -p tcp -s localhost --dport 45291 -j ACCEPT
+        sudo iptables -A INPUT -p tcp --dport 45291 -j DROP
+fi
+
 if [ "$START_HTTPD" = "YES" ]; then
     if [ -f /usr/bin/httpd-now ]; then
         httpd-now -dir="." -addr=":45291" &
@@ -348,5 +355,14 @@ if [ "$START_HTTPD" = "YES" ]; then
     elif [ -f ./uhttpd.go ]; then
         gccgo uhttpd.go -o httpd-now
         ./httpd-now -dir="." -addr=":45291" &
+    fi
+fi
+
+if [ "$USE_TOR" = "YES" ]; then
+    if [ ! cat /etc/tor/torrc | grep "HiddenServiceDir /var/lib/tor/apt-now/" ]; then
+        echo "HiddenServiceDir /var/lib/tor/apt-now/" | sudo tee -a /etc/tor/torrc
+    fi
+    if [ ! cat /etc/tor/torrc | grep "HiddenServicePort 80 127.0.0.1:45291" ]; then
+        echo "HiddenServicePort 80 127.0.0.1:45291" | sudo tee -a /etc/tor/torrc
     fi
 fi
