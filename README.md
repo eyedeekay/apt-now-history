@@ -216,6 +216,6 @@ to add this repository to your Debian-based system:
 
 In this respository, you'll find
 
-  * (the latest apt-now)[info/apt-now_20160719-1_all.deb.html]
-  * (the pkpage helper)[info/pkpage_20160719-1_all.deb.html]
+  * [the latest apt-now](info/apt-now_20160719-1_all.deb.html)
+  * [the pkpage helper](info/pkpage_20160719-1_all.deb.html)
 
