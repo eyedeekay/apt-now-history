@@ -143,6 +143,11 @@ polyglot(But probably not agnostic) way.
   link to eachother, also a sitemap. This is all really easy to do on the client
   side.
 
+Screenshot
+----------
+
+![apt-now hosted 4 ways](aptnow-4.png)
+
 On Deck
 -------
 
