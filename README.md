@@ -55,7 +55,7 @@ Use Cases
   similar versioned web hosting services.
   * Large Businesses: Larger businesses which allow their employees to use "20%
   time" or similar programs to develop projects can use this in conjunction with
-  tools like dh_make or fpm to roll out an instant package repository when a
+  tools like dh\_make or fpm to roll out an instant package repository when a
   program is ready for testing with a wider audience.
 
 Versioning and Features
@@ -123,7 +123,7 @@ polyglot(But probably not agnostic) way.
   * Self-Hosted
     - Self Hosting with local static httpd written in go. Stupid easy to turn
 	on, just build the web site with the -l / --serve command line option
-	or the START_HTTPD option in the config file/environment variable.
+	or the START\_HTTPD option in the config file/environment variable.
     - i2p eepsites are now also supported, and in fact this exact repository is
 	mirrored at [fireaxe.i2p/apt-now](http://fireaxe.i2p/apt-now), or
 	[ov3ev5dplhdz6ipy442ftb4kzz4dembm3ifs2jo25qhiyw6f4ogq.b32.i2p/apt-now](http://ov3ev5dplhdz6ipy442ftb4kzz4dembm3ifs2jo25qhiyw6f4ogq.b32.i2p/apt-now)
@@ -133,7 +133,7 @@ polyglot(But probably not agnostic) way.
 	as a mirror at [hmuc3ffhrehwuenz.onion/apt-now](http://hmuc3ffhrehwuenz.onion/apt-now)
 	to prove the concept. These must be configured using the config file,
 	using the USE\_TOR and LOCAL\_ONLY\_HTTPD options in conjunction with
-	the START_HTTPD option. If you're only interested in making packages
+	the START\_HTTPD option. If you're only interested in making packages
 	available to Tor users and not your own anonymity, you can omit
 	LOCAL\_ONLY\_HTTPD.
 
@@ -164,7 +164,7 @@ Related Projects
   * [Effing Package Management](https://github.com/jordansissel/fpm) Some
   packages depend on this, but it isn't in may repo's besides the ruby gems
   somewhat ironically.
-  * dh_make, live-build, lots of others, I mean it's a package management
+  * dh\_make, live-build, lots of others, I mean it's a package management
   component, so it's loosely related to almost everything if it has to be.
 
 Links
