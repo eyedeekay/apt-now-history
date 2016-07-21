@@ -3,6 +3,8 @@
 A tool for setting up and hosting an apt repository using arbitrary http/s hosts to
 make files accessible with extra features for git-enabled hosting sites.
 
+[Support the i2p Stack Exchange Proposal](http://area51.stackexchange.com/proposals/99297/i2p?referrer=xh8rCeF30swuqv_zBnPYPw2)
+
 usage
 -----
 
