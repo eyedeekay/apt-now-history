@@ -238,20 +238,17 @@ generaterkey(){
 }
 
 includepackages(){
-	cd $SRCDIR
-	for f in *.deb ; do
+	for f in $SRCDIR/*.deb ; do
                 reprepro --basedir $BASEDIR includedeb $CODENAME "$f";
 		export TITLE="$f"
-                pkpage-html -f $f >> $INFODIR/$f.html
+                pkpage-html -f $INFODIR/$f >> $INFODIR/$f.html
         done
-	for f in *.dsc ; do
+	for f in $SRCDIR/*.dsc ; do
                 reprepro --basedir $BASEDIR includedsc $CODENAME "$f";
         done
-	for f in *.changes ; do
+	for f in $SRCDIR/*.changes ; do
                 reprepro --basedir $BASEDIR include $CODENAME "$f";
         done
-	cd ..
-#	reprepro include "$SRCDIR/*"
 }
 hdpage(){
     DOCTYPE_HEADER='<!DOCTYPE html>'
@@ -358,6 +355,7 @@ if [ "$DRY_RUN" = "NO" ]; then
 			includepackages
 			DATE=date
                         constructindex
+                        cd $CURDIR
 			if [ "$ORG" = "YES" ]; then
 				git add . && git commit -am "Repository update: $MESSAGE $DATE" && git push origin master
 			else
