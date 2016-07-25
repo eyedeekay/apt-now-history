@@ -17,11 +17,9 @@ img {
 }
 
 #content {
-	max-width: 59%;
-
-	#main-content {
-		max-width: 59%;
-	}
+	max-width: 58%;
+        float: right;
+}
 
 #sidebar {
 	width: 40%;
