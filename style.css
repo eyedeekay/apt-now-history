@@ -1,13 +1,14 @@
 body {
 	font-size: 50%;
 	font-family: sans-serif;
-	background: #FFFADA;
+	background: #696969;
+        color: #C71585;
 }
 
 .clear { clear: both; }
 
 #header {
-	background: #deb887;
+	background: #2F4F4F;
 }
 
 img {
@@ -25,5 +26,5 @@ img {
 	width: 40%;
         max-width: 40%;
 	float: left;
-        background: #bdb76b;
+        background: #708090;
 }
