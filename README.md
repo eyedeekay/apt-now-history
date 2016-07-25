@@ -1,21 +1,6 @@
 ﻿
 
-<head>
-
-
-	<title>apt-now instant package repositories</title>
-
-
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-
-
-	<link rel="stylesheet" type="text/css" href="style.css" />
-
-
-</head>
-
-
-<div id="header">
+<p id="header">
 
 
 apt-now
@@ -31,10 +16,11 @@ usage
 For usage help, [go here](usage.html).
 
 
-</div>
+</p>
 
 
-<div id="content">
+<p id="content">
+
 
 Details
 -------
@@ -133,7 +119,7 @@ will be provided.
 ###Transport Types
   * Version-Controlled
     - git(Complete as a way up updating the server, but can't be used to
-	retrieve individual software packages or update software. Cloning is pretty
+	retrieve inpidual software packages or update software. Cloning is pretty
 	much like making an instant mirror, which is cool.) Will be considered
 	complete when a repository can be initialized and cloned from in the
 	apt-now directory in the absence of a configured web-based git account.
@@ -188,10 +174,10 @@ On Deck
    building tools and techniques easier.
 
 
-</div>
+</p>
 
 
-<div id="sidebar">
+<p id="sidebar">
 
 
 Related Projects
@@ -266,4 +252,6 @@ In this respository, you'll find
   * [the latest apt-now](info/apt-now_20160725-1_all.deb.html)
   * [the pkpage helper](info/pkpage_20160719-1_all.deb.html)
 
-</div>
+
+</p>
+
