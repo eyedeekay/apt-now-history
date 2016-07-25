@@ -9,9 +9,6 @@ body {
 	background: url(images/content-bg.png) left repeat-y #FFFADA;
 }
 
-h1 { font-size: 2.0em; }
-p, li { font-size: 1; }
-
 .clear { clear: both; }
 
 #header {
