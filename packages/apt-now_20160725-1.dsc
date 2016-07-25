@@ -4,19 +4,19 @@ Binary: apt-now
 Architecture: all
 Version: 20160725-1
 Maintainer: idk <eyedeekay@i2pmail.org>
-Homepage: https://cmotc.github.io/apt-git/
+Homepage: https://cmotc.github.io/apt-now/
 Standards-Version: 3.9.5
-Vcs-Browser: https://github.com/cmotc/apt-git
-Vcs-Git: git@github.com:cmotc/apt-git.git
+Vcs-Browser: https://github.com/cmotc/apt-now
+Vcs-Git: git@github.com:cmotc/apt-now.git
 Build-Depends: debhelper (>= 9)
 Package-List:
  apt-now deb admin optional arch=all
 Checksums-Sha1:
- 9faa12984900516af279f1b8193ff20cfba3342c 23436 apt-now_20160725.orig.tar.xz
- 7546c7c55be3120667b13031971fc0d61ed93397 2976 apt-now_20160725-1.debian.tar.xz
+ 94ccd753b4f323c4b03bbf07c4b864da84d65888 23452 apt-now_20160725.orig.tar.xz
+ 9f5df0bce34b56cb78595961c00966d3aeb7c4dc 2972 apt-now_20160725-1.debian.tar.xz
 Checksums-Sha256:
- f9ad0248b35581bcea568484a9d94f0df25a74acceccf9513ce8901131d4d1fe 23436 apt-now_20160725.orig.tar.xz
- 3a426a7036d6e607a1311de7b113f9bee7a22c64e2a1fb239fa1ba35f5c3b6ad 2976 apt-now_20160725-1.debian.tar.xz
+ 99e951a6bd67871ec3c9ac33fd29207afe283eaed6e6e078022fec0819016937 23452 apt-now_20160725.orig.tar.xz
+ 8921824c2d6fea87349fc9fcbd1a076698f37b6286aa2a745c595eb728e8ab28 2972 apt-now_20160725-1.debian.tar.xz
 Files:
- 7e462425d2e844d55c2278ca3e330e26 23436 apt-now_20160725.orig.tar.xz
- 71a466e87908c6d717ff5e09d042bc12 2976 apt-now_20160725-1.debian.tar.xz
+ c9ad56171d006ef7a0627173e678c532 23452 apt-now_20160725.orig.tar.xz
+ b1ae328dd55c18784ee122a1323a134f 2972 apt-now_20160725-1.debian.tar.xz

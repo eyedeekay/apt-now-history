@@ -13,9 +13,9 @@ Priority: optional
 Maintainer: idk <eyedeekay@i2pmail.org>
 Build-Depends: debhelper (>= 9)
 Standards-Version: 3.9.5
-Homepage: https://cmotc.github.io/apt-git/
-Vcs-Git: git@github.com:cmotc/apt-git.git
-Vcs-Browser: https://github.com/cmotc/apt-git
+Homepage: https://cmotc.github.io/apt-now/
+Vcs-Git: git@github.com:cmotc/apt-now.git
+Vcs-Browser: https://github.com/cmotc/apt-now
 
 Package: apt-now
 Architecture: all
