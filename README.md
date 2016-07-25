@@ -88,7 +88,7 @@ will be provided.
 ###Repository Types
   * Debian/APT
     - Binary Repository(Complete, Stable, Generates Web Pages from package info)
-    - Source Repository(Final stages, Unstable)
+    - Source Repository(Pretty much complete and stable. Doesn't generate pages yet.)
     - Notes: Depends on normal debian tools, including reprepro
   * Android/F-Droid
     - Binary Repository(Experimental, Unstable, broken, see fdroid-git. The
@@ -108,12 +108,15 @@ will be provided.
   * Version-Controlled
     - git(Complete as a way up updating the server, but can't be used to
 	retrieve individual software packages or update software. Cloning is pretty
-	much like making an instant mirror, which is cool.)
+	much like making an instant mirror, which is cool.) Will be considered
+	complete when a repository can be initialized and cloned from in the
+	apt-now directory in the absence of a configured web-based git account.
     - hg(Not started, but straightforward. Pretty much the same as the git code
 	with very little alteration, just some transliterating of commands with
-	identical benefits.)
+	identical benefits.) Will be considered complete when fulfilling the
+	same requirements as git.
     - svn(Not started, but basically the same story for the purposes of this
-	system.)
+	system.) See above.
   * File Transfer Based
     - FTP(Not started, but really pretty easy, involves composing some commands
 	and configuring some usernames/passwords/keys/etc.)
