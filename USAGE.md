@@ -1,5 +1,3 @@
-
-
 #what is apt-now
 
 Formerly called apt-git, apt-now is a static site generator which emits a
@@ -19,7 +17,7 @@ Bear with me while I write the manuals, but it shouldn't take long, because as
 you're about to see, it's really simple. First, you need to get a copy of the
 system. You can do this by forking the apt-now repository and cloning it.
 
-      git clone https://github.com/$YOUR_FORK/apt-git
+        git clone https://github.com/$YOUR_FORK/apt-git
 
 BUT you'll still have the apt-now repository's public key in your copy if you
 do it this way. No biggie, though just delete cmotc.github.io.gpg.key from your
@@ -31,18 +29,17 @@ pages for each of the packages hosted in your apt-now instance) and so is every
 fork of that repository and the clone on your computer. So if you create a file
 like /etc/apt/sources.list.d/apt-now.list with the contents
 
-      deb https://cmotc.github.io/apt-git/debian rolling main
+        deb https://cmotc.github.io/apt-git/debian rolling main
 
 and tell your Package Manager to trust my key by running this command
 
-      wget -qO - https://cmotc.github.io/apt-git/cmotc.github.io.gpg.key | sudo
-  apt-key add -
+        wget -qO - https://cmotc.github.io/apt-git/cmotc.github.io.gpg.key | sudo apt-key add -
 
 then you'll be able to run the following commands
 
-      sudo apt-get install apt-transport-https
-      sudo apt-get update
-      sudo apt-get install apt-now pkpage
+        sudo apt-get install apt-transport-https
+        sudo apt-get update
+        sudo apt-get install apt-now pkpage
 
 and have a copy of apt-now installed on your system, managed by your package
 manager, from a repository created by apt-now! Which is kinda cool. Now
@@ -167,34 +164,34 @@ think this is by far the least convenient way of using it. Most of these don't
 need to be passed at all after an interactive run unless you want to change
 something though. I'll try to improve how this soon.
 
-      -d \ --directory\n
+        -d \ --directory\n
               Work in this directory, uses current directory by default\n
-      -o \ --origin\n
+        -o \ --origin\n
               URL of the repository\n
-      -c \ --codename\n
+        -c \ --codename\n
               Codename you want to use, defaults is \"testing\"\n
-      -a \ --arch\n
+        -a \ --arch\n
               Architecture you want to host, defaults to \"all\"\n
-      -p \ --policy\n
+        -p \ --policy\n
               Policy of packages you want to host, defaults to \"main\"\n
-      -k \ --key\n
+        -k \ --key\n
               ID of the package signing key\n
-      -s \ --sources\n
+        -s \ --sources\n
               Folder with the packages to include in the repo\n
-      -q \ --override\n
+        -q \ --override\n
               Name of the override file\n
-      -m \ --message\n
+        -m \ --message\n
               Message to include in the commit\n
-      -n \ --name\n
+        -n \ --name\n
               Human-readable name of the Repository\n
-      -v \ --desc\n
+        -v \ --desc\n
               Detailed repository description\n
-      -c \ --check\n
+        -c \ --check\n
               Make sure the dependencies are installed\n
-      -r \ --reset\n
+        -r \ --reset\n
               Re-generate all components of the repository\n
-      -u \ --user \ --org \ --organization\n
+        -u \ --user \ --org \ --organization\n
               Us as user/organization page, post page to master branch\n
-      -h \ --help\n
+        -h \ --help\n
               Display this help message\n
 
