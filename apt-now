@@ -238,21 +238,6 @@ generaterkey(){
         \rm $CURDIR/$KEYNAME.gpg.key.tmp
     fi
 }
-
-includepackages(){
-	for f in $SRCDIR/*.deb ; do
-                echo $f > log
-                reprepro --basedir $BASEDIR includedeb $CODENAME "$f";
-		export TITLE=$(echo $f | sed "s|$SRCDIR|$INFODIR|")
-                pkpage-html -f $f >> $TITLE.html
-        done
-	for f in $SRCDIR/*.dsc ; do
-                reprepro --basedir $BASEDIR includedsc $CODENAME "$f";
-        done
-	for f in $SRCDIR/*.changes ; do
-                reprepro --basedir $BASEDIR include $CODENAME "$f";
-        done
-}
 hdpage(){
     DOCTYPE_HEADER='<!DOCTYPE html>'
     HTML='<html>'
@@ -265,7 +250,7 @@ hdpage(){
 HEADER="<head>\n
 \t<meta charset=\"utf-8\">\n
 \t<title>$TITLE</title>\n
-\t<link rel=\"stylesheet\" href=\"style.css\">\n
+\t<link rel=\"stylesheet\" href=\"$PARENT/style.css\">\n
 \t<script src=\"script.js\"></script>\n
 </head>\n
 "
@@ -273,6 +258,22 @@ HEADER="<head>\n
     echo $DOCTYPE_HEADER
     echo $HTML
     printf "%b\n" $HEADER
+}
+includepackages(){
+	for f in $SRCDIR/*.deb ; do
+                echo $f > log
+                reprepro --basedir $BASEDIR includedeb $CODENAME "$f";
+		export TITLE=$(echo $f | sed "s|$SRCDIR|$INFODIR|")
+                export PARENT=".."
+                hdpage > $TITLE.html
+                pkpage-html -f $f >> $TITLE.html
+        done
+	for f in $SRCDIR/*.dsc ; do
+                reprepro --basedir $BASEDIR includedsc $CODENAME "$f";
+        done
+	for f in $SRCDIR/*.changes ; do
+                reprepro --basedir $BASEDIR include $CODENAME "$f";
+        done
 }
 constructindex(){
         export TITLE="$ORIGIN"
