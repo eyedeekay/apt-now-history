@@ -5,7 +5,7 @@ POSSIBLE_EXTANT_KEY=$(ls *.gpg.key)
 START_HTTPD="NO"
 HTTPD_LOCAL_ONLY="NO"
 USE_TOR="NO"
-pwd
+USE_I2P="NO"
 
 CURDIR=$(pwd)
 
@@ -86,6 +86,15 @@ while [ "$#" -gt 0 ]; do
                 -l|--serve)
 			START_HTTPD="YES"
 		;;
+                -f|--hide)
+                        LOCAL_ONLY_HTTPD="YES"
+                ;;
+                -t|--tor)
+                        USE_TOR="YES"
+                ;;
+                -i|--i2p)
+                        USE_I2P="YES"
+                ;;
 		-h|--help)
 			H="YES"
 			DRY_RUN="YES"
@@ -129,6 +138,12 @@ static pages for download. \n
 \t\t		Us as user/organization page, post page to master branch\n
 \t	-l \ --serve\n
 \t\t		Serve with a local, static httpd on port 45291(debia).
+\t	-f \ --hide\n
+\t\t		Make local httpd only accessible by localhost.
+\t	-t \ --tor\n
+\t\t		Serve local httpd with Tor Hidden Service.
+\t	-i \ --i2p\n
+\t\t		Point i2p eepSite at apt-now directory.
 \t	-h \ --help\n
 \t\t		Display this help message\n
 

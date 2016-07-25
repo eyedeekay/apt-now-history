@@ -138,9 +138,7 @@ polyglot(But probably not agnostic) way.
 	all you have to do is point your eepsite at the apt-now directory.
     - Tor HS are now also supported and automatic, and they are also available
 	as a mirror at [hmuc3ffhrehwuenz.onion/apt-now](http://hmuc3ffhrehwuenz.onion/apt-now)
-	to prove the concept. These must be configured using the config file,
-	using the USE\_TOR and LOCAL\_ONLY\_HTTPD options in conjunction with
-	the START\_HTTPD option. If you're only interested in making packages
+	to prove the concept. If you're only interested in making packages
 	available to Tor users and not your own anonymity, you can omit
 	LOCAL\_ONLY\_HTTPD.
 

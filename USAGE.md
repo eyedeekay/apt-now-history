@@ -134,6 +134,14 @@ as parameters.
 
   o example: "YES"
 
+* USE_I2P= When set, this will attempt to set up an i2p eepSite using a
+  daemonized instance of i2p on Debian by modifying
+  /var/lib/i2p/i2p-config/eepsite/contexts/base-context.xml
+  to point to the apt-now directory. Your apt-now address will then be the
+  same as the address of your default published eepSite.
+
+  o example: "YES"
+
 ###aptgit.conf is just a shell script
 
 These environment variables can also be set in a configuration file at the base
@@ -154,6 +162,7 @@ the default apt-now repository.
         START_HTTPD=YES
         LOCAL_ONLY_HTTPD=YES
         USE_TOR=YES
+        USE_I2P=YES
 
 
 ###Passing Parameters, I hope you hate this way.
@@ -192,6 +201,14 @@ something though. I'll try to improve how this soon.
               Re-generate all components of the repository\n
         -u \ --user \ --org \ --organization\n
               Us as user/organization page, post page to master branch\n
+        -l \ --serve
+		Serve with a local, static httpd on port 45291(debia).
+        -f \ --hide
+		Make local httpd only accessible by localhost.
+        -t \ --tor
+		Serve local httpd with Tor Hidden Service.
+        -i \ --i2p
+		Point i2p eepSite at apt-now directory.
         -h \ --help\n
               Display this help message\n
 
