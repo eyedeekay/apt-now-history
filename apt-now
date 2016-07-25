@@ -288,10 +288,10 @@ $CODENAME\n
 ####Latest update: $DATE\n
 \n\n</div>\n\n
 "
-        INDEX_DETAIL="
-###Description:
-$REPODESC
-"
+        INDEX_DETAIL=$(echo "\n
+###Description:\n
+$REPODESC\n
+")
         INDEX_FOOTER="This repository was generated with [apt-now](https://cmotc.github.io/apt-now), a static site
 generator which emits apt repositories
 
@@ -310,7 +310,7 @@ generator which emits apt repositories
         printf "%b\n" $INDEX_HEADER | sed -e 's/^[ \t]*//' | markdown >> index.html
         printf "%b\n" "\n\n</div>\n\n" >> index.html
         printf "%b\n" "\n\n<div id=\"content\">\n\n" >> index.html
-        printf "%s\n" $INDEX_DETAIL | sed -e 's/^[ \t]*/        /' | markdown >> index.html
+        printf "%b\n" $INDEX_DETAIL | sed -e 's/^[ \t]*/        /' | markdown >> index.html
         printf "%b\n" "$INDEX_FOOTER" | sed -e 's/^[ \t]*/        /' | markdown >> index.html
         printf "%b\n" "\n\n</div>\n\n" >> index.html
         printf "%b\n" "\n\n<div id=\"sidebar\">\n\n" >> index.html
