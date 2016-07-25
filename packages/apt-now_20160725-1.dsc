@@ -12,11 +12,11 @@ Build-Depends: debhelper (>= 9)
 Package-List:
  apt-now deb admin optional arch=all
 Checksums-Sha1:
- 109e30d4e60c4a4210971c8469250e82e992dae2 23256 apt-now_20160725.orig.tar.xz
- 9c2eb985cb717febd0e606d280ff7f248d2df330 2960 apt-now_20160725-1.debian.tar.xz
+ 4185dfd1cc168d577c4a94a1d0d7e6262bcc31b4 23356 apt-now_20160725.orig.tar.xz
+ 8293e5c729b3a0442e200b03d586109174ba9722 2972 apt-now_20160725-1.debian.tar.xz
 Checksums-Sha256:
- ef11f17942fcf81748dde5e88addcfcf6f87796e24829057ecf7b4766c72c1c6 23256 apt-now_20160725.orig.tar.xz
- 89f62f358d8aaca741c1bd4d68aeb4f20e4af946e5221d2cefa36ae1f4945d14 2960 apt-now_20160725-1.debian.tar.xz
+ c14a02cb91079bffb93c40b96767e0248c8313f68cee71f289c3da6de8ce5205 23356 apt-now_20160725.orig.tar.xz
+ d0ae7c9e659a082d3db40a2492b61cfacbef57b417fab3edeac2923e7dc88914 2972 apt-now_20160725-1.debian.tar.xz
 Files:
- 51c8bc0b76f142fb1daecf6861ddf359 23256 apt-now_20160725.orig.tar.xz
- 794e1eb4392c5421d2224cb0339b2fee 2960 apt-now_20160725-1.debian.tar.xz
+ eccc3277ae2e15d142d75d12ac081264 23356 apt-now_20160725.orig.tar.xz
+ b2c67d75cfc682040c15cfd73318ca69 2972 apt-now_20160725-1.debian.tar.xz

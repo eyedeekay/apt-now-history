@@ -269,7 +269,7 @@ HEADER="<head>\n
 
     echo $DOCTYPE_HEADER
     echo $HTML
-    echo -e $HEADER
+    printf "%b\n" $HEADER
 }
 constructindex(){
         TOR_INDEX=$(cat "/var/lib/tor/apt-now/host")
@@ -302,22 +302,22 @@ generator which emits apt repositories
         wget -q0 - http://$TOR_INDEX/$KEYNAME.gpg.key | sudo apt-key add -\n
 "
         hdpage > index.html
-        echo -e "\n\n<div id=\"header\">\n\n" >> index.html
-        echo -e $INDEX_HEADER | sed -e 's/^[ \t]*//' | markdown >> index.html
-        echo -e "\n\n</div>\n\n" >> index.html
-        echo -e "\n\n<div id=\"content\">\n\n" >> index.html
-        echo -e $INDEX_DETAILS | sed -e 's/^[ \t]*//' | markdown >> index.html
-        echo -e "\n\n</div>\n\n" >> index.html
-        echo -e "\n\n<div id=\"sidebar\">\n\n" >> index.html
+        printf "%b\n" "\n\n<div id=\"header\">\n\n" >> index.html
+        printf "%b\n" $INDEX_HEADER | sed -e 's/^[ \t]*//' | markdown >> index.html
+        printf "%b\n" "\n\n</div>\n\n" >> index.html
+        printf "%b\n" "\n\n<div id=\"content\">\n\n" >> index.html
+        printf "%b\n" $INDEX_DETAILS | sed -e 's/^[ \t]*//' | markdown >> index.html
+        printf "%b\n" "\n\n</div>\n\n" >> index.html
+        printf "%b\n" "\n\n<div id=\"sidebar\">\n\n" >> index.html
 	for f in $INFODIR/*.html ; do
                 TRIMMED_CLEAN=$(echo $f | sed -e 's/.html/ /')
-                echo -e "  * [$TRIMMED_CLEAN](info/$f) \n" | markdown >> index.html
+                printf "%b\n" "  * [$TRIMMED_CLEAN](info/$f) \n" | markdown >> index.html
         done
-        echo -e "\n\n</div>\n\n" >> index.html
+        printf "%b\n" "\n\n</div>\n\n" >> index.html
         cd ..
-        echo -e "\n\n<div id=\"footer\">\n\n" >> index.html
-        echo -e "$INDEX_FOOTER" | sed -e 's/^[ \t]*//' | markdown >> index.html
-        echo -e "\n\n</div>\n\n" >> index.html
+        printf "%b\n" "\n\n<div id=\"footer\">\n\n" >> index.html
+        printf "%b\n" "$INDEX_FOOTER" | sed -e 's/^[ \t]*//' | markdown >> index.html
+        printf "%b\n" "\n\n</div>\n\n" >> index.html
         export TITLE="$REPONAME"
         echo "</html>" >> index.html
 }
