@@ -276,8 +276,7 @@ HEADER="<head>\n
 }
 constructindex(){
         TOR_INDEX=$(cat "/var/lib/tor/apt-now/host")
-        INDEX_HEADER="\n\n<div id=\"header\">\n\n
-$REPONAME\n
+        INDEX_HEADER="$REPONAME\n
 ============\n
 $CODENAME\n
 ------------\n
@@ -288,36 +287,42 @@ $CODENAME\n
 ####Latest update: $DATE\n
 \n\n</div>\n\n
 "
-        INDEX_DETAIL="\n\n<div id=\"content\">\n\n
+        INDEX_DETAIL="
 ###Description:\n
 $REPODESC\n
-\n\n</div>\n\n"
-        INDEX_FOOTER="\n\n<div id=\"footer\">\n\n
-This repository was generated with [apt-now](https://cmotc.github.io/apt-now), a static site
+"
+        INDEX_FOOTER="This repository was generated with [apt-now](https://cmotc.github.io/apt-now), a static site
 generator which emits apt repositories
 
 ###to add this repository to your Debian-based system:
 
         echo \"deb https://$ORIGIN/debian $CODENAME main\" | sudo tee /etc/apt/source.list.d/$KEYNAME.list\n
         wget -q0 - https://$ORIGIN/$KEYNAME.gpg.key | sudo apt-key add -\n
-\n\n</div>\n\n
+
+###alternatively via Tor:
+
+        echo \"deb http://$TOR_INDEX/debian $CODENAME main\" | sudo tee /etc/apt/source.list.d/$TOR_INDEX.list\n
+        wget -q0 - http://$TOR_INDEX/$KEYNAME.gpg.key | sudo apt-key add -\n
 "
-        echo -e $INDEX_HEADER | sed -e 's/^[ \t]*//' > $INFODIR/index.md
-        echo -e $INDEX_DETAILS | sed -e 's/^[ \t]*//' >> $INFODIR/index.md
-        cd $INFODIR
-        echo "\n\n<div id=\"sidebar\">\n\n"
-	for f in *.html ; do
-                TRIMMED_CLEAN=$(echo $f | sed -e 's/.html/ /')
-                echo -e "  * [$TRIMMED_CLEAN](info/$f) \n" >> $INFODIR/index.md
-        done
-        echo "\n\n</div>\n\n"
-        cd ..
-        #echo $INDEX_FOOTER >> $INFODIR/index.md
-        echo -e "$INDEX_FOOTER" | sed -e 's/^[ \t]*//' >> $INFODIR/index.md
-        export TITLE="$REPONAME"
         hdpage > index.html
-        markdown $INFODIR/index.md >> $CURDIR/index.html
-        echo "</html>" >> $CURDIR/index.html
+        echo -e "\n\n<div id=\"header\">\n\n" >> index.html
+        echo -e $INDEX_HEADER | sed -e 's/^[ \t]*//' | markdown >> index.html
+        echo -e "\n\n</div>\n\n" >> index.html
+        echo -e "\n\n<div id=\"content\">\n\n" >> index.html
+        echo -e $INDEX_DETAILS | sed -e 's/^[ \t]*//' | markdown >> index.html
+        echo -e "\n\n</div>\n\n" >> index.html
+        echo -e "\n\n<div id=\"sidebar\">\n\n" >> index.html
+	for f in $INFODIR/*.html ; do
+                TRIMMED_CLEAN=$(echo $f | sed -e 's/.html/ /')
+                echo -e "  * [$TRIMMED_CLEAN](info/$f) \n" | markdown >> index.html
+        done
+        echo -e "\n\n</div>\n\n" >> index.html
+        cd ..
+        echo -e "\n\n<div id=\"footer\">\n\n" >> index.html
+        echo -e "$INDEX_FOOTER" | sed -e 's/^[ \t]*//' | markdown >> index.html
+        echo -e "\n\n</div>\n\n" >> index.html
+        export TITLE="$REPONAME"
+        echo "</html>" >> index.html
 }
 
 if [ "$H" = "YES" ]; then
