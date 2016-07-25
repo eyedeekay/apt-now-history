@@ -1,154 +1,38 @@
+<!DOCTYPE html>
+<html lang=en_US.UTF-8>
 <head>
-<title>
-apt-now instant package repositories
-</title>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<link rel="stylesheet" type="text/css" href="style.css" />
-</head>
-<div id="header">
-<h2 id="apt-now">apt-now</h2>
-<p>A tool for setting up and hosting an apt repository using arbitrary http/s hosts to make files accessible with extra features for git-enabled hosting sites.</p>
-<p><a href="http://area51.stackexchange.com/proposals/99297/i2p?referrer=xh8rCeF30swuqv_zBnPYPw2">Support the i2p Stack Exchange Proposal</a></p>
-<h2 id="usage">usage</h2>
-<p>For usage help, <a href="usage.html">go here</a>.</p>
-</div>
-<div id="content">
-<h2 id="details">Details</h2>
-<p>This tool, currently called apt-now but soon to be changed to repo-now, is essentially a static site generator geared toward generating and formatting a specific type of content in a specific type of way, the content being GNU/Linux or Android/Linux binary packages, and the format being a signed repository accessible from the web or something like it(It can also, for instance, be used to statically host software repositories over i2p with no substantial modification.) It does this by taking advantage of the structural regularity of these types of resources and constructs the whole site on the client side, transmitting content to the server only after a valid repository has been built. This means that the server doesn't have to run any code at all to present the site to the end-user taking advantage of the resource over the web, doesn't need to support ssh or remote desktop, and doesn't even technically need to support ftp or git, as long as a way of transferring the repository to the remote storage service can be included in the program.</p>
-<h2 id="use-cases">Use Cases</h2>
+ 	<meta charset="utf-8">
+ 	<title>apt-now</title>
+ 	<link rel="stylesheet" href="style.css">
+ 	<script src="script.js"></script>
+ </head>
+
+<h1>apt-now</h1>
+
+<h2>rolling</h2>
+
+<h3>amd64 i386 armhf</h3>
+
+<h3>main</h3>
+
+<h3>554DB437</h3>
+
+<h3>cmotc.github.io</h3>
+
+<h4>Latest update: date</h4>
+
 <ul>
-<li>Personal Use: Independent, hobbyist, and self-employed developers can use this program to host their own packages in a way which allows them to use their package management interface, encourages them to learn more about their choices of software and GNU/Linux distributions, and which provides an easy way for them to back up their configuration.</li>
-<li>Educational Use: Educational and corporate training programs which work with Open-Source projects can use this program to host code repositories for employees during training, and in turn their trainers and supervisors can follow versioned updates and use them to build redistributable packages of viable projects.</li>
-<li>Activist Use: Activists who deliver things like privacy and security related packages that might find their main repositories censored in some regions can use this tool to maintain mirrors on sites which will prove much more difficult to keep people from accessing, like &quot;burner&quot; accounts on free file hosting sites, distributed file systems, and fire-and-forget hidden services.</li>
-<li>Small Groups: Small groups of hobbyists and hackers can collaborate on projects and take advantage of the instant clonability of github repositories to create instant mirrors of their group's packages, sharing, testing, and growing their projects potential userbase and lowering barriers to entry for their ideas.</li>
-<li>Small Businesses: Small businesses can save costs on hosting their in-house process software and encourage a culture of peer review by hosting both their source repositories and tiny package repositories on github, bitbucket, or similar versioned web hosting services.</li>
-<li>Large Businesses: Larger businesses which allow their employees to use &quot;20% time&quot; or similar programs to develop projects can use this in conjunction with tools like dh_make or fpm to roll out an instant package repository when a program is ready for testing with a wider audience.</li>
+<li><p><a href="info/apt-now_20160725-1_all.deb.html">apt-now_20160725-1_all.deb </a></p></li>
+<li><p><a href="info/pkpage_20160719-1_all.deb.html">pkpage_20160719-1_all.deb </a></p></li>
 </ul>
-<p>If you're one of these people and you have a bitcoin or two lying around, you could send them my way and support development.</p>
-<ul>
-<li><strong>1HfTfgVVcvSe33TVrbRYKLawMQ21hXDABd</strong></li>
-</ul>
-<h2 id="versioning-and-features">Versioning and Features</h2>
-<p>Right now, binary repository generation for Debian(APT Repositories) is stable and source repository generation for Debian/Apt is nearing stability and are in usuable form. While these are the only working types of repositories, the pre-hyphenate part of this project's name will be &quot;apt.&quot; Additionally, while an end user could use any means to transfer the repository constructed by the apt-now tool, there is currently only support for the use of github-pages as a hosting medium in the code. While this remains the case the post-hyphenate part of this project's name will be &quot;git.&quot; When experimental support for F-Droid and Redhat(Yellowdog Updater) are complete, additional ways of transferring the files will be considered and added, and the final version will implement APT, YUM, and F-Droid repositories in an easy to configure, polyglot(But probably not agnostic) way.</p>
-<p>You should be aware that if you use this, your .git directory will be visible to all users of the repository, allowing them to completely copy the repository and it's entire history. It assumes that is what you want. If you don't, you must remove the .git directory manually. In the future, a command-line option will be provided.</p>
-<h3 id="repository-types">Repository Types</h3>
-<ul>
-<li>Debian/APT
-<ul>
-<li>Binary Repository(Complete, Stable, Generates Web Pages from package info)</li>
-<li>Source Repository(Pretty much complete and stable. Doesn't generate pages yet.)</li>
-<li>Notes: Depends on normal debian tools, including reprepro</li>
-</ul></li>
-<li>Android/F-Droid
-<ul>
-<li>Binary Repository(Experimental, Unstable, broken, see fdroid-git. The documentation for fdroidserver sometimes implies that the system requires some small amount of server-side code.)</li>
-<li>Source Repository(Research phases)</li>
-<li>Notes: Android implies somewhat different separation of logic from GNU/Linux</li>
-</ul></li>
-<li>Redhat/YUM
-<ul>
-<li>Binary Repository(Experimental, Still researching, but from the looks of things it's really straightforward. I do not know how to build RPM packages though, so we'll be working with Fedora's rpm's.)</li>
-<li>Source Repository(Experimental, Still researching, but the YUM paradigm seems to be astoundingly simple.)</li>
-<li>Notes: None yet. But I'm sure there's something.</li>
-</ul></li>
-</ul>
-<h3 id="transport-types">Transport Types</h3>
-<ul>
-<li>Version-Controlled
-<ul>
-<li>git(Complete as a way up updating the server, but can't be used to retrieve inpidual software packages or update software. Cloning is pretty much like making an instant mirror, which is cool.) Will be considered complete when a repository can be initialized and cloned from in the apt-now directory in the absence of a configured web-based git account.</li>
-<li>hg(Not started, but straightforward. Pretty much the same as the git code with very little alteration, just some transliterating of commands with identical benefits.) Will be considered complete when fulfilling the same requirements as git.</li>
-<li>svn(Not started, but basically the same story for the purposes of this system.) See above.</li>
-</ul></li>
-<li>File Transfer Based
-<ul>
-<li>FTP(Not started, but really pretty easy, involves composing some commands and configuring some usernames/passwords/keys/etc.)</li>
-<li>SFTP(Not started, but basically maps onto ftp. Probably like, one additional line of code and a teeny bit of planning to support.)</li>
-</ul></li>
-<li>More Exotic, Sync, Filesharing oriented
-<ul>
-<li>bittorrent(Not started, probably will work with <a href="http://www.camrdale.org/apt-p2p/">apt-p2p</a> or <a href="http://debtorrent.alioth.debian.org/">debtorrent</a> with minimal to no modification. Might have to generate some magnet links. Probably going to conflict with Tor, but may be able to encourage use within i2p?)</li>
-</ul></li>
-<li>Self-Hosted
-<ul>
-<li>Self Hosting with local static httpd written in go. Stupid easy to turn on, just build the web site with the -l / --serve command line option or the START_HTTPD option in the config file/environment variable.</li>
-<li>i2p eepsites are now also supported, and in fact this exact repository is mirrored at <a href="http://fireaxe.i2p/apt-now">fireaxe.i2p/apt-now</a>, or <a href="http://ov3ev5dplhdz6ipy442ftb4kzz4dembm3ifs2jo25qhiyw6f4ogq.b32.i2p/apt-now">ov3ev5dplhdz6ipy442ftb4kzz4dembm3ifs2jo25qhiyw6f4ogq.b32.i2p/apt-now</a> if you need the b32 address.</li>
-<li>Tor HS are now also supported and automatic, and they are also available as a mirror at <a href="http://hmuc3ffhrehwuenz.onion/apt-now">hmuc3ffhrehwuenz.onion/apt-now</a> to prove the concept. If you're only interested in making packages available to Tor users and not your own anonymity, you can omit LOCAL_ONLY_HTTPD.</li>
-</ul></li>
-</ul>
-<h3 id="misc-features">Misc Features</h3>
-<ul>
-<li>Output a site. Collect information from within the packages, list them in well-formatted markdown files, and emit the markdown into html files which link to eachother, also a sitemap. This is all really easy to do on the client side.</li>
-</ul>
-<h2 id="screenshot">Screenshot</h2>
-<div class="figure">
-<img src="aptnow-4.png" title="Packageception" alt="apt-now hosted 4 ways" />
-<p class="caption">apt-now hosted 4 ways</p>
-</div>
-<h2 id="on-deck">On Deck</h2>
-<ul>
-<li>Break more functionality into smaller chunks. Right now the generate function is huge and duplicates a pretty sizable amount of code. Write a generic function for building according to script, then existing spec, then guessing. This will make supporting more package types and more package building tools and techniques easier.</li>
-</ul>
-</div>
-<div id="sidebar">
-<h2 id="related-projects">Related Projects</h2>
-<ul>
-<li><a href="http://mirrorer.alioth.debian.org/">Reprepro, obviously</a> for APT repo management</li>
-<li><a href="http://createrepo.baseurl.org/">Createrepo, also obviously</a> for YUM repo management</li>
-<li><a href="https://gitlab.com/fdroid/fdroidserver">Fdroidserver, also also obvious</a></li>
-<li><a href="https://github.com/jordansissel/fpm">Effing Package Management</a> Some packages depend on this, but it isn't in may repo's besides the ruby gems somewhat ironically.</li>
-<li>dh_make, live-build, lots of others, I mean it's a package management component, so it's loosely related to almost everything if it has to be.</li>
-</ul>
-<h2 id="links">Links</h2>
-<ul>
-<li><a href="https://www.godaddy.com/help/how-to-set-up-a-yum-repository-on-centos-6-12297">CreateRepo Tutorial</a></li>
-</ul>
-<h1 id="apt-now-personal-repository-tool">apt-now personal repository tool</h1>
-<p>This tool helps developers host their own applications by posting them to github pages for download.</p>
-<pre><code>    -d \ --directory\n
-            Work in this directory, uses current directory by default\n
-    -o \ --origin\n
-            URL of the repository\n
-    -c \ --codename\n
-            Codename you want to use, defaults is \&quot;testing\&quot;\n
-    -a \ --arch\n
-            Architecture you want to host, defaults to \&quot;all\&quot;\n
-    -p \ --policy\n
-            Policy of packages you want to host, defaults to \&quot;main\&quot;\n
-    -k \ --key\n
-            ID of the package signing key\n
-    -s \ --sources\n
-            Folder with the packages to include in the repo\n
-    -q \ --override\n
-            Name of the override file\n
-    -m \ --message\n
-            Message to include in the commit\n
-    -n \ --name\n
-            Human-readable name of the Repository\n
-    -v \ --desc\n
-            Detailed repository description\n
-    -c \ --check\n
-            Make sure the dependencies are installed\n
-    -r \ --reset\n
-            Re-generate all components of the repository\n
-    -u \ --user \ --org \ --organization\n
-            Us as user/organization page, post page to master branch\n
-    -l \ --serve
-            Serve with a local, static httpd on port 45291(debia).
-    -f \ --hide
-            Make local httpd only accessible by localhost.
-    -t \ --tor
-            Serve local httpd with Tor Hidden Service.
-    -i \ --i2p
-            Point i2p eepSite at apt-now directory.
-    -h \ --help\n
-            Display this help message\n</code></pre>
-<p>to add this repository to your Debian-based system:</p>
-<pre><code>    echo &quot;deb https://cmotc.github.io/apt-now/debian unstable main&quot; | sudo tee /etc/apt/source.list.d/cmotc.github.io.list
-    wget -qO - https://cmotc.github.io/apt-now/cmotc.github.io.gpg.key | sudo apt-key add -</code></pre>
-<p>In this respository, you'll find</p>
-<ul>
-<li><a href="info/apt-now_20160725-1_all.deb.html">the latest apt-now</a></li>
-<li><a href="info/pkpage_20160719-1_all.deb.html">the pkpage helper</a></li>
-</ul>
-</div>
+
+
+<p>This repository was generated with <a href="https://cmotc.github.io/apt-now">apt-now</a>, a static site
+generator which emits apt repositories</p>
+
+<h3>to add this repository to your Debian-based system:</h3>
+
+<p>echo &ldquo;deb https://cmotc.github.io/debian rolling main&rdquo; | sudo tee /etc/apt/source.list.d/cmotc.github.io.list</p>
+
+<p>wget -q0 - https://cmotc.github.io/cmotc.github.io.gpg.key | sudo apt-key add -</p>
+</html>
