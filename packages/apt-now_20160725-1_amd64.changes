@@ -1,5 +1,5 @@
 Format: 1.8
-Date: Mon, 25 Jul 2016 15:36:21 -0400
+Date: Mon, 25 Jul 2016 16:13:08 -0400
 Source: apt-now
 Binary: apt-now
 Architecture: source all
@@ -15,17 +15,17 @@ Changes:
  .
    * Initial release (Closes: #nnnn)  <nnnn is the bug number of your ITP>
 Checksums-Sha1:
- ec42c5f2ca7a232b11e081d7251ff51b7434d950 913 apt-now_20160725-1.dsc
- c7b7c283bfc884e186fb546ded299821aae92086 23400 apt-now_20160725.orig.tar.xz
- bedc5d935ec641a2e17f709b4f14f1170cf94b65 2976 apt-now_20160725-1.debian.tar.xz
- 341483974cc775355c1b08fc242e88d45e824583 6180 apt-now_20160725-1_all.deb
+ 15a77b3339bd14a0e3f652217fcd7bcb45eca0c6 913 apt-now_20160725-1.dsc
+ 9faa12984900516af279f1b8193ff20cfba3342c 23436 apt-now_20160725.orig.tar.xz
+ 7546c7c55be3120667b13031971fc0d61ed93397 2976 apt-now_20160725-1.debian.tar.xz
+ bb8b2a66613a42c40d3092c27349812c4f0670ff 6198 apt-now_20160725-1_all.deb
 Checksums-Sha256:
- 7fec8d9c9535e775c5cdc47622d09af67e19597413b934b3815c59d75b170730 913 apt-now_20160725-1.dsc
- b4fd7b0fca392b83a0b5404692d26939fc7a8a83c02ea3ad6feff833d54c1fb6 23400 apt-now_20160725.orig.tar.xz
- e43590860a3fb462577623725fdbf0f6bc5ada339777935d65b6abc6a406a3e0 2976 apt-now_20160725-1.debian.tar.xz
- 116935576d3f5094dff9c49fbf8a33f1e460e932ef862633aa9aae55b3a1c770 6180 apt-now_20160725-1_all.deb
+ a1abd204ecb8eb8c79a7e10654a53b59ac5602b0a7a85f11dd9cd22ee8c9e1e3 913 apt-now_20160725-1.dsc
+ f9ad0248b35581bcea568484a9d94f0df25a74acceccf9513ce8901131d4d1fe 23436 apt-now_20160725.orig.tar.xz
+ 3a426a7036d6e607a1311de7b113f9bee7a22c64e2a1fb239fa1ba35f5c3b6ad 2976 apt-now_20160725-1.debian.tar.xz
+ e508a757c2f6d0588cd38454bb1af39ec9a0b7c29d1e2a6509110ee0068397c9 6198 apt-now_20160725-1_all.deb
 Files:
- d12afa3b780e6c27bb4a336a35c045f2 913 admin optional apt-now_20160725-1.dsc
- 6900175e53c7246cc96f0a6b6b40cb34 23400 admin optional apt-now_20160725.orig.tar.xz
- d05ed31d30e5af4a879bbb90f3cc379f 2976 admin optional apt-now_20160725-1.debian.tar.xz
- ceaa865c0e26a3d16ccc9e04f12c78a5 6180 admin optional apt-now_20160725-1_all.deb
+ b2ece099d190b46d8eb20990c2945fb6 913 admin optional apt-now_20160725-1.dsc
+ 7e462425d2e844d55c2278ca3e330e26 23436 admin optional apt-now_20160725.orig.tar.xz
+ 71a466e87908c6d717ff5e09d042bc12 2976 admin optional apt-now_20160725-1.debian.tar.xz
+ 561189bec35b972513ceb478e856c4d3 6198 admin optional apt-now_20160725-1_all.deb
