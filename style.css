@@ -10,15 +10,17 @@ body {
 	background: #deb887;
 }
 
+img {
+        position: absolute;
+        right: 0px;
+        max-width: 480px;
+        padding: 0;
+        margin: 0;
+}
+
 #content {
 	max-width: 59%;
-        img {
-                position: absolute;
-                right: 0px;
-                width: 480px;
-                padding: 0;
-                margin: 0;
-        }
+
 	#main-content {
 		max-width: 59%;
 	}
