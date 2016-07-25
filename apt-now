@@ -18,7 +18,9 @@ POLICY="main"
 KEY="Example"
 OVERRIDE="override.testing"
 
-if [ -f /usr/local/bin/pkpage-html ]; then
+if [ -f /usr/bin/pkpage-html ]; then
+        alias pkpage-html=/usr/bin/pkpage-html
+elif [ -f /usr/local/bin/pkpage-html ]; then
         alias pkpage-html=/usr/local/bin/pkpage-html
 elif [ -f ./pkpage.sh ]; then
         alias pkpage-html="/bin/bash -c \"markdown <($CURDIR/pkpage $@)\""
@@ -273,7 +275,7 @@ HEADER="<head>\n
     printf "%b\n" $HEADER
 }
 constructindex(){
-        TOR_INDEX=$(cat "/var/lib/tor/apt-now/host")
+        TOR_INDEX=$(sudo cat "/var/lib/tor/apt-now/host")
         INDEX_HEADER="$REPONAME\n
 ============\n
 $CODENAME\n
@@ -388,17 +390,17 @@ if [ "$START_HTTPD" = "YES" ]; then
 fi
 
 if [ "$USE_TOR" = "YES" ]; then
-    if [ ! cat /etc/tor/torrc | grep "HiddenServiceDir /var/lib/tor/apt-now/" ]; then
+    if [ ! sudo cat /etc/tor/torrc | grep "HiddenServiceDir /var/lib/tor/apt-now/" ]; then
         echo "HiddenServiceDir /var/lib/tor/apt-now/" | sudo tee -a /etc/tor/torrc
     fi
-    if [ ! cat /etc/tor/torrc | grep "HiddenServicePort 80 127.0.0.1:45291" ]; then
+    if [ ! sudo cat /etc/tor/torrc | grep "HiddenServicePort 80 127.0.0.1:45291" ]; then
         echo "HiddenServicePort 80 127.0.0.1:45291" | sudo tee -a /etc/tor/torrc
     fi
     sudo service tor restart
 fi
 
 if [ "$USE_I2P" = "YES" ]; then
-    if [ ! cat /var/lib/i2p/i2p-config/eepsite/contexts/base-context.xml | grep "$CURDIR" ]; then
+    if [ ! sudo cat /var/lib/i2p/i2p-config/eepsite/contexts/base-context.xml | grep "$CURDIR" ]; then
         sudo sed -i "s|/var/lib/i2p/i2p-config/eepsite/docroot/|$CURDIR|"
     fi
     sudo service i2p restart
