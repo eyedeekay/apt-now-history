@@ -239,6 +239,7 @@ generaterkey(){
 
 includepackages(){
 	for f in $SRCDIR/*.deb ; do
+                echo $f
                 reprepro --basedir $BASEDIR includedeb $CODENAME "$f";
 		export TITLE="$f"
                 pkpage-html -f $INFODIR/$f >> $INFODIR/$f.html
