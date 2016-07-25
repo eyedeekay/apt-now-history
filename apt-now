@@ -242,7 +242,7 @@ includepackages(){
                 echo $f > log
                 reprepro --basedir $BASEDIR includedeb $CODENAME "$f";
 		export TITLE="$f"
-                pkpage-html -f $f >> f.html
+                pkpage-html -f $f >> $f.html
         done
 	for f in $SRCDIR/*.dsc ; do
                 reprepro --basedir $BASEDIR includedsc $CODENAME "$f";
