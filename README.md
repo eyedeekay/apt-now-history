@@ -1,4 +1,24 @@
-﻿apt-now
+﻿
+
+<head>
+
+
+	<title>apt-now instant package repositories</title>
+
+
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+
+	<link rel="stylesheet" type="text/css" href="style.css" />
+
+
+</head>
+
+
+<div id="header">
+
+
+apt-now
 -------
 A tool for setting up and hosting an apt repository using arbitrary http/s hosts to
 make files accessible with extra features for git-enabled hosting sites.
@@ -9,6 +29,12 @@ usage
 -----
 
 For usage help, [go here](usage.html).
+
+
+</div>
+
+
+<div id="content">
 
 Details
 -------
@@ -162,6 +188,12 @@ On Deck
    building tools and techniques easier.
 
 
+</div>
+
+
+<div id="sidebar">
+
+
 Related Projects
 ----------------
 
@@ -234,3 +266,4 @@ In this respository, you'll find
   * [the latest apt-now](info/apt-now_20160725-1_all.deb.html)
   * [the pkpage helper](info/pkpage_20160719-1_all.deb.html)
 
+</div>
