@@ -14,7 +14,7 @@
 
 </head>
 
-<p id="header">
+<div id="header">
 
 
 apt-now
@@ -30,10 +30,10 @@ usage
 For usage help, [go here](usage.html).
 
 
-</p>
+</div>
 
 
-<p id="content">
+<div id="content">
 
 
 Details
@@ -188,10 +188,10 @@ On Deck
    building tools and techniques easier.
 
 
-</p>
+</div>
 
 
-<p id="sidebar">
+<div id="sidebar">
 
 
 Related Projects
@@ -267,5 +267,5 @@ In this respository, you'll find
   * [the pkpage helper](info/pkpage_20160719-1_all.deb.html)
 
 
-</p>
+</div>
 
