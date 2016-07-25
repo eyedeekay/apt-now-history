@@ -173,42 +173,42 @@ think this is by far the least convenient way of using it. Most of these don't
 need to be passed at all after an interactive run unless you want to change
 something though. I'll try to improve how this soon.
 
-        -d \ --directory\n
-              Work in this directory, uses current directory by default\n
-        -o \ --origin\n
-              URL of the repository\n
-        -c \ --codename\n
-              Codename you want to use, defaults is \"testing\"\n
-        -a \ --arch\n
-              Architecture you want to host, defaults to \"all\"\n
-        -p \ --policy\n
-              Policy of packages you want to host, defaults to \"main\"\n
-        -k \ --key\n
-              ID of the package signing key\n
-        -s \ --sources\n
-              Folder with the packages to include in the repo\n
-        -q \ --override\n
-              Name of the override file\n
-        -m \ --message\n
-              Message to include in the commit\n
-        -n \ --name\n
-              Human-readable name of the Repository\n
-        -v \ --desc\n
-              Detailed repository description\n
-        -c \ --check\n
-              Make sure the dependencies are installed\n
-        -r \ --reset\n
-              Re-generate all components of the repository\n
-        -u \ --user \ --org \ --organization\n
-              Us as user/organization page, post page to master branch\n
+        -d \ --directory
+              Work in this directory, uses current directory by default
+        -o \ --origin
+              URL of the repository
+        -c \ --codename
+              Codename you want to use, defaults is \"testing\"
+        -a \ --arch
+              Architecture you want to host, defaults to \"all\"
+        -p \ --policy
+              Policy of packages you want to host, defaults to \"main\"
+        -k \ --key
+              ID of the package signing key
+        -s \ --sources
+              Folder with the packages to include in the repo
+        -q \ --override
+              Name of the override file
+        -m \ --message
+              Message to include in the commit
+        -n \ --name
+              Human-readable name of the Repository
+        -v \ --desc
+              Detailed repository description
+        -c \ --check
+              Make sure the dependencies are installed
+        -r \ --reset
+              Re-generate all components of the repository
+        -u \ --user \ --org \ --organization
+              Us as user/organization page, post page to master branch
         -l \ --serve
-		Serve with a local, static httpd on port 45291(debia).
+                Serve with a local, static httpd on port 45291(debia).
         -f \ --hide
-		Make local httpd only accessible by localhost.
+                Make local httpd only accessible by localhost.
         -t \ --tor
-		Serve local httpd with Tor Hidden Service.
+                Serve local httpd with Tor Hidden Service.
         -i \ --i2p
-		Point i2p eepSite at apt-now directory.
-        -h \ --help\n
-              Display this help message\n
+                Point i2p eepSite at apt-now directory.
+        -h \ --help
+              Display this help message
 

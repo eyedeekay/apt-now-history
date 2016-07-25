@@ -216,6 +216,12 @@ github pages for download.
                 Us as user/organization page, post page to master branch\n
         -l \ --serve
                 Serve with a local, static httpd on port 45291(debia).
+        -f \ --hide
+                Make local httpd only accessible by localhost.
+        -t \ --tor
+                Serve local httpd with Tor Hidden Service.
+        -i \ --i2p
+                Point i2p eepSite at apt-now directory.
         -h \ --help\n
                 Display this help message\n
 
