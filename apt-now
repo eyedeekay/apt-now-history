@@ -350,12 +350,12 @@ fi
 
 if [ "$START_HTTPD" = "YES" ]; then
     if [ -f /usr/bin/httpd-now ]; then
-        httpd-now -dir="." -addr=":45291" &
+        httpd-now -dir="$CURDIR" -addr=":45291" &
     elif [ -f ./httpd-now ]; then
-        ./httpd-now -dir="." -addr=":45291" &
+        ./httpd-now -dir="$CURDIR" -addr=":45291" &
     elif [ -f ./uhttpd.go ]; then
         gccgo uhttpd.go -o httpd-now
-        ./httpd-now -dir="." -addr=":45291" &
+        ./httpd-now -dir="$CURDIR" -addr=":45291" &
     fi
 fi
 
@@ -366,4 +366,5 @@ if [ "$USE_TOR" = "YES" ]; then
     if [ ! cat /etc/tor/torrc | grep "HiddenServicePort 80 127.0.0.1:45291" ]; then
         echo "HiddenServicePort 80 127.0.0.1:45291" | sudo tee -a /etc/tor/torrc
     fi
+    sudo service tor restart
 fi
