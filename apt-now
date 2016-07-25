@@ -309,7 +309,7 @@ generator which emits apt repositories
         printf "%b\n" $INDEX_HEADER | sed -e 's/^[ \t]*//' | markdown >> index.html
         printf "%b\n" "\n\n</div>\n\n" >> index.html
         printf "%b\n" "\n\n<div id=\"content\">\n\n" >> index.html
-        printf "%b\n" $INDEX_DETAIL | sed -e 's/^[ \t]*//' | markdown >> index.html
+        printf "%b\n" $INDEX_DETAIL | sed -e 's/^[ \t]*/        /' | markdown >> index.html
         printf "%b\n" "\n\n</div>\n\n" >> index.html
         printf "%b\n" "\n\n<div id=\"sidebar\">\n\n" >> index.html
 	for f in $INFODIR/*.html ; do
@@ -317,10 +317,9 @@ generator which emits apt repositories
                 #TRIMMED_FILE="$TRIMMED_CLEAN.html" sed -e 's/.html/ /' |
                 echo "  * [$TRIMMED_CLEAN](info/$TRIMMED_CLEAN)" | markdown >> index.html
         done
-        printf "%b\n" "\n\n</div>\n\n" >> index.html
-        cd ..
-        printf "%b\n" "\n\n<div id=\"footer\">\n\n" >> index.html
-        printf "%b\n" "$INDEX_FOOTER" | sed -e 's/^[ \t]*//' | markdown >> index.html
+        #printf "%b\n" "\n\n</div>\n\n" >> index.html
+        #printf "%b\n" "\n\n<div id=\"footer\">\n\n" >> index.html
+        printf "%b\n" "$INDEX_FOOTER" | sed -e 's/^[ \t]*/        /' | markdown >> index.html
         printf "%b\n" "\n\n</div>\n\n" >> index.html
         export TITLE="$REPONAME"
         echo "</html>" >> index.html
