@@ -1,7 +1,8 @@
 body {
 	font-size: 62.5%;
 	font-family: Garamond, sans-serif;
-	background: url(images/content-bg.png) left repeat-y #FFFADA;
+        background: #e3da9d;
+	/*background: url(images/content-bg.png) left repeat-y #FFFADA;*/
 }
 
 img {
