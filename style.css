@@ -5,7 +5,7 @@ body {
 }
 
 img {
-        max-width: 500px;
+        max-width: 50%;
 }
 
 .clear { clear: both; }
@@ -21,11 +21,11 @@ img {
 	#main-content {
 		text-align: right;
                 float: right;
-		max-width: 600px;
+		max-width: 59%;
 	}
 
 #sidebar {
-	width: 145px;
+	width: 40%;
 	float: left;
 	padding: 0 0 0 15px;
 	}
