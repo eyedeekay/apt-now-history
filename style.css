@@ -14,10 +14,11 @@ body {
         text-align: right;
 	max-width: 59%;
         img {
-                max-width: 50%;
-                float: right;
-                margin: 0;
+                position: absolute;
+                right: 0px;
+                width: 60%;
                 padding: 0;
+                margin: 0;
         }
 	#main-content {
 		text-align: right;
