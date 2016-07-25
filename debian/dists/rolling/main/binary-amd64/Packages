@@ -8,10 +8,10 @@ Homepage: https://cmotc.github.io/apt-git/
 Priority: optional
 Section: admin
 Filename: pool/main/a/apt-now/apt-now_20160725-1_all.deb
-Size: 6134
-SHA256: fc224beb8a4d716c6c97cd449109c36624186951123a5bc445640ecad5a93b5d
-SHA1: f591a37cae094c10725dc139641e20d84d50e882
-MD5sum: 7af2f6b7f75d9467fff174cb1eda5a09
+Size: 6180
+SHA256: 116935576d3f5094dff9c49fbf8a33f1e460e932ef862633aa9aae55b3a1c770
+SHA1: 341483974cc775355c1b08fc242e88d45e824583
+MD5sum: ceaa865c0e26a3d16ccc9e04f12c78a5
 Description: A tool for setting up and hosting an apt repository using arbitrary
  http/s hosts to make files accessible with extra features for git-enabled
  hosting sites.
