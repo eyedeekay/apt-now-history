@@ -1,36 +1,36 @@
 Origin: cmotc.github.io
 Label: cmotc.github.io
 Codename: rolling
-Date: Mon, 25 Jul 2016 17:20:06 UTC
+Date: Mon, 25 Jul 2016 18:42:52 UTC
 Architectures: amd64 i386 armhf
 Components: main
 MD5Sum:
- d1295fa6aadd45e5e4c44b5949299d87 2725 main/binary-amd64/Packages
- 7acc899d374d29e3a838678354d93310 1409 main/binary-amd64/Packages.gz
+ e57ccd6617916423b4636dec935b9be7 2725 main/binary-amd64/Packages
+ ea445735a126e5b6cc2564d7b81dd3da 1407 main/binary-amd64/Packages.gz
  b93a49311885d54bc47920848a52bd5b 83 main/binary-amd64/Release
- d1295fa6aadd45e5e4c44b5949299d87 2725 main/binary-i386/Packages
- 7acc899d374d29e3a838678354d93310 1409 main/binary-i386/Packages.gz
+ e57ccd6617916423b4636dec935b9be7 2725 main/binary-i386/Packages
+ ea445735a126e5b6cc2564d7b81dd3da 1407 main/binary-i386/Packages.gz
  5d504a5ab8aa7ce88862f785d801f8e7 82 main/binary-i386/Release
- d1295fa6aadd45e5e4c44b5949299d87 2725 main/binary-armhf/Packages
- 7acc899d374d29e3a838678354d93310 1409 main/binary-armhf/Packages.gz
+ e57ccd6617916423b4636dec935b9be7 2725 main/binary-armhf/Packages
+ ea445735a126e5b6cc2564d7b81dd3da 1407 main/binary-armhf/Packages.gz
  a9c80da2a7546feab7c4b73c77b33894 83 main/binary-armhf/Release
 SHA1:
- 964e3b730519ae1a75caed77398d4a3f57c8d64c 2725 main/binary-amd64/Packages
- 9ef3cae4bd95fa91ac2a113871b08833d01a50e9 1409 main/binary-amd64/Packages.gz
+ bc82d37d9d9d7e4b3452297e3e34f6420c7d0505 2725 main/binary-amd64/Packages
+ c668828d95aacd078fe9d039d352cb7f81da09dc 1407 main/binary-amd64/Packages.gz
  8e62c83fc00de4c7e6c2bba3632993e397bd0a35 83 main/binary-amd64/Release
- 964e3b730519ae1a75caed77398d4a3f57c8d64c 2725 main/binary-i386/Packages
- 9ef3cae4bd95fa91ac2a113871b08833d01a50e9 1409 main/binary-i386/Packages.gz
+ bc82d37d9d9d7e4b3452297e3e34f6420c7d0505 2725 main/binary-i386/Packages
+ c668828d95aacd078fe9d039d352cb7f81da09dc 1407 main/binary-i386/Packages.gz
  d70387552146e61c87e844d31d92dff2b89a139a 82 main/binary-i386/Release
- 964e3b730519ae1a75caed77398d4a3f57c8d64c 2725 main/binary-armhf/Packages
- 9ef3cae4bd95fa91ac2a113871b08833d01a50e9 1409 main/binary-armhf/Packages.gz
+ bc82d37d9d9d7e4b3452297e3e34f6420c7d0505 2725 main/binary-armhf/Packages
+ c668828d95aacd078fe9d039d352cb7f81da09dc 1407 main/binary-armhf/Packages.gz
  79a56de773c17edf264c9edc1e6d85585ca1ab28 83 main/binary-armhf/Release
 SHA256:
- cc413afac73de55e08d9be950ada0a7877303384c9cb5d5920f546ca3bd16064 2725 main/binary-amd64/Packages
- 01eb222e5030e5d7ee3f9f5707bff1689bb01454f197b9c772342d745b70ed50 1409 main/binary-amd64/Packages.gz
+ a43c308f095ac0fbc61af58b69c6c510227c189940a2dc1b7384539c9c203ace 2725 main/binary-amd64/Packages
+ c8c75fd642431edf151e7d4b7ca4bc923a6b3c265a9bfe5a6bcba23061af2df7 1407 main/binary-amd64/Packages.gz
  cb42d093d0c7df5cec4ca7055ded2dbab12b7cd0241ca8e25c4706ea0f71ba2a 83 main/binary-amd64/Release
- cc413afac73de55e08d9be950ada0a7877303384c9cb5d5920f546ca3bd16064 2725 main/binary-i386/Packages
- 01eb222e5030e5d7ee3f9f5707bff1689bb01454f197b9c772342d745b70ed50 1409 main/binary-i386/Packages.gz
+ a43c308f095ac0fbc61af58b69c6c510227c189940a2dc1b7384539c9c203ace 2725 main/binary-i386/Packages
+ c8c75fd642431edf151e7d4b7ca4bc923a6b3c265a9bfe5a6bcba23061af2df7 1407 main/binary-i386/Packages.gz
  da2cb76a58eea64c3c4011754f9d77eb160be46f9baf4a75478fab5f680be957 82 main/binary-i386/Release
- cc413afac73de55e08d9be950ada0a7877303384c9cb5d5920f546ca3bd16064 2725 main/binary-armhf/Packages
- 01eb222e5030e5d7ee3f9f5707bff1689bb01454f197b9c772342d745b70ed50 1409 main/binary-armhf/Packages.gz
+ a43c308f095ac0fbc61af58b69c6c510227c189940a2dc1b7384539c9c203ace 2725 main/binary-armhf/Packages
+ c8c75fd642431edf151e7d4b7ca4bc923a6b3c265a9bfe5a6bcba23061af2df7 1407 main/binary-armhf/Packages.gz
  80a4c8ccf9425053c719d165f5586669b18acf2a40a670ffb61e0cea7f989e61 83 main/binary-armhf/Release

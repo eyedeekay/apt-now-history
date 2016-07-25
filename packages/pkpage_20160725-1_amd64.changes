@@ -1,5 +1,5 @@
 Format: 1.8
-Date: Mon, 25 Jul 2016 12:54:18 -0400
+Date: Mon, 25 Jul 2016 14:40:26 -0400
 Source: pkpage
 Binary: pkpage
 Architecture: source all
@@ -15,17 +15,17 @@ Changes:
  .
    * Initial release (Closes: #nnnn)  <nnnn is the bug number of your ITP>
 Checksums-Sha1:
- 17fbf473fde217f303db57dca4f4999960b8b6fc 898 pkpage_20160725-1.dsc
- cef8658dcb5908b714eaedc762533704cc33255d 1212 pkpage_20160725.orig.tar.xz
- 7b8a53624345993ea1241d14a3cbd6a5dd00d405 2664 pkpage_20160725-1.debian.tar.xz
- 537066c3a95b8a2c6ac43a2b53099203a7e6cefc 3566 pkpage_20160725-1_all.deb
+ ee9e47cfc6addcdf76fa8b9c3a860eb5f855cf0f 898 pkpage_20160725-1.dsc
+ d1e8d56c25d8f92a009e77a106ca8f65fbf764fc 1212 pkpage_20160725.orig.tar.xz
+ 0d4a301e33cab4189552eb0a635c281c0e447cb5 2672 pkpage_20160725-1.debian.tar.xz
+ 5b92194abfaff2ab2bb3ae4b3c5e8b9ccdd3f8ec 3568 pkpage_20160725-1_all.deb
 Checksums-Sha256:
- 883385e5432c924a4aeb607c0ffa3fee1274bfe3ec4a8c633ab9acb74ca735c9 898 pkpage_20160725-1.dsc
- 985d399b55c3bd97eecc0fd589554d4b69782911fbb867d56badff79867f8296 1212 pkpage_20160725.orig.tar.xz
- 5c47a3eed340b7cc06c5cda60757e8bea636df185a3f9a1fceb794e8a677e75e 2664 pkpage_20160725-1.debian.tar.xz
- d2741d873489f3f83345d7cdc1a79c3b3840f7e4287d0e8f1027270370b53f73 3566 pkpage_20160725-1_all.deb
+ 8d9c86ef59b7c75c19d1ad61e2c36f9c3a3ee3a802b7045d28d13f6265a816ac 898 pkpage_20160725-1.dsc
+ d1282d93c21abe7290277f03c0d260e788be43a48f0b6c83f2b0521260890d00 1212 pkpage_20160725.orig.tar.xz
+ e23d526e5d2259b2b30f5afd1d42fd53db073f66278778a519d9ca71044e20f4 2672 pkpage_20160725-1.debian.tar.xz
+ 269db64a50f871baa5d24198a23c42e3a0afb20d7462e32224e7100612a42a06 3568 pkpage_20160725-1_all.deb
 Files:
- f82fde1d5448add7dc4e669a9bd5fcd0 898 admin optional pkpage_20160725-1.dsc
- 1b28a1e6b7af2af7622765c622427863 1212 admin optional pkpage_20160725.orig.tar.xz
- d4448364e617b44a6690c78e928c215f 2664 admin optional pkpage_20160725-1.debian.tar.xz
- 8ca121240b808db0c4a29898980827f8 3566 admin optional pkpage_20160725-1_all.deb
+ 7d41866f90c24d75de80be7104063a33 898 admin optional pkpage_20160725-1.dsc
+ 27e8c6f5f1b2862e31d9746418089a11 1212 admin optional pkpage_20160725.orig.tar.xz
+ 78269f8c517a8dffc1a19e8d02fd8a2f 2672 admin optional pkpage_20160725-1.debian.tar.xz
+ 9e58742652487f2993da056a6e1c19d8 3568 admin optional pkpage_20160725-1_all.deb
