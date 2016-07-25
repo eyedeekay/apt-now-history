@@ -13,7 +13,7 @@ body {
 #content {
         text-align: right;
 	max-width: 59%;
-        img {
+        #figure {
                 position: absolute;
                 right: 0px;
                 width: 60%;
