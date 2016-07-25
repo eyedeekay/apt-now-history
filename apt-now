@@ -265,7 +265,7 @@ hdpage(){
 HEADER="<head>\n
 \t<meta charset=\"utf-8\">\n
 \t<title>$TITLE</title>\n
-\t<link rel=\"stylesheet\" href=\"/style.css\">\n
+\t<link rel=\"stylesheet\" href=\"style.css\">\n
 \t<script src=\"script.js\"></script>\n
 </head>\n
 "
@@ -288,10 +288,11 @@ $CODENAME\n
 ####Latest update: $DATE\n
 \n\n</div>\n\n
 "
-        INDEX_DETAIL=$(echo "\n
+        TRIMMED_REPODESC=$(echo $REPODESC | tr "\n" " ")
+        INDEX_DETAIL="\n
 ###Description:\n
-$REPODESC\n
-")
+$TRIMMED_REPODESC\n
+"
         INDEX_FOOTER="This repository was generated with [apt-now](https://cmotc.github.io/apt-now), a static site
 generator which emits apt repositories
 
@@ -316,7 +317,6 @@ generator which emits apt repositories
         printf "%b\n" "\n\n<div id=\"sidebar\">\n\n" >> index.html
 	for f in $INFODIR/*.html ; do
                 TRIMMED_CLEAN=$(echo $f | sed "s|$INFODIR/||")
-                #TRIMMED_FILE="$TRIMMED_CLEAN.html" sed -e 's/.html/ /' |
                 echo "  * [$TRIMMED_CLEAN](info/$TRIMMED_CLEAN)" | markdown >> index.html
         done
         #printf "%b\n" "\n\n</div>\n\n" >> index.html
