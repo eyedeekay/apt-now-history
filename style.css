@@ -1,11 +1,13 @@
 body {
 	font-size: 62.5%;
 	font-family: Garamond, sans-serif;
-	background: #FFFADA;
+	background: url(images/content-bg.png) left repeat-y #FFFADA;
 }
 
 img {
         max-width: 50%;
+        /*display: block;
+        margin: auto;*/
 }
 
 .clear { clear: both; }
@@ -25,7 +27,6 @@ img {
 #sidebar {
 	width: 40%;
 	float: left;
-        background: #e3da9d;
 	#sidebar ul {
 		list-style: inside;
 	}
