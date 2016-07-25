@@ -82,6 +82,12 @@ additional ways of transferring the files will be considered and added, and the 
 version will implement APT, YUM, and F-Droid repositories in an easy to configure,
 polyglot(But probably not agnostic) way.</p>
 
+<p>You should be aware that if you use this, your .git directory will be visible
+to all users of the repository, allowing them to completely copy the repository
+and it&rsquo;s entire history. It assumes that is what you want. If you don&rsquo;t, you
+must remove the .git directory manually. In the future, a command-line option
+will be provided.</p>
+
 <h3>Repository Types</h3>
 
 <ul>
@@ -145,19 +151,10 @@ additional line of code and a teeny bit of planning to support.)</li>
 <li>More Exotic, Sync, Filesharing oriented
 
 <ul>
-<li>gittorrent(Not started, Probably easy, but will require a change to the
-transport layer used by apt to treat git as a way of retrieving some
-information.)</li>
-<li>Zeronet(Experimental, broken, probably requires a change to the transport
-layer used by apt, see <a href="https://anonscm.debian.org/cgit/apt/apt.git/tree/methods">apt-transport-https</a>,
-<a href="https://github.com/diocles/apt-transport-tor">apt-transport-tor</a>.)</li>
 <li>bittorrent(Not started, probably will work with <a href="http://www.camrdale.org/apt-p2p/">apt-p2p</a>
 or <a href="http://debtorrent.alioth.debian.org/">debtorrent</a> with minimal to no
 modification. Might have to generate some magnet links. Probably going to
 conflict with Tor, but may be able to encourage use within i2p?)</li>
-<li>Freenet(Not started, but it would be really interesting to do freenet-as-
-eepsite via some sort of proxy, possibly? Similar complications to Zeronet,
-which I&rsquo;ll probably do first.)</li>
 </ul>
 </li>
 <li>Self-Hosted
@@ -169,8 +166,7 @@ or the START_HTTPD option in the config file/environment variable.</li>
 <li>i2p eepsites are now also supported, and in fact this exact repository is
 mirrored at <a href="http://fireaxe.i2p/apt-now">fireaxe.i2p/apt-now</a>, or
 <a href="http://ov3ev5dplhdz6ipy442ftb4kzz4dembm3ifs2jo25qhiyw6f4ogq.b32.i2p/apt-now">ov3ev5dplhdz6ipy442ftb4kzz4dembm3ifs2jo25qhiyw6f4ogq.b32.i2p/apt-now</a>
-if you need the b32 address. These are not set up automatically yet, but
-all you have to do is point your eepsite at the apt-now directory.</li>
+if you need the b32 address.</li>
 <li>Tor HS are now also supported and automatic, and they are also available
 as a mirror at <a href="http://hmuc3ffhrehwuenz.onion/apt-now">hmuc3ffhrehwuenz.onion/apt-now</a>
 to prove the concept. If you&rsquo;re only interested in making packages

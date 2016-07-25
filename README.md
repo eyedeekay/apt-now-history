@@ -79,6 +79,12 @@ additional ways of transferring the files will be considered and added, and the 
 version will implement APT, YUM, and F-Droid repositories in an easy to configure,
 polyglot(But probably not agnostic) way.
 
+You should be aware that if you use this, your .git directory will be visible
+to all users of the repository, allowing them to completely copy the repository
+and it's entire history. It assumes that is what you want. If you don't, you
+must remove the .git directory manually. In the future, a command-line option
+will be provided.
+
 ###Repository Types
   * Debian/APT
     - Binary Repository(Complete, Stable, Generates Web Pages from package info)
@@ -103,30 +109,21 @@ polyglot(But probably not agnostic) way.
     - git(Complete as a way up updating the server, but can't be used to
 	retrieve individual software packages or update software. Cloning is pretty
 	much like making an instant mirror, which is cool.)
-	- hg(Not started, but straightforward. Pretty much the same as the git code
+    - hg(Not started, but straightforward. Pretty much the same as the git code
 	with very little alteration, just some transliterating of commands with
 	identical benefits.)
-	- svn(Not started, but basically the same story for the purposes of this
+    - svn(Not started, but basically the same story for the purposes of this
 	system.)
   * File Transfer Based
     - FTP(Not started, but really pretty easy, involves composing some commands
 	and configuring some usernames/passwords/keys/etc.)
-	- SFTP(Not started, but basically maps onto ftp. Probably like, one
+    - SFTP(Not started, but basically maps onto ftp. Probably like, one
 	additional line of code and a teeny bit of planning to support.)
   * More Exotic, Sync, Filesharing oriented
-    - gittorrent(Not started, Probably easy, but will require a change to the
-	transport layer used by apt to treat git as a way of retrieving some
-	information.)
-	- Zeronet(Experimental, broken, probably requires a change to the transport
-	layer used by apt, see [apt-transport-https](https://anonscm.debian.org/cgit/apt/apt.git/tree/methods),
-	[apt-transport-tor](https://github.com/diocles/apt-transport-tor).)
-	- bittorrent(Not started, probably will work with [apt-p2p](http://www.camrdale.org/apt-p2p/)
+    - bittorrent(Not started, probably will work with [apt-p2p](http://www.camrdale.org/apt-p2p/)
 	or [debtorrent](http://debtorrent.alioth.debian.org/) with minimal to no
 	modification. Might have to generate some magnet links. Probably going to
 	conflict with Tor, but may be able to encourage use within i2p?)
-	- Freenet(Not started, but it would be really interesting to do freenet-as-
-	eepsite via some sort of proxy, possibly? Similar complications to Zeronet,
-	which I'll probably do first.)
   * Self-Hosted
     - Self Hosting with local static httpd written in go. Stupid easy to turn
 	on, just build the web site with the -l / --serve command line option
@@ -134,8 +131,7 @@ polyglot(But probably not agnostic) way.
     - i2p eepsites are now also supported, and in fact this exact repository is
 	mirrored at [fireaxe.i2p/apt-now](http://fireaxe.i2p/apt-now), or
 	[ov3ev5dplhdz6ipy442ftb4kzz4dembm3ifs2jo25qhiyw6f4ogq.b32.i2p/apt-now](http://ov3ev5dplhdz6ipy442ftb4kzz4dembm3ifs2jo25qhiyw6f4ogq.b32.i2p/apt-now)
-	if you need the b32 address. These are not set up automatically yet, but
-	all you have to do is point your eepsite at the apt-now directory.
+	if you need the b32 address.
     - Tor HS are now also supported and automatic, and they are also available
 	as a mirror at [hmuc3ffhrehwuenz.onion/apt-now](http://hmuc3ffhrehwuenz.onion/apt-now)
 	to prove the concept. If you're only interested in making packages
