@@ -9,6 +9,10 @@ body {
 	background: url(images/content-bg.png) left repeat-y #FFFADA;
 }
 
+img {
+        max-width: 500px;
+}
+
 .clear { clear: both; }
 
 #header {
