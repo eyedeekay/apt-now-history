@@ -72,6 +72,22 @@ date</p>
     static
     hosts.
 </code></pre>
+<pre><code>    This repository was generated with [apt-now](https://cmotc.github.io/apt-now), a static site
+    generator which emits apt repositories
+
+    ###to add this repository to your Debian-based system:
+
+    echo "deb https://cmotc.github.io/debian rolling main" | sudo tee /etc/apt/source.list.d/cmotc.github.io.list
+
+    wget -q0 - https://cmotc.github.io/cmotc.github.io.gpg.key | sudo apt-key add -
+
+
+    ###alternatively via Tor:
+
+    echo "deb http:///debian rolling main" | sudo tee /etc/apt/source.list.d/.list
+
+    wget -q0 - http:///cmotc.github.io.gpg.key | sudo apt-key add -
+</code></pre>
 
 
 </div>
@@ -90,22 +106,6 @@ date</p>
 <li><a href="info/pkpage_20160725-1_all.deb.html">pkpage_20160725-1_all.deb.html</a></li>
 </ul>
 
-<pre><code>    This repository was generated with [apt-now](https://cmotc.github.io/apt-now), a static site
-    generator which emits apt repositories
-
-    ###to add this repository to your Debian-based system:
-
-    echo "deb https://cmotc.github.io/debian rolling main" | sudo tee /etc/apt/source.list.d/cmotc.github.io.list
-
-    wget -q0 - https://cmotc.github.io/cmotc.github.io.gpg.key | sudo apt-key add -
-
-
-    ###alternatively via Tor:
-
-    echo "deb http:///debian rolling main" | sudo tee /etc/apt/source.list.d/.list
-
-    wget -q0 - http:///cmotc.github.io.gpg.key | sudo apt-key add -
-</code></pre>
 
 
 </div>
