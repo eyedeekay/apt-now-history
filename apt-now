@@ -156,6 +156,13 @@ to add this repository to your Debian-based system:\n
 
 BASEDIR="$CURDIR/debian"
 CONFDIR="$CURDIR/debian/conf"
+if [ ! -d "$BASEDIR" ]; then
+        mkdir -p "$CONFDIR"
+else
+        \rm -rf "$BASEDIR"
+        mkdir -p "$CONFDIR"
+fi
+
 INFODIR="$CURDIR/info"
 if [ ! -d "$INFODIR" ]; then
         mkdir -p "$INFODIR"
@@ -250,7 +257,7 @@ hdpage(){
 HEADER="<head>\n
 \t<meta charset=\"utf-8\">\n
 \t<title>$TITLE</title>\n
-\t<link rel=\"stylesheet\" href=\"$PARENT/style.css\">\n
+\t<link rel=\"stylesheet\" href=\"style.css\">\n
 \t<script src=\"script.js\"></script>\n
 </head>\n
 "
