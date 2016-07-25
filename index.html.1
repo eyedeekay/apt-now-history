@@ -19,9 +19,9 @@ accessible from the web or something like it(It can also, for instance, be used 
 statically host software repositories over i2p with no substantial modification.) It
 does this by taking advantage of the structural regularity of these types of resources
 and constructs the whole site on the client side, transmitting content to the server
-only after a valid repository has been built. This means that the server doesn't have
+only after a valid repository has been built. This means that the server doesn&rsquo;t have
 to run any code at all to present the site to the end-user taking advantage of the
-resource over the web, doesn't need to support ssh or remote desktop, and doesn't even
+resource over the web, doesn&rsquo;t need to support ssh or remote desktop, and doesn&rsquo;t even
 technically need to support ftp or git, as long as a way of transferring the
 repository to the remote storage service can be included in the program.</p>
 
@@ -41,33 +41,42 @@ viable projects.</li>
 <li>Activist Use: Activists who deliver things like privacy and security related
 packages that might find their main repositories censored in some regions can
 use this tool to maintain mirrors on sites which will prove much more
-difficult to keep people from accessing, like "burner" accounts on free
+difficult to keep people from accessing, like &ldquo;burner&rdquo; accounts on free
 file hosting sites, distributed file systems, and fire-and-forget hidden
 services.</li>
 <li>Small Groups: Small groups of hobbyists and hackers can collaborate on
 projects and take advantage of the instant clonability of github repositories
-to create instant mirrors of their group's packages, sharing, testing, and
+to create instant mirrors of their group&rsquo;s packages, sharing, testing, and
 growing their projects potential userbase and lowering barriers to entry for
 their ideas.</li>
 <li>Small Businesses: Small businesses can save costs on hosting their in-house
 process software and encourage a culture of peer review by hosting both their
 source repositories and tiny package repositories on github, bitbucket, or
 similar versioned web hosting services.</li>
-<li>Large Businesses: Larger businesses which allow their employees to use "20%
-time" or similar programs to develop projects can use this in conjunction with
+<li>Large Businesses: Larger businesses which allow their employees to use &ldquo;20%
+time&rdquo; or similar programs to develop projects can use this in conjunction with
 tools like dh_make or fpm to roll out an instant package repository when a
 program is ready for testing with a wider audience.</li>
 </ul>
+
+
+<p>If you&rsquo;re one of these people and you have a bitcoin or two lying around, you
+could send them my way and support development.</p>
+
+<ul>
+<li><strong>1HfTfgVVcvSe33TVrbRYKLawMQ21hXDABd</strong></li>
+</ul>
+
 
 <h2>Versioning and Features</h2>
 
 <p>Right now, binary repository generation for Debian(APT Repositories) is stable and
 source repository generation for Debian/Apt is nearing stability and are in usuable
 form. While these are the only working types of repositories, the pre-hyphenate part
-of this project's name will be "apt." Additionally, while an end user could use any
+of this project&rsquo;s name will be &ldquo;apt.&rdquo; Additionally, while an end user could use any
 means to transfer the repository constructed by the apt-now tool, there is currently
 only support for the use of github-pages as a hosting medium in the code. While this
-remains the case the post-hyphenate part of this project's name will be "git." When
+remains the case the post-hyphenate part of this project&rsquo;s name will be &ldquo;git.&rdquo; When
 experimental support for F-Droid and Redhat(Yellowdog Updater) are complete,
 additional ways of transferring the files will be considered and added, and the final
 version will implement APT, YUM, and F-Droid repositories in an easy to configure,
@@ -77,36 +86,44 @@ polyglot(But probably not agnostic) way.</p>
 
 <ul>
 <li>Debian/APT
+
 <ul>
 <li>Binary Repository(Complete, Stable, Generates Web Pages from package info)</li>
 <li>Source Repository(Final stages, Unstable)</li>
 <li>Notes: Depends on normal debian tools, including reprepro</li>
-</ul></li>
+</ul>
+</li>
 <li>Android/F-Droid
+
 <ul>
 <li>Binary Repository(Experimental, Unstable, broken, see fdroid-git. The
 documentation for fdroidserver sometimes implies that the system requires
 some small amount of server-side code.)</li>
 <li>Source Repository(Research phases)</li>
 <li>Notes: Android implies somewhat different separation of logic from GNU/Linux</li>
-</ul></li>
+</ul>
+</li>
 <li>Redhat/YUM
+
 <ul>
 <li>Binary Repository(Experimental, Still researching, but from the looks of
-things it's really straightforward. I do not know how to build RPM packages
-though, so we'll be working with Fedora's rpm's.)</li>
+things it&rsquo;s really straightforward. I do not know how to build RPM packages
+though, so we&rsquo;ll be working with Fedora&rsquo;s rpm&rsquo;s.)</li>
 <li>Source Repository(Experimental, Still researching, but the YUM paradigm
 seems to be astoundingly simple.)</li>
-<li>Notes: None yet. But I'm sure there's something.</li>
-</ul></li>
+<li>Notes: None yet. But I&rsquo;m sure there&rsquo;s something.</li>
 </ul>
+</li>
+</ul>
+
 
 <h3>Transport Types</h3>
 
 <ul>
 <li>Version-Controlled
+
 <ul>
-<li>git(Complete as a way up updating the server, but can't be used to
+<li>git(Complete as a way up updating the server, but can&rsquo;t be used to
 retrieve individual software packages or update software. Cloning is pretty
 much like making an instant mirror, which is cool.)</li>
 <li>hg(Not started, but straightforward. Pretty much the same as the git code
@@ -114,15 +131,19 @@ with very little alteration, just some transliterating of commands with
 identical benefits.)</li>
 <li>svn(Not started, but basically the same story for the purposes of this
 system.)</li>
-</ul></li>
+</ul>
+</li>
 <li>File Transfer Based
+
 <ul>
 <li>FTP(Not started, but really pretty easy, involves composing some commands
 and configuring some usernames/passwords/keys/etc.)</li>
 <li>SFTP(Not started, but basically maps onto ftp. Probably like, one
 additional line of code and a teeny bit of planning to support.)</li>
-</ul></li>
+</ul>
+</li>
 <li>More Exotic, Sync, Filesharing oriented
+
 <ul>
 <li>gittorrent(Not started, Probably easy, but will require a change to the
 transport layer used by apt to treat git as a way of retrieving some
@@ -136,12 +157,14 @@ modification. Might have to generate some magnet links. Probably going to
 conflict with Tor, but may be able to encourage use within i2p?)</li>
 <li>Freenet(Not started, but it would be really interesting to do freenet-as-
 eepsite via some sort of proxy, possibly? Similar complications to Zeronet,
-which I'll probably do first.)</li>
-</ul></li>
+which I&rsquo;ll probably do first.)</li>
+</ul>
+</li>
 <li>Self-Hosted
+
 <ul>
 <li>Self Hosting with local static httpd written in go. Stupid easy to turn
-on, just build the web site with the -l / --serve command line option
+on, just build the web site with the -l / &ndash;serve command line option
 or the START_HTTPD option in the config file/environment variable.</li>
 <li>i2p eepsites are now also supported, and in fact this exact repository is
 mirrored at <a href="http://fireaxe.i2p/apt-now">fireaxe.i2p/apt-now</a>, or
@@ -152,11 +175,13 @@ all you have to do is point your eepsite at the apt-now directory.</li>
 as a mirror at <a href="http://hmuc3ffhrehwuenz.onion/apt-now">hmuc3ffhrehwuenz.onion/apt-now</a>
 to prove the concept. These must be configured using the config file,
 using the USE_TOR and LOCAL_ONLY_HTTPD options in conjunction with
-the START_HTTPD option. If you're only interested in making packages
+the START_HTTPD option. If you&rsquo;re only interested in making packages
 available to Tor users and not your own anonymity, you can omit
 LOCAL_ONLY_HTTPD.</li>
-</ul></li>
 </ul>
+</li>
+</ul>
+
 
 <h3>Misc Features</h3>
 
@@ -167,19 +192,21 @@ link to eachother, also a sitemap. This is all really easy to do on the client
 side.</li>
 </ul>
 
+
 <h2>Screenshot</h2>
 
-<p><img src="aptnow-4.png" alt="apt-now hosted 4 ways" title="Packageception" /></p>
+<p><img src="aptnow-4.png" title="Packageception" alt="apt-now hosted 4 ways" /></p>
 
 <h2>On Deck</h2>
 
 <ul>
-<li>Break more functionality into smaller chunks. Right now the generate
+<li> Break more functionality into smaller chunks. Right now the generate
 function is huge and duplicates a pretty sizable amount of code. Write a
 generic function for building according to script, then existing spec, then
 guessing. This will make supporting more package types and more package
 building tools and techniques easier.</li>
 </ul>
+
 
 <h2>Related Projects</h2>
 
@@ -190,17 +217,19 @@ management</li>
 for YUM repo management</li>
 <li><a href="https://gitlab.com/fdroid/fdroidserver">Fdroidserver, also also obvious</a></li>
 <li><a href="https://github.com/jordansissel/fpm">Effing Package Management</a> Some
-packages depend on this, but it isn't in may repo's besides the ruby gems
+packages depend on this, but it isn&rsquo;t in may repo&rsquo;s besides the ruby gems
 somewhat ironically.</li>
-<li>dh_make, live-build, lots of others, I mean it's a package management
-component, so it's loosely related to almost everything if it has to be.</li>
+<li>dh_make, live-build, lots of others, I mean it&rsquo;s a package management
+component, so it&rsquo;s loosely related to almost everything if it has to be.</li>
 </ul>
+
 
 <h2>Links</h2>
 
 <ul>
 <li><a href="https://www.godaddy.com/help/how-to-set-up-a-yum-repository-on-centos-6-12297">CreateRepo Tutorial</a></li>
 </ul>
+
 
 <h1>apt-now personal repository tool</h1>
 
@@ -247,9 +276,10 @@ github pages for download.</p>
     wget -qO - https://cmotc.github.io/apt-now/cmotc.github.io.gpg.key | sudo apt-key add -
 </code></pre>
 
-<p>In this respository, you'll find</p>
+<p>In this respository, you&rsquo;ll find</p>
 
 <ul>
 <li><a href="info/apt-now_20160719-1_all.deb.html">the latest apt-now</a></li>
 <li><a href="info/pkpage_20160719-1_all.deb.html">the pkpage helper</a></li>
 </ul>
+

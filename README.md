@@ -60,6 +60,11 @@ Use Cases
   tools like dh\_make or fpm to roll out an instant package repository when a
   program is ready for testing with a wider audience.
 
+If you're one of these people and you have a bitcoin or two lying around, you
+could send them my way and support development.
+
+  * **1HfTfgVVcvSe33TVrbRYKLawMQ21hXDABd**
+
 Versioning and Features
 -----------------------
 Right now, binary repository generation for Debian(APT Repositories) is stable and

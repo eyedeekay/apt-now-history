@@ -260,6 +260,7 @@ HEADER="<head>\n
     echo -e $HEADER
 }
 constructindex(){
+        TOR_INDEX=$(cat "/var/lib/tor/apt-now/host")
         INDEX_HEADER="$REPONAME\n
 ============\n
 $CODENAME\n
@@ -277,7 +278,7 @@ generator which emits apt repositories
 
 ###to add this repository to your Debian-based system:
 
-        echo \"deb https://$ORIGIN/debian unstable main\" | sudo tee /etc/apt/source.list.d/$KEYNAME.list\n
+        echo \"deb https://$ORIGIN/debian $CODENAME main\" | sudo tee /etc/apt/source.list.d/$KEYNAME.list\n
         wget -q0 - https://$ORIGIN/$KEYNAME.gpg.key | sudo apt-key add -\n
 "
         echo -e $INDEX_HEADER | sed -e 's/^[ \t]*//' > $INFODIR/index.md
