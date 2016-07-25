@@ -19,7 +19,7 @@ Vcs-Browser: https://github.com/cmotc/apt-git
 
 Package: apt-now
 Architecture: all
-Depends: \${misc:Depends}, markdown, reprepro
+Depends: \${misc:Depends}, markdown | discount, reprepro
 Description: A tool for setting up and hosting an apt repository using arbitrary
  http/s hosts to make files accessible with extra features for git-enabled
  hosting sites.
