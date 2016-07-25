@@ -311,7 +311,7 @@ generator which emits apt repositories
         printf "%b\n" "\n\n</div>\n\n" >> index.html
         printf "%b\n" "\n\n<div id=\"sidebar\">\n\n" >> index.html
 	for f in $INFODIR/*.html ; do
-                TRIMMED_CLEAN=$(echo $f | sed -e 's/.html/ /')
+                TRIMMED_CLEAN=$(echo $f | sed -e 's/.html/ /' | sed "s|$INFODIR||")
                 printf "%b\n" "  * [$TRIMMED_CLEAN](info/$f) \n" | markdown >> index.html
         done
         printf "%b\n" "\n\n</div>\n\n" >> index.html
