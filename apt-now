@@ -241,8 +241,8 @@ includepackages(){
 	for f in $SRCDIR/*.deb ; do
                 echo $f > log
                 reprepro --basedir $BASEDIR includedeb $CODENAME "$f";
-		export TITLE="$f"
-                pkpage-html -f $f >> $f.html
+		export TITLE=$(echo $f | sed "s|$SRCDIR|$INFODIR|")
+                pkpage-html -f $f >> $TITLE.html
         done
 	for f in $SRCDIR/*.dsc ; do
                 reprepro --basedir $BASEDIR includedsc $CODENAME "$f";
