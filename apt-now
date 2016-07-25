@@ -313,7 +313,7 @@ generator which emits apt repositories
 	for f in $INFODIR/*.html ; do
                 TRIMMED_CLEAN=$(echo $f | sed -e 's/.html/ /' | sed "s|$INFODIR/||")
                 TRIMMED_FILE="$TRIMMED_FILE.html"
-                printf "%b\n" "  * [$TRIMMED_CLEAN](info/$TRIMMED_FILE) \n" | markdown >> index.html
+                echo "  * [$TRIMMED_CLEAN](info/$TRIMMED_FILE)" | markdown >> index.html
         done
         printf "%b\n" "\n\n</div>\n\n" >> index.html
         cd ..
