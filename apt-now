@@ -368,3 +368,10 @@ if [ "$USE_TOR" = "YES" ]; then
     fi
     sudo service tor restart
 fi
+
+if [ "$USE_I2P" = "YES" ]; then
+    if [ ! cat /var/lib/i2p/i2p-config/eepsite/contexts/base-context.xml | grep "$CURDIR" ]; then
+        sudo sed -i "s|/var/lib/i2p/i2p-config/eepsite/docroot/|$CURDIR|"
+    fi
+    sudo service i2p restart
+fi
