@@ -4,7 +4,7 @@ Hash: SHA256
 Origin: cmotc.github.io
 Label: cmotc.github.io
 Codename: rolling
-Date: Wed, 27 Jul 2016 05:57:53 UTC
+Date: Wed, 27 Jul 2016 05:58:59 UTC
 Architectures: amd64 i386 armhf
 Components: main
 MD5Sum:
@@ -40,17 +40,17 @@ SHA256:
 -----BEGIN PGP SIGNATURE-----
 Version: GnuPG v2
 
-iQIcBAEBCAAGBQJXmE1hAAoJEEATcHpVTbQ3QlkP/Rt+ZFnk/dbmenDsLmtgbnVZ
-mnXhu+87Ka1j0Pd+myEQHqoxpa1IDE0N49ukF4XyY8Phq3gbfn1j4Zkyhi9Jvm6U
-z3HpBuwyf7k08XoVNYZsw9nwf2hmFCSkksIMa8gmUm3ViVhTepro+rFfGbzhe1S7
-fNfCEWnxc+VrTnzqmv3pJJU5jNFPgqzmYyauSv4Ywx+5R+pZXRnjhZkbkD+3ndZ+
-lX54JrJjZ7ZyzjmThlPii6Adj6dzBh8besTqBdxMOWj/NRnEE7N5xcMXJGc+ApNq
-qFZun1FwOXc+kuckaAgpdhu59efSKeKQW+OWEwg5kv83M+IUPltZVtci3vo5ECk3
-RYBh8fJyJ6W9ZzNKtdG1+4UVvS8ev5hFsU6Dtm4yu1nsSx6Ge9u3sPh4el4D6+Nj
-Yk5YZ7XZhECEFbKooj38cuxcsPUS1hFu0ZUIJa06AhVGvxQCfrhUYPtM2I6hvoUc
-lFv8TRXakhdBtA2ShwKYVW6jnU4SSxYjpPYlVEy6I/cqp/TipVAINaf09MYnjNAY
-NP03iTAtxqQFg13Qte6kGeRvxhpvpT2tvOND7xx88GlwCCyrm7zyz/9HtAWV3MyV
-8ZPaK2VaFNT4OceWWURNeeVLkaHHWpsWPk+bV+WgsTe/G6R90jOpQFAgr3LEDHUq
-TJA4G2B1K2Xlyv//pY3M
-=EhaB
+iQIcBAEBCAAGBQJXmE2jAAoJEEATcHpVTbQ3PM4QALFM29VqeDvsvzh1EPLvYVW7
+knAs3ZFm3kvUNfFEvLcqAfvSX+sRuhnmZfYpgMePdySEzUmg8vTKPLraJXLv9Fv2
+oEJudyyfvsXOUZoVsDGZ2X4n7eDsqFexdUAMheXWZ0ahvJXFFiCXLSBhwJ3gzlmb
+szaKmVpR7mqgSo/WOzxuzK8M51ywd6fQFSJ+F8i1ThW5F973Pe+XXj7ryzAPJLLv
+pcMGNNdeEW8Zt9xALX8QPV6geHYFVzGr/dQVk52ulwOAvWydxsF2SERKba/NXBu+
+DoH56JPoGL4II4JXVeZwCzK1d+9hraCLtmml/NctMPohv8DD45RX+WN4Pcs/8puA
+YLD6mCxeR9L0FdHc2ZLhehu9lJiVqK5UJHccv+ZJubAvlOanfPVy+tMD/9dXG6bd
+ugtJIq+76o/qyWmUgosArn16V4+o1DpCvweGfUWL38wU7MLOWHu6JkifC2VoriEB
+110/65UT+t11+XxBYXvukDHj4ChmeX+tEcmjyUo1QZPGvn/uXbWklXWv3HeDbq3M
+dJf2hiJMmen1Ckg6HLcFSEsw4Zzw8/XVxJDoduBjoxiGsaJeaw+M7q2pscc34kXF
+jkbIuqD3jCbmSe0lhL4FvZYmMMF8Zeh2kg20c/Msf370Ly6LLKK8PVXLKrzL0MNx
+OHfR7XmjVy0jeYou+txV
+=Ca43
 -----END PGP SIGNATURE-----
