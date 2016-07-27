@@ -41,10 +41,10 @@ Homepage: https://cmotc.github.io/pkpage/
 Priority: optional
 Section: admin
 Filename: pool/main/p/pkpage/pkpage_20160727-1_all.deb
-Size: 3576
-SHA256: b9f1c97d7f5df54817a4efe4fdd71ac3df2560ba4606dd3dde339b04fd9ae5a7
-SHA1: f8cca28ab71f0d30e8f22d8e663885f0c22c2791
-MD5sum: b549f17debf354941607207ceefcfe18
+Size: 3636
+SHA256: 34aaa4784d0452d0e2500105de4cd67cae6f4855f4240187f1c4d9c7736442e8
+SHA1: e00383a41a834640e14e125545d03a7c31e465f9
+MD5sum: 30ae375a9acf29df34d8aa010e4fd94f
 Description: Generates a Markdown-formatted description of a software package
  and a corresponding html page. For use with my repo generator, apt-git so that
  it can generate package description pages automatically and make the
