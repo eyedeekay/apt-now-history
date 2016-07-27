@@ -99,7 +99,7 @@ while [ "$#" -gt 0 ]; do
                         USE_I2P="YES"
                 ;;
                 -x|--skindex)
-                        SKIP_INDEX="YES"
+                        USE_I2P="YES"
                 ;;
 		-h|--help)
 			H="YES"
@@ -151,7 +151,7 @@ static pages for download. \n
 \t	-i \ --i2p\n
 \t\t		Point i2p eepSite at apt-now directory.
 \t	-x \ --skindex\n
-\t\t		Skip generating the index page if another page is desired.
+\t\t		Skip generating index
 \t	-h \ --help\n
 \t\t		Display this help message\n
 
@@ -276,10 +276,11 @@ includepackages(){
 	for f in $SRCDIR/*.deb ; do
                 echo $f > log
                 reprepro --basedir $BASEDIR includedeb $CODENAME "$f";
-		export TITLE=$(echo $f | sed "s|$SRCDIR|$INFODIR|")
+		export POSTPATH=$(echo $f | sed "s|$SRCDIR|$INFODIR|")
+                export TITLE=$(echo $f | sed "s|$SRCDIR||")
                 export PARENT=".."
-                hdpage > $TITLE.html
-                pkpage-html -f $f >> $TITLE.html
+                hdpage > $POSTPATH.html
+                pkpage-html -f $f >> $POSTPATH.html
         done
 	for f in $SRCDIR/*.dsc ; do
                 reprepro --basedir $BASEDIR includedsc $CODENAME "$f";
@@ -372,7 +373,7 @@ if [ "$DRY_RUN" = "NO" ]; then
 			echo "setting up packages"
 			includepackages
 			DATE=date
-                        if [ "$SKIP_INDEX" = "NO" ]; then
+                        if [ "$SKIP_INDEX" = "TES" ]; then
                                 constructindex
                         fi
                         cd $CURDIR
