@@ -153,11 +153,16 @@ static pages for download. \n
 \t	-x \ --skindex\n
 \t\t		Skip generating index
 \t	-h \ --help\n
-\t\t		Display this help message\n
+\t\t		Display this help message\n\n
 
 to add this repository to your Debian-based system:\n
 \t\t	echo \"deb https://$ORIGIN/debian unstable main\" | sudo tee /etc/apt/source.list.d/$ORIGIN.list\n
 \t	wget -q0 - https://$ORIGIN/$KEYNAME.gpg.key | sudo apt-key add -\n
+
+alternatively via Tor:\n\n
+
+\t\t	echo \"deb http://$TOR_INDEX/debian $CODENAME main\" | sudo tee /etc/apt/source.list.d/$TOR_INDEX.list\n
+\t	wget -q0 - http://$TOR_INDEX/$KEYNAME.gpg.key | sudo apt-key add -\n
 "
 
 BASEDIR="$CURDIR/debian"
@@ -274,7 +279,6 @@ HEADER="<head>\n
 }
 includepackages(){
 	for f in $SRCDIR/*.deb ; do
-                echo $f > log
                 reprepro --basedir $BASEDIR includedeb $CODENAME "$f";
 		export POSTPATH=$(echo $f | sed "s|$SRCDIR|$INFODIR|")
                 export TITLE=$(echo $f | sed "s|$SRCDIR||")
@@ -284,9 +288,17 @@ includepackages(){
         done
 	for f in $SRCDIR/*.dsc ; do
                 reprepro --basedir $BASEDIR includedsc $CODENAME "$f";
+		export POSTPATH=$(echo $f | sed "s|$SRCDIR|$INFODIR|")
+                export TITLE=$(echo $f | sed "s|$SRCDIR||")
+                hdpage > $POSTPATH.html
+                scpage-html -f $f >> $POSTPATH.html
         done
 	for f in $SRCDIR/*.changes ; do
                 reprepro --basedir $BASEDIR include $CODENAME "$f";
+		export POSTPATH=$(echo $f | sed "s|$SRCDIR|$INFODIR|")
+                export TITLE=$(echo $f | sed "s|$SRCDIR||")
+#                hdpage > $POSTPATH.html
+#                pkpage-html -f $f >> $POSTPATH.html
         done
 }
 constructindex(){
