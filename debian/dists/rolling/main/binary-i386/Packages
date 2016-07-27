@@ -32,7 +32,7 @@ Description: A tool for setting up and hosting an apt repository using arbitrary
  the remote storage service can be included in the program.
 
 Package: pkpage
-Version: 20160725-1
+Version: 20160727-1
 Architecture: all
 Maintainer: idk <eyedeekay@i2pmail.org>
 Installed-Size: 34
@@ -40,11 +40,11 @@ Depends: markdown | discount
 Homepage: https://cmotc.github.io/pkpage/
 Priority: optional
 Section: admin
-Filename: pool/main/p/pkpage/pkpage_20160725-1_all.deb
-Size: 3580
-SHA256: 3ac8c4d8cacaf2b9faa33cc905866eb445c663cf312bff28ee2b91395bf8de23
-SHA1: cb77bc56b25bbc91958c14932944d15b1bd3d360
-MD5sum: b1eef408363dbff1c5f9ee06b8484c82
+Filename: pool/main/p/pkpage/pkpage_20160727-1_all.deb
+Size: 3576
+SHA256: b9f1c97d7f5df54817a4efe4fdd71ac3df2560ba4606dd3dde339b04fd9ae5a7
+SHA1: f8cca28ab71f0d30e8f22d8e663885f0c22c2791
+MD5sum: b549f17debf354941607207ceefcfe18
 Description: Generates a Markdown-formatted description of a software package
  and a corresponding html page. For use with my repo generator, apt-git so that
  it can generate package description pages automatically and make the

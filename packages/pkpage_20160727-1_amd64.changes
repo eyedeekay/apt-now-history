@@ -1,0 +1,31 @@
+Format: 1.8
+Date: Wed, 27 Jul 2016 01:16:42 -0400
+Source: pkpage
+Binary: pkpage
+Architecture: source all
+Version: 20160727-1
+Distribution: unstable
+Urgency: low
+Maintainer: idk <eyedeekay@i2pmail.org>
+Changed-By: idk <idk@devuan.local>
+Description:
+ pkpage     - Generates a Markdown-formatted description of a software package
+Changes:
+ pkpage (20160727-1) unstable; urgency=low
+ .
+   * Initial release (Closes: #nnnn)  <nnnn is the bug number of your ITP>
+Checksums-Sha1:
+ 029a0416a49ee16a9a4dd7e901507c2d33764812 898 pkpage_20160727-1.dsc
+ ea09df0a7ff01c72903618c4fda67354b456cf0c 1216 pkpage_20160727.orig.tar.xz
+ 354464d21c952a0981d25e0ca92c4ce11f0e7de6 2672 pkpage_20160727-1.debian.tar.xz
+ f8cca28ab71f0d30e8f22d8e663885f0c22c2791 3576 pkpage_20160727-1_all.deb
+Checksums-Sha256:
+ d23f3565856ab0c584147ddb284e962aa485c1108723771e19c75070b1aae5d0 898 pkpage_20160727-1.dsc
+ 673ad29dd51fb3b248e158e96c736415886538b37ba127540e33523e92c3e3d6 1216 pkpage_20160727.orig.tar.xz
+ 043fb1c43bb8dcb54114ad911008f9be25bfe163437ac79f7158243794dc4e17 2672 pkpage_20160727-1.debian.tar.xz
+ b9f1c97d7f5df54817a4efe4fdd71ac3df2560ba4606dd3dde339b04fd9ae5a7 3576 pkpage_20160727-1_all.deb
+Files:
+ cf8361a811dc17cc9a4c667f7b11d087 898 admin optional pkpage_20160727-1.dsc
+ 13ed146160a6700a8f3aa623e5410be4 1216 admin optional pkpage_20160727.orig.tar.xz
+ 7d890b1bfcde6e9dd713324e212cffdc 2672 admin optional pkpage_20160727-1.debian.tar.xz
+ b549f17debf354941607207ceefcfe18 3576 admin optional pkpage_20160727-1_all.deb
