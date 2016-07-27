@@ -91,7 +91,7 @@ will be provided.
 ###Repository Types
   * Debian/APT
     - Binary Repository(Complete, Stable, Generates Web Pages from package info)
-    - Source Repository(Pretty much complete and stable. Doesn't generate pages yet.)
+    - Source Repository(Pretty much complete and stable. Generates pages from package info.)
     - Notes: Depends on normal debian tools, including reprepro
   * Android/F-Droid
     - Binary Repository(Experimental, Unstable, broken, see fdroid-git. The
@@ -223,6 +223,8 @@ github pages for download.
                 Serve local httpd with Tor Hidden Service.
         -i \ --i2p
                 Point i2p eepSite at apt-now directory.
+        -x \ --skindex
+                Skip creating index page.
         -h \ --help\n
                 Display this help message\n
 
