@@ -241,6 +241,6 @@ In this respository, you'll find
 
 ###Source Packages:
 
-  * [the latest apt-now](info/apt-now_20160725-1_all.dsc.html)
-  * [the pkpage helper](info/pkpage_20160727-1_all.dsc.html)
-  * [the scpage helper](info/scpage_20160727-1_all.dsc.html)
+  * [the latest apt-now](info/apt-now_20160725-1.dsc.html)
+  * [the pkpage helper](info/pkpage_20160727-1.dsc.html)
+  * [the scpage helper](info/scpage_20160727-1.dsc.html)
