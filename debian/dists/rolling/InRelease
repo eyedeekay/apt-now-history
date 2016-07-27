@@ -4,7 +4,7 @@ Hash: SHA256
 Origin: cmotc.github.io
 Label: cmotc.github.io
 Codename: rolling
-Date: Wed, 27 Jul 2016 07:20:48 UTC
+Date: Wed, 27 Jul 2016 07:22:18 UTC
 Architectures: amd64 i386 armhf
 Components: main
 MD5Sum:
@@ -17,6 +17,9 @@ MD5Sum:
  6cd3915184876730a467b46b98b1713b 3761 main/binary-armhf/Packages
  b97464f1e74cacebffc769db6962c8d6 1550 main/binary-armhf/Packages.gz
  a9c80da2a7546feab7c4b73c77b33894 83 main/binary-armhf/Release
+ d4f95afef8c84fe563a070bbd3ce31f2 3580 main/source/Sources
+ 3df11507f41f1ebbf4b8190351706950 1325 main/source/Sources.gz
+ de61b0be4e1dd5b66e4adf697609b49e 84 main/source/Release
 SHA1:
  83972f8c982d1456d3e9b6467cc0e0dd231d5293 3761 main/binary-amd64/Packages
  21af12706b02abbfff8c7a09682162553780b9c7 1550 main/binary-amd64/Packages.gz
@@ -27,6 +30,9 @@ SHA1:
  83972f8c982d1456d3e9b6467cc0e0dd231d5293 3761 main/binary-armhf/Packages
  21af12706b02abbfff8c7a09682162553780b9c7 1550 main/binary-armhf/Packages.gz
  79a56de773c17edf264c9edc1e6d85585ca1ab28 83 main/binary-armhf/Release
+ b064ef0088ed67c6264518523b225b16531a6ffd 3580 main/source/Sources
+ 0f380f86c63ac158dda6844c1cdb0064cb9eb9d2 1325 main/source/Sources.gz
+ 3319faaae8acdbe217c17e0427b319611f6b83ec 84 main/source/Release
 SHA256:
  e0c8d22a8bafdc78ea2e2d147ff8d4e36d891b6e4aef01da77e620625a021cf2 3761 main/binary-amd64/Packages
  9fe0412c1b46faa428d8009025531dd6afe136c2ed5923464d6f2c3089dba9d3 1550 main/binary-amd64/Packages.gz
@@ -37,20 +43,23 @@ SHA256:
  e0c8d22a8bafdc78ea2e2d147ff8d4e36d891b6e4aef01da77e620625a021cf2 3761 main/binary-armhf/Packages
  9fe0412c1b46faa428d8009025531dd6afe136c2ed5923464d6f2c3089dba9d3 1550 main/binary-armhf/Packages.gz
  80a4c8ccf9425053c719d165f5586669b18acf2a40a670ffb61e0cea7f989e61 83 main/binary-armhf/Release
+ ac4414dbd5f5fd7aac0f5b4b467f68e17332c92af0b36297094e8430dd573d22 3580 main/source/Sources
+ c5430978b95e29db644c17bec7207b78e87858b0fafbe1a678be5c29ea1e30d4 1325 main/source/Sources.gz
+ 9f9018ccb21f13c83c83e6f336c085876c38f63711d656f76fece1d55e8b9b59 84 main/source/Release
 -----BEGIN PGP SIGNATURE-----
 Version: GnuPG v2
 
-iQIcBAEBCAAGBQJXmGDQAAoJEEATcHpVTbQ3u6MQAIPrTtUiE9nu++6fnacz8aJB
-+wLfBy4LvN7SaOZuxEpQrzHJIjmbIGKHRmOIRkbUY3dNjLs40zOSZNZShIn7rdkb
-fiRovMgn6fyJ5KIwnvIrIqwfT2cN3E3qjdTfreETNgZssCZgquMye9lq701JYS2x
-+xCIoFToY4DU4XJnhP5i1IDo/uWmtKd7pgO7evK23l1mAH0ANxSF7UJgMSWAOMfm
-ms0kQgywI/irP/MwASPK2hgGndiy2czjBViJmiKvUHhLF9LP0/6seHQBc2X5rfjG
-fw8TL3kSM8AfFupo+cJnkLmeH52mDuolpMgIh1xysBS+ikpZEzlaDX8H9HSdaTa4
-qok7fcUyruzgYupc9yvmf3rOCf2hMFVZqsPXiduRRzhY7635yd6EoCSQhYKf/ui2
-N2vqSf4cMZiA52UaT7kLpM1VYUtnUZO+I58G5lYiaukF5J+B+zU0lVnAFHAvqw+K
-nhUnPipdV6HPymSxJH5qKaN5U/CVX3BSvTiqkjLUphNuLPDgWH/6+S3DdfFAqnX8
-tcD+PMc0Wtl1U0H7IuzKsIfZT04oc+NZaMjQwZkkQJMo8iP6b0EnSW8ZLeud06uC
-0KFK7ND/a14K/nk3COLvbLvbQTlVLKsMOjqCxXmYiyyt4j0lw2trrn/PAVvovAOf
-uccQmF8uZTLeKeRABIn8
-=EapF
+iQIcBAEBCAAGBQJXmGEqAAoJEEATcHpVTbQ3VvUP+wTJdhTM8NDT1G9mUFvbSP3Y
+yTiSrb+3gIzAea+rAK/r0mwx6yjpYkR7QaujyQDlpbEYw/jit96R1a0C1ypQ3Elw
+IcAoAnoZ7IKx1npqBdhuxR4okUTaL/swv5344jjvQtRt7RI5ys/AjrLZeZ/kUGCl
+s/QL2EwiijD+c9OYTzRIdEkvj8GH44LvzL3Oe6Ti6yqr81KivIq2p6N0km1v3Jae
+cZnUPQrksfAVNGi4o3a0zmFKsHQwVlKrasOP0s/mh9LrItpB8bC1WwDrq/daKg0K
+AykM7cvmckPArVfmgZySP8NqkJfu8LKfVkfyOwWFM4DYPoIX5pTXqt0bXEGNbJpN
+cpikAiSb3wIqBx0LEBbsSMdUNTrV/IhxWbttaltrX1HQ8PPixcPEf8PyBIGCCVle
+lZOA0Phv1Av7pRM9wk+buBK0m/F/fuRSKSWWr39oO8R2RIuhX2IxTNvbnnhk1YMb
+nK8KaIGJ9EBWSuGGXy6XCNTvSUyBMLF7fa5wm1vawPoKu1JtuFAHUZJVLCVYaVli
+gG6JwxcoOJ+RjEAHOCU1KI/XL3owUyGUYDquJUAs3WwFZe3xR39XPyqUKRYMra64
+X4e+VzIOUSi4E/nH0J4h4J5esL2+pHDKoUO8laLEHxgsWiFlwNFC3ZgVT1/xROqr
+d0kLO4XLZnmFmqcN4EmB
+=PKUf
 -----END PGP SIGNATURE-----
