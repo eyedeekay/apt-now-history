@@ -2,6 +2,7 @@
 DRY_RUN="NO"
 RESET="NO"
 POSSIBLE_EXTANT_KEY=$(ls *.gpg.key)
+SKIP_INDEX="NO"
 START_HTTPD="NO"
 HTTPD_LOCAL_ONLY="NO"
 USE_TOR="NO"
@@ -97,6 +98,9 @@ while [ "$#" -gt 0 ]; do
                 -i|--i2p)
                         USE_I2P="YES"
                 ;;
+                -x|--skindex)
+                        SKIP_INDEX="YES"
+                ;;
 		-h|--help)
 			H="YES"
 			DRY_RUN="YES"
@@ -146,6 +150,8 @@ static pages for download. \n
 \t\t		Serve local httpd with Tor Hidden Service.
 \t	-i \ --i2p\n
 \t\t		Point i2p eepSite at apt-now directory.
+\t	-x \ --skindex\n
+\t\t		Skip generating the index page if another page is desired.
 \t	-h \ --help\n
 \t\t		Display this help message\n
 
@@ -366,7 +372,9 @@ if [ "$DRY_RUN" = "NO" ]; then
 			echo "setting up packages"
 			includepackages
 			DATE=date
-                        constructindex
+                        if [ "$SKIP_INDEX" = "NO" ]; then
+                                constructindex
+                        fi
                         cd $CURDIR
 			if [ "$ORG" = "YES" ]; then
 				git add . && git commit -am "Repository update: $MESSAGE $DATE" && git push origin master

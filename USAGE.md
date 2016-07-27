@@ -142,6 +142,11 @@ as parameters.
 
   o example: "YES"
 
+* SKIP_INDEX= When set, apt-now will skip setting up the index file. If you use
+  this option, you will need to supply your own index page.
+
+  o example: "NO"
+
 ###aptgit.conf is just a shell script
 
 These environment variables can also be set in a configuration file at the base
