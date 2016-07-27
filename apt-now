@@ -342,7 +342,13 @@ generator which emits apt repositories
         printf "%b\n" "$INDEX_FOOTER" | sed -e 's/^[ \t]*/        /' | markdown >> index.html
         printf "%b\n" "\n\n</div>\n\n" >> index.html
         printf "%b\n" "\n\n<div id=\"sidebar\">\n\n" >> index.html
-	for f in $INFODIR/*.html ; do
+        printf "%b\n" "###Binary Packages:\n\n" | markdown >> index.html
+	for f in $INFODIR/*.deb.html ; do
+                TRIMMED_CLEAN=$(echo $f | sed "s|$INFODIR/||")
+                echo "  * [$TRIMMED_CLEAN](info/$TRIMMED_CLEAN)" | markdown >> index.html
+        done
+        printf "%b\n" "###Source Packages:\n\n" | markdown >> index.html
+        for f in $INFODIR/*.dsc.html ; do
                 TRIMMED_CLEAN=$(echo $f | sed "s|$INFODIR/||")
                 echo "  * [$TRIMMED_CLEAN](info/$TRIMMED_CLEAN)" | markdown >> index.html
         done
