@@ -1,0 +1,31 @@
+Format: 1.8
+Date: Tue, 09 Aug 2016 18:04:44 -0400
+Source: apt-now
+Binary: apt-now
+Architecture: source all
+Version: 20160809-1
+Distribution: unstable
+Urgency: low
+Maintainer: idk <eyedeekay@i2pmail.org>
+Changed-By: idk <idk@devuan.local>
+Description:
+ apt-now    - A tool for setting up and hosting an apt repository using arbitra
+Changes:
+ apt-now (20160809-1) unstable; urgency=low
+ .
+   * Initial release (Closes: #nnnn)  <nnnn is the bug number of your ITP>
+Checksums-Sha1:
+ 5f73db864978886471a500e44d2c193028a7b3a6 913 apt-now_20160809-1.dsc
+ 67b14546ad0da8f5a13b2d2bb5e550cd52fee77f 25048 apt-now_20160809.orig.tar.xz
+ ef2813244a3d144981b33481f3a7d7d70183dd6d 2972 apt-now_20160809-1.debian.tar.xz
+ 78cb76e8842ffc71e0cdc81ab991a642b628ffb8 6368 apt-now_20160809-1_all.deb
+Checksums-Sha256:
+ 8c1e0f45dddc9e5acf720bb0240f8a64efde1833940c57b8d7a60be943eb24f1 913 apt-now_20160809-1.dsc
+ e564a6102a175365ad8caff4ec63b86158df78a945895249e94cbfbf8d01b3a9 25048 apt-now_20160809.orig.tar.xz
+ cb46543872e8a43ccbfea5fc6db9a701c91a10e91f22719fa7ec2d7dafcdb33d 2972 apt-now_20160809-1.debian.tar.xz
+ 6fa8e38938ed144d692b0cbc404e123be5da45c29aeb7500e4b202763148ef4c 6368 apt-now_20160809-1_all.deb
+Files:
+ e9efa1e69acba62c0d89998a04275b7c 913 admin optional apt-now_20160809-1.dsc
+ cf9f26257be764717c6a50be69e41f87 25048 admin optional apt-now_20160809.orig.tar.xz
+ b02bf6a04e6fa2345c185b6ca21e06b3 2972 admin optional apt-now_20160809-1.debian.tar.xz
+ 218abca884a56f20ff9cffe8046a53ba 6368 admin optional apt-now_20160809-1_all.deb
