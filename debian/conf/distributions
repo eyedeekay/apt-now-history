@@ -3,6 +3,6 @@ Label: cmotc.github.io
 Codename: rolling
 Architectures: amd64 i386 armhf source
 Components: main
-SignWith: 554DB437
+SignWith: 00AE637E
 DebOverride: override.testing
 DscOverride: override.testing
