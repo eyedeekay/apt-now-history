@@ -333,30 +333,30 @@ generator which emits apt repositories
         echo \"deb http://$TOR_INDEX/debian $CODENAME main\" | sudo tee /etc/apt/source.list.d/$TOR_INDEX.list\n
         wget -q0 - http://$TOR_INDEX/$KEYNAME.gpg.key | sudo apt-key add -\n
 "
-        hdpage > index.html
-        printf "%b\n" "\n\n<div id=\"header\">\n\n" >> index.html
-        printf "%b\n" $INDEX_HEADER | sed -e 's/^[ \t]*//' | markdown >> index.html
-        printf "%b\n" "\n\n</div>\n\n" >> index.html
-        printf "%b\n" "\n\n<div id=\"content\">\n\n" >> index.html
-        printf "%b\n" $INDEX_DETAIL | sed -e 's/^[ \t]*/        /' | markdown >> index.html
-        printf "%b\n" "$INDEX_FOOTER" | sed -e 's/^[ \t]*/        /' | markdown >> index.html
-        printf "%b\n" "\n\n</div>\n\n" >> index.html
-        printf "%b\n" "\n\n<div id=\"sidebar\">\n\n" >> index.html
-        printf "%b\n" "###Binary Packages:\n\n" | markdown >> index.html
+        hdpage | tee index.html
+        printf "%b\n" "\n\n<div id=\"header\">\n\n" | tee -a index.html
+        printf "%b\n" $INDEX_HEADER | sed -e 's/^[ \t]*//' | markdown | tee -a index.html
+        printf "%b\n" "\n\n</div>\n\n" | tee -a index.html
+        printf "%b\n" "\n\n<div id=\"content\">\n\n" | tee -a index.html
+        printf "%b\n" $INDEX_DETAIL | sed -e 's/^[ \t]*/        /' | markdown | tee -a index.html
+        printf "%b\n" "$INDEX_FOOTER" | sed -e 's/^[ \t]*/        /' | markdown | tee -a index.html
+        printf "%b\n" "\n\n</div>\n\n" | tee -a index.html
+        printf "%b\n" "\n\n<div id=\"sidebar\">\n\n" | tee -a index.html
+        printf "%b\n" "###Binary Packages:\n\n" | markdown | tee -a index.html
 	for f in $INFODIR/*.deb.html ; do
                 TRIMMED_CLEAN=$(echo $f | sed "s|$INFODIR/||")
-                echo "  * [$TRIMMED_CLEAN](info/$TRIMMED_CLEAN)" | markdown >> index.html
+                echo "  * [$TRIMMED_CLEAN](info/$TRIMMED_CLEAN)" | markdown | tee -a index.html
         done
-        printf "%b\n" "###Source Packages:\n\n" | markdown >> index.html
+        printf "%b\n" "###Source Packages:\n\n" | markdown | tee -a index.html
         for f in $INFODIR/*.dsc.html ; do
                 TRIMMED_CLEAN=$(echo $f | sed "s|$INFODIR/||")
-                echo "  * [$TRIMMED_CLEAN](info/$TRIMMED_CLEAN)" | markdown >> index.html
+                echo "  * [$TRIMMED_CLEAN](info/$TRIMMED_CLEAN)" | markdown | tee -a index.html
         done
-        #printf "%b\n" "\n\n</div>\n\n" >> index.html
-        #printf "%b\n" "\n\n<div id=\"footer\">\n\n" >> index.html
-        printf "%b\n" "\n\n</div>\n\n" >> index.html
+        #printf "%b\n" "\n\n</div>\n\n" | tee -a index.html
+        #printf "%b\n" "\n\n<div id=\"footer\">\n\n" | tee -a index.html
+        printf "%b\n" "\n\n</div>\n\n" | tee -a index.html
         export TITLE="$REPONAME"
-        echo "</html>" >> index.html
+        echo "</html>" | tee -a index.html
 }
 
 if [ "$H" = "YES" ]; then
@@ -391,7 +391,7 @@ if [ "$DRY_RUN" = "NO" ]; then
 			echo "setting up packages"
 			includepackages
 			DATE=date
-                        if [ "$SKIP_INDEX" = "TES" ]; then
+                        if [ ! "$SKIP_INDEX" = "YES" ]; then
                                 constructindex
                         fi
                         cd $CURDIR
