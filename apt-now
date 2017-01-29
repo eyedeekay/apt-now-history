@@ -156,13 +156,13 @@ static pages for download. \n
 \t\t		Display this help message\n\n
 
 to add this repository to your Debian-based system:\n
-\t\t	echo \"deb https://$ORIGIN/debian unstable main\" | sudo tee /etc/apt/source.list.d/$ORIGIN.list\n
-\t	wget -q0 - https://$ORIGIN/$KEYNAME.gpg.key | sudo apt-key add -\n
+\t\t	echo \"deb https://$ORIGIN/debian unstable main\" | sudo tee /etc/apt/sources.list.d/$ORIGIN.list\n
+\t	wget -qO - https://$ORIGIN/$KEYNAME.gpg.key | sudo apt-key add -\n
 
 alternatively via Tor:\n\n
 
-\t\t	echo \"deb http://$TOR_INDEX/debian $CODENAME main\" | sudo tee /etc/apt/source.list.d/$TOR_INDEX.list\n
-\t	wget -q0 - http://$TOR_INDEX/$KEYNAME.gpg.key | sudo apt-key add -\n
+\t\t	echo \"deb http://$TOR_INDEX/debian $CODENAME main\" | sudo tee /etc/apt/sources.list.d/$TOR_INDEX.list\n
+\t	wget -qO - http://$TOR_INDEX/$KEYNAME.gpg.key | sudo apt-key add -\n
 "
 
 BASEDIR="$CURDIR/debian"
@@ -326,12 +326,12 @@ generator which emits apt repositories
 ###to add this repository to your Debian-based system:
 
         echo \"deb https://$ORIGIN/debian $CODENAME main\" | sudo tee /etc/apt/source.list.d/$KEYNAME.list\n
-        wget -q0 - https://$ORIGIN/$KEYNAME.gpg.key | sudo apt-key add -\n
+        wget -qO - https://$ORIGIN/$KEYNAME.gpg.key | sudo apt-key add -\n
 
 ###alternatively via Tor:
 
         echo \"deb http://$TOR_INDEX/debian $CODENAME main\" | sudo tee /etc/apt/source.list.d/$TOR_INDEX.list\n
-        wget -q0 - http://$TOR_INDEX/$KEYNAME.gpg.key | sudo apt-key add -\n
+        wget -qO - http://$TOR_INDEX/$KEYNAME.gpg.key | sudo apt-key add -\n
 "
         hdpage | tee index.html
         printf "%b\n" "\n\n<div id=\"header\">\n\n" | tee -a index.html
