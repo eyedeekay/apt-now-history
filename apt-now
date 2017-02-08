@@ -156,7 +156,7 @@ static pages for download. \n
 \t\t		Display this help message\n\n
 
 to add this repository to your Debian-based system:\n
-\t\t	echo \"deb https://$ORIGIN/debian unstable main\" | sudo tee /etc/apt/sources.list.d/$ORIGIN.list\n
+\t\t	echo \"deb https://$ORIGIN/debian $CODENAME main\" | sudo tee /etc/apt/sources.list.d/$ORIGIN.list\n
 \t	wget -qO - https://$ORIGIN/$KEYNAME.gpg.key | sudo apt-key add -\n
 
 alternatively via Tor:\n\n
