@@ -1,4 +1,4 @@
-﻿#! /bin/sh
+﻿#! /usr/bin/env sh
 DRY_RUN="NO"
 RESET="NO"
 POSSIBLE_EXTANT_KEY=$(ls *.gpg.key)
