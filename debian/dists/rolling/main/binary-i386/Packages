@@ -55,19 +55,19 @@ Description: Generates a Markdown-formatted description of a software package
  should run fine on any Debian-based system.
 
 Package: scpage
-Version: 20160727-1
+Version: 20170208-1
 Architecture: all
 Maintainer: idk <eyedeekay@i2pmail.org>
-Installed-Size: 34
+Installed-Size: 15
 Depends: markdown | discount
 Homepage: https://cmotc.github.io/scpage/
 Priority: optional
 Section: admin
-Filename: pool/main/s/scpage/scpage_20160727-1_all.deb
-Size: 3510
-SHA256: f6a2dc13f5f40a4732d7b1ce2ec8c8581fa9f9baabd963c577ff27cf1e393b6f
-SHA1: ab3f4f75ef02a31359aa9b4fb9e7246f0cf171ad
-MD5sum: c3e1bd6a2836423d8ffc18e90e1cf0f4
+Filename: pool/main/s/scpage/scpage_20170208-1_all.deb
+Size: 3472
+SHA256: 6b48011b162290cffda5bbfedcb59ca68b6c28b247ff2f60f887be0dc7396a11
+SHA1: ceb1742fe1f8e457fc7ffe0e9f757fb9e75e6d71
+MD5sum: dc646c71647e1e27aab7ae14ecb4a113
 Description: Generates a Markdown-formatted description of a software package
  and a corresponding html page. For use with my repo generator, apt-git so that
  it can generate package description pages automatically and make the
