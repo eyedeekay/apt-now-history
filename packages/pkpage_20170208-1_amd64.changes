@@ -1,0 +1,34 @@
+Format: 1.8
+Date: Wed, 08 Feb 2017 00:42:37 -0500
+Source: pkpage
+Binary: pkpage
+Architecture: source all
+Version: 20170208-1
+Distribution: unstable
+Urgency: medium
+Maintainer: idk <eyedeekay@i2pmail.org>
+Changed-By: idk <idk@fireaxe.local>
+Description:
+ pkpage     - Generates a Markdown-formatted description of a software package
+Changes:
+ pkpage (20170208-1) unstable; urgency=medium
+ .
+   * Initial release (Closes: #nnnn)  <nnnn is the bug number of your ITP>
+Checksums-Sha1:
+ fa3ad377c946bbe6591e08361acae324cf392255 895 pkpage_20170208-1.dsc
+ 78ff42674533675c1c063e8e93d2032fca7afab5 800 pkpage_20170208.orig.tar.xz
+ a539944e4f8428105f7de47cebc4f9e70c1aefe1 2608 pkpage_20170208-1.debian.tar.xz
+ dda8aad961bae78f394e3b0aa2698b4b6e3d20e7 3084 pkpage_20170208-1_all.deb
+ 7e283d39f09f019a87745f65457c31f07a5117eb 4774 pkpage_20170208-1_amd64.buildinfo
+Checksums-Sha256:
+ fafe8232c3911aef1a5307ec9f873b1f43bdcbab34ca1e142fecfa371c4d0371 895 pkpage_20170208-1.dsc
+ 4995cf0a5a99455ab32134e03ce66e0bff58869a4cdfe60d6eba6eb67841608a 800 pkpage_20170208.orig.tar.xz
+ 798217bd79f43abe079bbd7117d52d3563ec8c2d66bdbc440546c21ff3eefb12 2608 pkpage_20170208-1.debian.tar.xz
+ d57027391ca072cf5fb09058cc070bb0a80609e56feb33e00634b7302034a8b7 3084 pkpage_20170208-1_all.deb
+ 3195866dcedef4df9516e775eee1c29e2176ee78114b716dd39172cc63905bf2 4774 pkpage_20170208-1_amd64.buildinfo
+Files:
+ 11028824a094ffcd64caa4432add808c 895 admin optional pkpage_20170208-1.dsc
+ e857b83cb456a77e3bd646345c9e40e1 800 admin optional pkpage_20170208.orig.tar.xz
+ ce4b35e07fab193454f56de467d7fa14 2608 admin optional pkpage_20170208-1.debian.tar.xz
+ 1b851439ceba1054c0bd0d22e28fafa6 3084 admin optional pkpage_20170208-1_all.deb
+ 090c6c86f36ad9761935a576e3a8b322 4774 admin optional pkpage_20170208-1_amd64.buildinfo
