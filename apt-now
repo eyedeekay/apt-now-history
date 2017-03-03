@@ -98,6 +98,9 @@ while [ "$#" -gt 0 ]; do
                 -i|--i2p)
                         USE_I2P="YES"
                 ;;
+                -o|--i2pd)
+                        USE_I2PD="YES"
+                ;;
                 -x|--skindex)
                         USE_I2P="YES"
                 ;;
@@ -439,4 +442,16 @@ if [ "$USE_I2P" = "YES" ]; then
         sudo sed -i "s|/var/lib/i2p/i2p-config/eepsite/docroot/|$CURDIR|"
     fi
     sudo service i2p restart
+fi
+
+if [ "$USE_I2PD" = "YES" ]; then
+    if [ ! sudo cat /etc/i2pd/tunnels.conf | grep "[APTNOW]" ]; then
+        echo "[APTNOW]
+        type = http
+        host = 127.0.0.1
+        port = 45291
+        keys = site-keys.dat
+        " | sudo tee -a /etc/i2pd/tunnels.conf
+    fi
+    sudo service i2pd restart
 fi
