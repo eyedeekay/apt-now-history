@@ -7,4 +7,4 @@ RUN echo "deb https://cmotc.github.io/apt-now/debian unstable main" | tee /etc/a
 RUN wget -qO - https://cmotc.github.io/apt-now/cmotc.github.io.gpg.key | apt-key add -
 
 RUN apt-get update
-RUN apt-get install apt-now pkpage scpage mini-httpd
+RUN apt-get install -y apt-now pkpage scpage mini-httpd
