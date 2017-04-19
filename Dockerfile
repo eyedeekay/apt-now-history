@@ -11,8 +11,6 @@ RUN apt-get update
 RUN apt-get install -y apt-now pkpage scpage mini-httpd devscripts debhelper
 RUN apt-get build-dep -y apt-now pkpage scpage
 
-
-
 RUN addgroup apt-now && adduser --system --home "/home/apt-now" --ingroup apt-now --disabled-login apt-now \
     && mkdir -p  /home/apt-now/packages /home/gpg/ \
     && chown -R apt-now:apt-now "/home/apt-now" "/home/gpg"
