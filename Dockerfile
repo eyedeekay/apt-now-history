@@ -13,6 +13,6 @@ RUN apt-get build-dep apt-now pkpage scpage mini-httpd
 
 RUN mkdir -p /home/apt-now/packages
 COPY aptnow.conf /home/apt-now/
-RUN cd /home/apt-now/packages/ && apt-get source apt-now pkpage scpage mini-httpd
+RUN cd /home/apt-now/packages/ && apt-get source apt-now pkpage scpage
 
 CMD [mini_httpd, -d, /home/apt-now/]
