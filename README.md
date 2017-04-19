@@ -11,8 +11,6 @@ usage
 
 For usage help, [go here](usage.html).
 
-
-
 Details
 -------
 
@@ -29,6 +27,13 @@ to run any code at all to present the site to the end-user taking advantage of t
 resource over the web, doesn't need to support ssh or remote desktop, and doesn't even
 technically need to support ftp or git, as long as a way of transferring the
 repository to the remote storage service can be included in the program.
+
+Using Docker
+------------
+
+        git clone https://github.com/cmotc/apt-now && docker build -t apt-now .
+        docker run -p 45291:45291 \
+                apt-now
 
 Use Cases
 ---------
