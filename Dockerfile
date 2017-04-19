@@ -38,7 +38,7 @@ RUN apt-get install -y supervisor
 RUN sed -i 's|data_dir=/var/www/html|data_dir=/home/apt-now/|g' /etc/mini-httpd.conf
 RUN sed -i 's|cgipat=cgi-bin/*|#cgipat=cgi-bin/*|g' /etc/mini-httpd.conf
 RUN sed -i 's|port=80|port=45291|g' /etc/mini-httpd.conf
-
+RUN sed -i 's|/var/log/mini-httpd.log|/home/gpg/mini-httpd.log|g' /etc/mini-httpd.conf
 RUN cat /etc/mini-httpd.conf
 COPY supervisor.conf /etc/supervisor/supervisord.conf
 CMD /usr/bin/supervisord -c /etc/supervisor/supervisord.conf
