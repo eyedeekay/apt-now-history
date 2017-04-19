@@ -36,7 +36,7 @@ RUN cd /home/apt-now/packages/ && for folder in $(find -type d -maxdepth 1); do 
 RUN cd /home/apt-now/ && apt-now
 
 USER root
-
+RUN apt-get install -y supervisor
 RUN sed -i 's|data_dir=/var/www/html|data_dir=/home/apt-now/|g' /etc/mini-httpd.conf
 RUN sed -i 's|cgipat=cgi-bin/*|#cgipat=cgi-bin/*|g' /etc/mini-httpd.conf
 
