@@ -11,6 +11,12 @@ RUN apt-get update
 RUN apt-get install -y apt-now pkpage scpage mini-httpd
 RUN apt-get build-dep -y apt-now pkpage scpage
 
+
+
+RUN addgroup aptnow && adduser --system --home "/home/apt-now" --ingroup aptnow --disabled-login aptnow \
+    && mkdir -p "$SRC_DIR" "$DIST_DIR" "$ICE_DIR" \
+    && chown -R i2pd:i2pd "$HOME"
+
 RUN mkdir -p /home/apt-now/packages
 COPY aptnow.conf /home/apt-now/
 RUN cd /home/apt-now/packages/ && apt-get source apt-now pkpage scpage
