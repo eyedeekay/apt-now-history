@@ -24,12 +24,7 @@ USER apt-now
 RUN cd /home/gpg/ && echo Passphrase: $(apg -n 1) | tee -a gpg.file && \
    cat gpg.file gpg.file2 > gpg.batch && cat gpg.batch && gpg --gen-key --batch gpg.batch
 
-RUN cd /home/apt-now/packages/ && apt-get source apt-now pkpage scpage
-RUN cd /home/apt-now/packages/ && for folder in $(find -type d -maxdepth 1); do \
-   cd $folder; \
-   debuild -us -uc; \
-   cd /home/apt-now/packages; \
-   done
+RUN cd /home/apt-now/packages/ && apt-get source apt-now pkpage scpage && apt-get download apt-now pkpage scpage
 
 RUN cd /home/apt-now/ && apt-now
 
