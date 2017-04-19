@@ -23,6 +23,13 @@ USER apt-now
 
 RUN cd /home/apt-now/ && echo Passphrase: $(apg -n 1) | tee -a gpg.file && gpg --gen-key --batch gpg.file
 RUN cd /home/apt-now/packages/ && apt-get source apt-now pkpage scpage
+RUN cd /home/apt-now/packages/ && for folder in $(find -type d -maxdepth 1); do \
+   cd $folder; \
+   debuild -us -uc; \
+   cd /home/apt-now/packages; \
+   done
+
+RUN cd /home/apt-now/packages/ &&
 
 USER root
 
