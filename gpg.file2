@@ -1,0 +1,4 @@
+%pubring batch_key.pub
+%secring batch_key.sec
+%commit
+%echo done
