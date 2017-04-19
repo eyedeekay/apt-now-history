@@ -37,4 +37,6 @@ RUN cd /home/apt-now/ && apt-now
 
 USER root
 
+RUN cat /etc/mini-httpd.conf
+
 CMD [mini_httpd, -d, /home/apt-now/]
