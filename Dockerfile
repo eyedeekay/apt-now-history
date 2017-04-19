@@ -8,7 +8,7 @@ RUN echo "deb-src https://cmotc.github.io/apt-now/debian rolling main" | tee -a 
 RUN wget -qO - https://cmotc.github.io/apt-now/cmotc.github.io.gpg.key | apt-key add -
 
 RUN apt-get update
-RUN apt-get install -y apt-now pkpage scpage mini-httpd
+RUN apt-get install -y apt-now pkpage scpage mini-httpd debuild debhelper
 RUN apt-get build-dep -y apt-now pkpage scpage
 
 
