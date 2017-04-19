@@ -13,12 +13,12 @@ RUN apt-get build-dep -y apt-now pkpage scpage
 
 
 
-RUN addgroup aptnow && adduser --system --home "/home/apt-now" --ingroup aptnow --disabled-login aptnow \
-    && mkdir -p "$SRC_DIR" "$DIST_DIR" "$ICE_DIR" \
-    && chown -R i2pd:i2pd "$HOME"
+RUN addgroup apt-now && adduser --system --home "/home/apt-now" --ingroup apt-now --disabled-login apt-now \
+    && mkdir -p  /home/apt-now/packages \
+    && chown -R i2pd:i2pd "/home/apt-now"
 
-RUN mkdir -p /home/apt-now/packages
 COPY aptnow.conf /home/apt-now/
+USER apt-now
 RUN cd /home/apt-now/packages/ && apt-get source apt-now pkpage scpage
 
 CMD [mini_httpd, -d, /home/apt-now/]
