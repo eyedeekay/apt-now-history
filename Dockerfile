@@ -42,4 +42,4 @@ RUN sed -i 's|cgipat=cgi-bin/*|#cgipat=cgi-bin/*|g' /etc/mini-httpd.conf
 
 RUN cat /etc/mini-httpd.conf
 
-CMD [mini_httpd, -C, /etc/mini-httpd.conf, -D]
+CMD [mini_httpd, -C, /etc/mini-httpd.conf]
