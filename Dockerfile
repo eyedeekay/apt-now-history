@@ -8,7 +8,10 @@ RUN wget -qO - https://cmotc.github.io/apt-now/cmotc.github.io.gpg.key | apt-key
 
 RUN apt-get update
 RUN apt-get install -y apt-now pkpage scpage mini-httpd
+RUN apt-get build-dep apt-now pkpage scpage mini-httpd
 
+RUN mkdir -p /home/apt-now/packages
+COPY aptnow.conf /home/apt-now/
+RUN cd /home/apt-now/packages/ && apt-get source apt-now pkpage scpage mini-httpd
 
-
-CMD min_httpd -d
+CMD [mini_httpd, -d, /home/apt-now/]
