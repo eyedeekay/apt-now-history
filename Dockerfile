@@ -37,6 +37,9 @@ RUN cd /home/apt-now/ && apt-now
 
 USER root
 
+RUN sed -i 's|data_dir=/var/www/html|data_dir=/home/apt-now/|g' /etc/mini-httpd.conf
+RUN sed -i 's|cgipat=cgi-bin/*|#cgipat=cgi-bin/*|g' /etc/mini-httpd.conf
+
 RUN cat /etc/mini-httpd.conf
 
-CMD [mini_httpd, -d, /home/apt-now/]
+CMD [mini_httpd, -C, /etc/mini-httpd.conf]
