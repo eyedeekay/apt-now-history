@@ -1,3 +1,4 @@
+%echo Generating a basic OpenPGP key
 Key-Type: RSA
 Key-Length: 2048
 #Subkey-Type: RSA
