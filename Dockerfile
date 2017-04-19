@@ -17,10 +17,10 @@ RUN addgroup apt-now && adduser --system --home "/home/apt-now" --ingroup apt-no
     && mkdir -p  /home/apt-now/packages \
     && chown -R apt-now:apt-now "/home/apt-now"
 
+
+USER apt-now
 COPY aptnow.conf /home/apt-now/
 COPY gpg.file /home/apt-now
-USER apt-now
-
 RUN cd /home/apt-now/ && echo Passphrase: $(apg -n 1) | tee -a gpg.file && gpg --gen-key --batch gpg.file
 RUN cd /home/apt-now/packages/ && apt-get source apt-now pkpage scpage
 RUN cd /home/apt-now/packages/ && for folder in $(find -type d -maxdepth 1); do \
