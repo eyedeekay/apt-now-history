@@ -14,16 +14,16 @@ RUN apt-get build-dep -y apt-now pkpage scpage
 
 
 RUN addgroup apt-now && adduser --system --home "/home/apt-now" --ingroup apt-now --disabled-login apt-now \
-    && mkdir -p  /home/apt-now/packages \
-    && chown -R apt-now:apt-now "/home/apt-now"
+    && mkdir -p  /home/apt-now/packages /home/gpg/ \
+    && chown -R apt-now:apt-now "/home/apt-now" "/home/gpg"
 
 COPY aptnow.conf /home/apt-now/
-COPY gpg.file /home/apt-now
-COPY gpg.file2 /home/apt-now
+COPY gpg.file /home/gpg
+COPY gpg.file2 /home/gpg
 
-RUN chown apt-now:apt-now /home/apt-now/aptnow.conf /home/apt-now/gpg.file /home/apt-now/gpg.file2
+RUN chown apt-now:apt-now /home/apt-now/aptnow.conf /home/gpg/gpg.file /home/gpg/gpg.file2
 USER apt-now
-RUN cd /home/apt-now/ && echo Passphrase: $(apg -n 1) | tee -a gpg.file && \
+RUN cd /home/gpg/ && echo Passphrase: $(apg -n 1) | tee -a gpg.file && \
    cat gpg.file gpg.file2 > gpg.batch && cat gpg.batch && gpg --gen-key --batch gpg.batch
 
 RUN cd /home/apt-now/packages/ && apt-get source apt-now pkpage scpage
