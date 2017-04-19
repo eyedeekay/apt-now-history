@@ -23,7 +23,7 @@ COPY gpg.file2 /home/apt-now
 
 RUN chown apt-now:apt-now /home/apt-now/aptnow.conf /home/apt-now/gpg.file /home/apt-now/gpg.file2
 USER apt-now
-RUN cd /home/apt-now/ && echo Passphrase: $(apg -n 1) | tee -a gpg.file \
+RUN cd /home/apt-now/ && echo Passphrase: $(apg -n 1) | tee -a gpg.file && \
    cat gpg.file gpg.file2 > gpg.batch && echo gpg.batch && gpg --gen-key --batch gpg.batch
 
 RUN cd /home/apt-now/packages/ && apt-get source apt-now pkpage scpage
