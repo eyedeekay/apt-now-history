@@ -42,4 +42,4 @@ RUN sed -i 's|cgipat=cgi-bin/*|#cgipat=cgi-bin/*|g' /etc/mini-httpd.conf
 
 RUN cat /etc/mini-httpd.conf
 COPY supervisor.conf /etc/supervisor/supervisord.conf
-CMD [/usr/bin/supervisord]
+CMD /usr/bin/supervisord
