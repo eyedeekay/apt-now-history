@@ -24,4 +24,6 @@ USER apt-now
 RUN cd /home/apt-now/ && echo Passphrase: $(apg -n 1) | tee -a gpg.file && gpg --gen-key --batch gpg.file
 RUN cd /home/apt-now/packages/ && apt-get source apt-now pkpage scpage
 
+USER root
+
 CMD [mini_httpd, -d, /home/apt-now/]
