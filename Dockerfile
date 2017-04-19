@@ -33,7 +33,7 @@ RUN cd /home/apt-now/packages/ && for folder in $(find -type d -maxdepth 1); do 
    cd /home/apt-now/packages; \
    done
 
-RUN cd /home/apt-now/packages/ && apt-now
+RUN cd /home/apt-now/ && apt-now
 
 USER root
 
