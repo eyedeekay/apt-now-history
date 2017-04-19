@@ -1,0 +1,13 @@
+%echo Generating a basic OpenPGP key
+Key-Type: RSA
+Key-Length: 2048
+#Subkey-Type: RSA
+#Subkey-Length: 2048
+Name-Real: Foo Bar
+Name-Comment: auto generated key pair for signing
+Name-Email: user@mail.com
+Expire-Date: 0
+%pubring batch_key.pub
+%secring batch_key.sec
+%commit
+%echo done

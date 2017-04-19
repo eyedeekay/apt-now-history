@@ -1,7 +1,7 @@
 FROM debian:stretch
 MAINTAINER idk <problemsolver@openmailbox.org>
 
-RUN apt-get update && apt-get dist-upgrade -y && apt-get install -y apt-transport-https wget curl gnupg2 apt-utils dpkg-sig reprepro git
+RUN apt-get update && apt-get dist-upgrade -y && apt-get install -y apt-transport-https wget curl gnupg2 apt-utils dpkg-sig reprepro git apg
 
 RUN echo "deb https://cmotc.github.io/apt-now/debian rolling main" | tee /etc/apt/sources.list.d/cmotc.github.io.list
 RUN echo "deb-src https://cmotc.github.io/apt-now/debian rolling main" | tee -a /etc/apt/sources.list.d/cmotc.github.io.list
@@ -18,7 +18,10 @@ RUN addgroup apt-now && adduser --system --home "/home/apt-now" --ingroup apt-no
     && chown -R apt-now:apt-now "/home/apt-now"
 
 COPY aptnow.conf /home/apt-now/
+COPY gpg.file /home/apt-now
 USER apt-now
+
+RUN cd /home/apt-now/ && echo Passphrase: $(apg -n 1) | tee -a gpg.file && gpg --gen-key --batch gpg.file
 RUN cd /home/apt-now/packages/ && apt-get source apt-now pkpage scpage
 
 CMD [mini_httpd, -d, /home/apt-now/]
