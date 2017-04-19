@@ -1,4 +1,4 @@
-FROM debian:jessie
+FROM debian:stretch
 MAINTAINER idk <problemsolver@openmailbox.org>
 
 RUN apt-get update && apt-get dist-upgrade -y && apt-get install -y apt-transport-https wget curl
